@@ -32,7 +32,7 @@
 | --- | --- |
 | **Platform** | Android 10 or newer (API 29) · `arm64-v8a` and `armeabi-v7a` |
 | **Root** | Magisk · KernelSU · KernelSU Next — or Shizuku for part of it |
-| **Screens** | 61 across ten control domains, plus a tools shelf |
+| **Screens** | 62 across ten control domains, plus a tools shelf |
 | **Languages** | 84 locales plus English, right-to-left enforced by a gate |
 | **Licence** | Proprietary — the copyright holder's written permission is required |
 
@@ -41,7 +41,7 @@
 <a id="contents"></a>
 
 <details>
-<summary><b>Contents</b> — the seventeen sections of this page, in reading order</summary>
+<summary><b>Contents</b> — the eighteen sections of this page, in reading order</summary>
 
 | | Section | The one question it answers |
 | --- | --- | --- |
@@ -60,8 +60,9 @@
 | 13 | [Documentation](#documentation) | Every page under `docs/` |
 | 14 | [FAQ](#faq) | The questions that keep coming back |
 | 15 | [Support](#support) | Where a bug report goes |
-| 16 | [Licence](#licence) | Proprietary, stated plainly |
-| 17 | [Credits](#credits) | Who wrote the parts this project did not |
+| 16 | [From the maker](#from-the-maker) | Why nothing here is generated |
+| 17 | [Licence](#licence) | Proprietary, stated plainly |
+| 18 | [Credits](#credits) | Who wrote the parts this project did not |
 
 </details>
 
@@ -90,7 +91,7 @@ Two doors in, depending on who you are:
 | **I want to use it** | **I build ROMs** |
 | --- | --- |
 | [What it looks like](#what-it-looks-like) · [What you can control](#what-you-can-control) · [Install](#install) | [For ROM developers](#for-rom-developers) — the integration kit in `android/aosp/` |
-| 61 screens across ten control domains, plus a tools shelf | Soong files, an init service, a sepolicy domain, a privileged-permission allowlist |
+| 65 screens across ten control domains, plus a tools shelf | Soong files, an init service, a sepolicy domain, a privileged-permission allowlist |
 | [Requirements](#requirements): Android 10+, root (or Shizuku for part of it) | Permission-first: proprietary software, written permission required |
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
@@ -157,7 +158,7 @@ Two doors in, depending on who you are:
 </details>
 
 <details>
-<summary><b>Control hubs</b> · 10 frames</summary>
+<summary><b>Control hubs</b> · 11 frames</summary>
 
 <table>
   <tr>
@@ -170,12 +171,12 @@ Two doors in, depending on who you are:
     <td align="center" width="25%"><a href="docs/screenshots/11-control-hub-2.png"><img src="docs/screenshots/11-control-hub-2.png" width="140" alt="MaxManager — Control (2)"></a><br><sub><b>Control (2)</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/12-hub-display.png"><img src="docs/screenshots/12-hub-display.png" width="140" alt="MaxManager — Display"></a><br><sub><b>Display</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/13-hub-responsiveness.png"><img src="docs/screenshots/13-hub-responsiveness.png" width="140" alt="MaxManager — Responsiveness"></a><br><sub><b>Responsiveness</b></sub></td>
-    <td align="center" width="25%"><a href="docs/screenshots/51-cpu-hub.png"><img src="docs/screenshots/51-cpu-hub.png" width="140" alt="MaxManager — CPU hub"></a><br><sub><b>CPU hub</b></sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/14-hub-power.png"><img src="docs/screenshots/14-hub-power.png" width="140" alt="MaxManager — Power"></a><br><sub><b>Power</b></sub></td>
   </tr>
   <tr>
+    <td align="center" width="25%"><a href="docs/screenshots/51-cpu-hub.png"><img src="docs/screenshots/51-cpu-hub.png" width="140" alt="MaxManager — CPU hub"></a><br><sub><b>CPU hub</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/52-memory-hub.png"><img src="docs/screenshots/52-memory-hub.png" width="140" alt="MaxManager — Memory hub"></a><br><sub><b>Memory hub</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/53-storage-hub.png"><img src="docs/screenshots/53-storage-hub.png" width="140" alt="MaxManager — Storage hub"></a><br><sub><b>Storage hub</b></sub></td>
-    <td align="center" width="25%"></td>
     <td align="center" width="25%"></td>
   </tr>
 </table>
@@ -237,7 +238,7 @@ Two doors in, depending on who you are:
 </details>
 
 <details>
-<summary><b>Settings and tools</b> · 13 frames</summary>
+<summary><b>Settings and tools</b> · 16 frames</summary>
 
 <table>
   <tr>
@@ -248,28 +249,28 @@ Two doors in, depending on who you are:
   </tr>
   <tr>
     <td align="center" width="25%"><a href="docs/screenshots/36-backup-plan.png"><img src="docs/screenshots/36-backup-plan.png" width="140" alt="MaxManager — Backup plan"></a><br><sub><b>Backup plan</b></sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/37-backup-apps.png"><img src="docs/screenshots/37-backup-apps.png" width="140" alt="MaxManager — Backup apps"></a><br><sub><b>Backup apps</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/38-permissions.png"><img src="docs/screenshots/38-permissions.png" width="140" alt="MaxManager — Permissions"></a><br><sub><b>Permissions</b></sub></td>
-    <td align="center" width="25%"><a href="docs/screenshots/41-activity-launcher.png"><img src="docs/screenshots/41-activity-launcher.png" width="140" alt="MaxManager — Activities"></a><br><sub><b>Activities</b></sub></td>
-    <td align="center" width="25%"><a href="docs/screenshots/42-set-edit.png"><img src="docs/screenshots/42-set-edit.png" width="140" alt="MaxManager — Property editor"></a><br><sub><b>Property editor</b></sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/39-permissions-app.png"><img src="docs/screenshots/39-permissions-app.png" width="140" alt="MaxManager — App permissions"></a><br><sub><b>App permissions</b></sub></td>
   </tr>
   <tr>
+    <td align="center" width="25%"><a href="docs/screenshots/40-permissions-2.png"><img src="docs/screenshots/40-permissions-2.png" width="140" alt="MaxManager — Permissions (2)"></a><br><sub><b>Permissions (2)</b></sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/41-activity-launcher.png"><img src="docs/screenshots/41-activity-launcher.png" width="140" alt="MaxManager — Activities"></a><br><sub><b>Activities</b></sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/42-set-edit.png"><img src="docs/screenshots/42-set-edit.png" width="140" alt="MaxManager — Property editor"></a><br><sub><b>Property editor</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/58-backup-scope.png"><img src="docs/screenshots/58-backup-scope.png" width="140" alt="MaxManager — What it copies"></a><br><sub><b>What it copies</b></sub></td>
+  </tr>
+  <tr>
     <td align="center" width="25%"><a href="docs/screenshots/59-settings-about.png"><img src="docs/screenshots/59-settings-about.png" width="140" alt="MaxManager — About"></a><br><sub><b>About</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/60-settings-advanced.png"><img src="docs/screenshots/60-settings-advanced.png" width="140" alt="MaxManager — Advanced"></a><br><sub><b>Advanced</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/61-settings-service.png"><img src="docs/screenshots/61-settings-service.png" width="140" alt="MaxManager — Service & logs"></a><br><sub><b>Service & logs</b></sub></td>
-  </tr>
-  <tr>
     <td align="center" width="25%"><a href="docs/screenshots/62-language.png"><img src="docs/screenshots/62-language.png" width="140" alt="MaxManager — Language"></a><br><sub><b>Language</b></sub></td>
-    <td align="center" width="25%"></td>
-    <td align="center" width="25%"></td>
-    <td align="center" width="25%"></td>
   </tr>
 </table>
 
 </details>
 
 <details>
-<summary><b>Network, storage and HUD</b> · 7 frames</summary>
+<summary><b>Network, storage and HUD</b> · 8 frames</summary>
 
 <table>
   <tr>
@@ -280,9 +281,9 @@ Two doors in, depending on who you are:
   </tr>
   <tr>
     <td align="center" width="25%"><a href="docs/screenshots/47-fps-overlay-metrics.png"><img src="docs/screenshots/47-fps-overlay-metrics.png" width="140" alt="MaxManager — HUD metrics"></a><br><sub><b>HUD metrics</b></sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/48-fps-overlay-source.png"><img src="docs/screenshots/48-fps-overlay-source.png" width="140" alt="MaxManager — HUD source"></a><br><sub><b>HUD source</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/63-compiler-mode.png"><img src="docs/screenshots/63-compiler-mode.png" width="140" alt="MaxManager — Compiler mode"></a><br><sub><b>Compiler mode</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/64-compiler-apps.png"><img src="docs/screenshots/64-compiler-apps.png" width="140" alt="MaxManager — Compile per app"></a><br><sub><b>Compile per app</b></sub></td>
-    <td align="center" width="25%"></td>
   </tr>
 </table>
 
@@ -308,7 +309,7 @@ Two doors in, depending on who you are:
 
 </details>
 
-> **67 of 72 frames captured** · 0 optional extras. A frame not captured yet is absent from the grid above rather than broken; the <a href="docs/screenshots/README.md">capture contract</a> lists all of them.
+> **72 of 72 frames captured** · 0 optional extras. A frame not captured yet is absent from the grid above rather than broken; the <a href="docs/screenshots/README.md">capture contract</a> lists all of them.
 <!-- screenshots:end -->
 
 Every frame here is a **real capture from a device**, taken to the contract in
@@ -577,6 +578,9 @@ uninstalling puts everything back.
 2. Reboot.
 3. Open **MaxManager** and walk through **Setup**, which explains what *your* device exposes.
 
+For a step-by-step flashing guide and the exact three files a custom ROM needs, see
+**[the module README](mainfiles/README.md)**.
+
 Builds come from CI as workflow artifacts: the flashable module, a developer bundle, and checksums —
 see **[docs/building.md](docs/building.md#releases)** for what each release channel contains. If the
 module fails to reach a stable boot twice in a row, it disables itself and says so in its own
@@ -737,6 +741,32 @@ an open-source project. Third-party components keep their own licences and are c
 - **Issues:** please include the device, the ROM, the root manager and what the app showed. If it said
   `status_unknown`, say so — that is a fact about your device, not a bug you have to fix first.
 
+---
+
+<a id="from-the-maker"></a>
+
+## <img src="docs/assets/makers-mark-dark.svg?v=2" width="22" height="22" align="absmiddle" alt="Maker's mark"> From the maker
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/makers-mark-dark.svg?v=2">
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/makers-mark-light.svg?v=2">
+    <img src="docs/assets/makers-mark-dark.svg?v=2" width="110" alt="The maker's mark: an M drawn in one line">
+  </picture>
+</p>
+
+No image on this page came out of an image model. Every drawing is a vector file under `docs/assets/`
+that this repository generates from the app's own palette and then measures (`tools/gen_readme_assets.py`,
+`tools/svg_review.py`); the mark above is drawn by `tools/makers_mark.py`, which also checks that the
+app draws **the same line** at runtime. And every screenshot under
+[`docs/screenshots/`](docs/screenshots/) comes from a real phone.
+
+The app is built the same way it looks: one measured change at a time, on a real device.
+
+— **Nader Magdy**, maker of MaxManager
+
+<p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
+
 <a id="licence"></a>
 
 ## <img src="docs/assets/ic-seal.svg?v=2" width="22" height="22" align="absmiddle" alt="Licence"> Licence
@@ -767,6 +797,7 @@ require stays in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md), which remai
 | [Rianixia-ThermalCore](https://github.com/ryanistr/Rianixia-ThermalCore) | (C) 2025-2026 ryanistr | Apache-2.0 |
 | [VMTouch](https://github.com/hoytech/vmtouch) | (c) 2009-2023 Doug Hoyte and contributors | BSD-3-Clause |
 | [COPG](https://github.com/AlirezaParsi/COPG) | AlirezaParsi | Apache-2.0 |
+| [Islandify](https://github.com/bughunter11/Islandify) | (c) 2026 bughunter11 | MIT |
 
 <sub><b>Missing from this list?</b> If a work of yours ends up used here and is not named above,
 message me privately — or find me in the [group](https://t.me/ROBINHOOD_GROUP_RODIN) — and I will add it.</sub>
