@@ -15,8 +15,8 @@ These are not aspirations in a document; each one is visible in the code.
 | --- | --- |
 | **Off by default, manual control** | Nothing self-enables. Turning it on is your action, and manual control is the default state. |
 | **Only discovered knobs are vocabulary** | The engine's vocabulary is the hardware controls Atlas actually found — not a list of commands it hopes exist. |
-| **One owner per knob** | A shared ownership ledger decides who holds a control (safety, per-app policy, manual, AI). There is no global mode and no queue of pending tweaks racing each other. |
-| **Global performance profile stays manual** | The performance/balanced/eco profile is a manual baseline applied through the module service; it never becomes an instruction to the engine. |
+| **One owner per knob** | A shared ownership ledger decides who holds a control (safety, per-app policy, manual, AI). The user's Max AI mode sets the baseline, but each knob still has one owner and there is no queue of pending tweaks racing each other. |
+| **One user mode, not two** | Performance/balanced/battery is the Max AI mode: it applies the module preset and sets the AI weights in one action. The daemon executes the same mode at boot and after temporary game/low-battery overrides; it is not a second profile. |
 | **Safety outranks everything, always** | The safety layer has absolute priority in the arbiter — including while the engine is off. |
 | **No decision without execution, no reward without measurement** | Every decision goes through the single arbiter and its result is then measured. A predicted win that did not happen earns nothing. |
 
@@ -24,7 +24,7 @@ These are not aspirations in a document; each one is visible in the code.
 
 | Part | What it does |
 | --- | --- |
-| `Objective` | An objective is **weights, not a fixed profile** — performance, balanced and eco are three points in the same space, not three sets of constants |
+| `Objective` | The weights of the selected mode. The mode also applies the system preset, but the AI keeps optimising continuously inside it — the preset is the floor, not the whole decision |
 | `MinimalPlanner` | The **smallest sufficient intervention** (a design decision, not an optimization): change one thing that is enough, instead of distributing a change across eight strings |
 | `ControlRegistry` | The canonical vocabulary — the real knobs discovered on this device, keyed so that two layers can never invent two keys for one control |
 | `ControlOutcomeModel` | The learning core, pure Kotlin over measured outcomes |
@@ -41,11 +41,29 @@ These are not aspirations in a document; each one is visible in the code.
 | `MaxAiInsights` | What the engine actually learned, turned into verdicts that can be displayed — all pure functions over measured data |
 | `CpuCeilingKnobs` | The per-policy CPU ceiling expressed as a real control through the same arbitration path, not a private write |
 
+## One mode, not two
+
+The performance/balanced/battery choice is the Max AI mode. It is stored in `API/max_ai_mode` and
+does two things at once:
+
+- applies the module preset (`1` performance / `2` balanced / `3` battery), and
+- sets the AI objective weights (`performance` / `balanced` / `battery`).
+
+The daemon is the executor. At boot it applies the saved mode only when Max AI is enabled; game and
+low-battery transitions are temporary and return to that mode. `API/current_profile` remains the
+*active* profile the daemon is running, so the UI can show a temporary override without confusing it
+with the user's choice. The old `AIobjective` property is kept as a mirror for notifications and as
+the one-time migration source; it is no longer a second selector.
+
 ## What it will not do
 
 - **It will not touch a never-touch interface.** Thermal trip points and their relatives are refused
   before planning, before routing and before any transaction is built — see
   [max-atlas.md](max-atlas.md).
+- **It will not lift the vendor's thermal policy.** The MI thermal mode node (`sconfig`) is **read,
+  never written** by the app: on a real device log the previous code wrote `6` ("no limits") 944 times
+  in fourteen hours with no restore, which is exactly why the phone stayed hot after Max AI was turned
+  off. A ceiling the firmware holds below our request is now reported as clamped, not overridden.
 - **It will not claim a win it did not measure.** Success requires a verified write; a command that was
   merely sent is not a result.
 - **It will not invent telemetry.** Where a value is unknown the app says `status_unknown`; it never

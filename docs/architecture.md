@@ -33,7 +33,7 @@ These are architectural, not stylistic — each is enforced by a test or a gate,
 
 ### The single write path
 
-<p align="center"><img src="assets/control-plane.svg" width="100%" alt="One write path: your screen, one arbiter, the root bridge, the kernel — then read back"></p>
+<p align="center"><img src="assets/control-plane.svg" width="100%" alt="One road for every change: you tap, one owner decides whether it is safe, one audited root write, then the device is read back — it held, or it is reported and undone"></p>
 
 
 ```
