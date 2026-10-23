@@ -2,15 +2,15 @@
 
 <p align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner-dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="docs/assets/banner-light.svg?v=2">
-  <img src="docs/assets/banner-dark.svg?v=2" width="100%"
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner-dark.svg?v=5">
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/banner-light.svg?v=5">
+  <img src="docs/assets/banner-dark.svg?v=5" width="100%"
        alt="MaxManager — performance control that asks before it acts">
 </picture>
 </p>
 
 <p align="center">
-  <a href="https://github.com/catui0041-alt/Gg/actions/workflows/build.yml"><img alt="Build" src="https://github.com/catui0041-alt/Gg/actions/workflows/build.yml/badge.svg?v=2"></a>
+  <a href="https://github.com/nader295/Max-Manger/releases/latest"><img alt="Download" src="https://img.shields.io/badge/download-latest_release-2ea44f?style=for-the-badge"></a>
   <img alt="Android" src="https://img.shields.io/badge/Android-10%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white">
   <img alt="Root" src="https://img.shields.io/badge/root-required-607D8F?style=for-the-badge">
   <img alt="Languages" src="https://img.shields.io/badge/languages-84%2B-607D8F?style=for-the-badge">
@@ -25,23 +25,30 @@
 <p align="center">
   <a href="#install"><b>Install the module</b></a> ·
   <a href="#what-it-looks-like"><b>See the screens</b></a> ·
+  <a href="#max-ai"><b>Meet Max AI</b></a> ·
   <a href="docs/README.md"><b>Read the docs</b></a>
 </p>
+
+<p align="center"><b>This repository is MaxManager's public face</b> — the documentation, the
+screenshots and the downloads. The application and its native layer are <b>private source</b>:
+nothing here builds, and the command lines quoted in these pages run inside that repository.</p>
+
+<p align="center"><img src="docs/assets/stats.svg?v=5" width="100%" alt="65 screens, 84 languages, ten control domains, zero telemetry"></p>
 
 | | |
 | --- | --- |
 | **Platform** | Android 10 or newer (API 29) · `arm64-v8a` and `armeabi-v7a` |
 | **Root** | Magisk · KernelSU · KernelSU Next — or Shizuku for part of it |
-| **Screens** | 62 across ten control domains, plus a tools shelf |
+| **Screens** | 65 screens across ten control domains, plus a tools shelf |
 | **Languages** | 84 locales plus English, right-to-left enforced by a gate |
 | **Licence** | Proprietary — the copyright holder's written permission is required |
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="contents"></a>
 
 <details>
-<summary><b>Contents</b> — the eighteen sections of this page, in reading order</summary>
+<summary><b>Contents</b> — the seventeen sections of this page, in reading order</summary>
 
 | | Section | The one question it answers |
 | --- | --- | --- |
@@ -55,53 +62,53 @@
 | 8 | [Languages](#languages) | 84 locales, and RTL as a gate |
 | 9 | [Requirements](#requirements) | Will it work on my phone? |
 | 10 | [Install](#install) | How to get it running |
-| 11 | [For ROM developers](#for-rom-developers) | The AOSP integration kit |
-| 12 | [What it will not do](#what-it-wont-do) | The rules that cannot be switched off |
-| 13 | [Documentation](#documentation) | Every page under `docs/` |
-| 14 | [FAQ](#faq) | The questions that keep coming back |
-| 15 | [Support](#support) | Where a bug report goes |
-| 16 | [From the maker](#from-the-maker) | Why nothing here is generated |
-| 17 | [Licence](#licence) | Proprietary, stated plainly |
-| 18 | [Credits](#credits) | Who wrote the parts this project did not |
+| 11 | [What it will not do](#what-it-wont-do) | The rules that cannot be switched off |
+| 12 | [Documentation](#documentation) | Every page under `docs/` |
+| 13 | [FAQ](#faq) | The questions that keep coming back |
+| 14 | [Support](#support) | Where a bug report goes |
+| 15 | [From the maker](#from-the-maker) | Why nothing here is generated |
+| 16 | [Licence](#licence) | Proprietary, stated plainly |
+| 17 | [Credits](#credits) | Who wrote the parts this project did not |
 
 </details>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="in-ten-seconds"></a>
 
-## <img src="docs/assets/ic-timer.svg?v=2" width="22" height="22" align="absmiddle" alt="Ten seconds"> In ten seconds
+## <img src="docs/assets/ic-timer.svg?v=5" width="32" height="32" align="absmiddle" alt="Ten seconds"> In ten seconds
 
 **MaxManager is a performance and power control panel for rooted Android — one that only shows you
 controls that actually exist on your device.**
 
 Rooting hands you hundreds of kernel interfaces and no map. Most tuning apps answer that with a wall
 of switches: half of them do nothing on your hardware, none of them tell you what they changed, and
-when something breaks you find out later. MaxManager is built the other way round.
+when something breaks you find out later. MaxManager is built the other way round — on four rules:
 
-- **A control your kernel does not expose is not on the screen.** Not greyed out — absent.
-- **Every change is confirmed, not assumed.** The value is read back after it is written, and a change
-  that did not hold is reported as a failure with a rollback attempted.
-- **When it does not know, it says `status_unknown`.** Never a plausible zero.
-- **Nothing runs behind your back.** The engines are off until you turn them on, and every write goes
-  through one audited path.
+<p align="center"><img src="docs/assets/pillars.svg?v=5" width="100%" alt="Four rules: a control your kernel does not expose is absent, not disabled; every change is verified by reading it back; an unknown value is shown as status_unknown, never a plausible zero; nothing runs unseen — engines are off until you turn them on and every write uses one audited path"></p>
 
-Two doors in, depending on who you are:
-
-| **I want to use it** | **I build ROMs** |
-| --- | --- |
-| [What it looks like](#what-it-looks-like) · [What you can control](#what-you-can-control) · [Install](#install) | [For ROM developers](#for-rom-developers) — the integration kit in `android/aosp/` |
-| 65 screens across ten control domains, plus a tools shelf | Soong files, an init service, a sepolicy domain, a privileged-permission allowlist |
-| [Requirements](#requirements): Android 10+, root (or Shizuku for part of it) | Permission-first: proprietary software, written permission required |
+**Start here →** [What it looks like](#what-it-looks-like) · [What you can control](#what-you-can-control) ·
+[Requirements](#requirements) · [Install](#install)
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="what-it-looks-like"></a>
 <a id="screenshots"></a>
 
-## <img src="docs/assets/ic-phone.svg?v=2" width="22" height="22" align="absmiddle" alt="Screens"> What it looks like
+## <img src="docs/assets/ic-phone.svg?v=5" width="32" height="32" align="absmiddle" alt="Screens"> What it looks like
+
+<table>
+  <tr>
+    <td align="center" width="25%"><a href="docs/screenshots/02-now-home.png"><img src="docs/screenshots/02-now-home.png" width="220" alt="MaxManager — Home"></a><br><b>Home</b><br><sub>the device, at a glance</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/03-max-ai.png"><img src="docs/screenshots/03-max-ai.png" width="220" alt="MaxManager — Max AI"></a><br><b>Max AI</b><br><sub>one measured change at a time</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/07-control-hub.png"><img src="docs/screenshots/07-control-hub.png" width="220" alt="MaxManager — Control"></a><br><b>Control</b><br><sub>ten domains, one hub</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/26-apps-list.png"><img src="docs/screenshots/26-apps-list.png" width="220" alt="MaxManager — Apps"></a><br><b>Apps</b><br><sub>a profile for each app</sub></td>
+  </tr>
+</table>
+
+<p align="center"><sub>Four of them, first. Open any group below to browse the rest — every frame is a real capture.</sub></p>
 
 <!-- screenshots:start -->
 <details open>
@@ -309,11 +316,11 @@ Two doors in, depending on who you are:
 
 </details>
 
-> **72 of 72 frames captured** · 0 optional extras. A frame not captured yet is absent from the grid above rather than broken; the <a href="docs/screenshots/README.md">capture contract</a> lists all of them.
+> **72 of 72 frames captured** · 0 optional extras. A frame not captured yet is absent from the grid above rather than broken; the <a href="docs/screenshots/">screenshots folder</a> holds all of them.
 <!-- screenshots:end -->
 
 Every frame here is a **real capture from a device**, taken to the contract in
-[`docs/screenshots/`](docs/screenshots/README.md): 1162×2480 PNG, under 400 KiB each, one status-bar
+[`docs/screenshots/`](docs/screenshots/): 1162×2480 PNG, under 400 KiB each, one status-bar
 choice across all frames, dark theme throughout, with `-light` and `-ar` variants. The grid is
 **generated from the frames that exist** — `tools/screenshot_gallery.py` emits an `<img>` only for a PNG
 that is really there, so a frame that has not been captured is **absent rather than broken**, and a frame
@@ -329,13 +336,13 @@ document and the code disagree.
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="the-story"></a>
 
-## <img src="docs/assets/ic-layers.svg?v=2" width="22" height="22" align="absmiddle" alt="Three layers"> Why it is built this way
+## <img src="docs/assets/ic-layers.svg?v=5" width="32" height="32" align="absmiddle" alt="Three layers"> Why it is built this way
 
-<p align="center"><img src="docs/assets/control-plane.svg?v=2" width="100%" alt="One write path: screen, arbiter, ownership ledger, verification and rollback, then the kernel interface — and a control whose route is unproven here is labelled as such"></p>
+<p align="center"><img src="docs/assets/control-plane.svg?v=5" width="100%" alt="One road for every change: you tap, one owner decides whether it is safe, a single audited root write applies it, and the device is read back — if the change held it stays, if not it is reported and undone"></p>
 
 Three layers, and they do not overlap:
 
@@ -352,13 +359,13 @@ instead of being shown a green tick.
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="max-atlas"></a>
 
-## <img src="docs/assets/ic-atlas.svg?v=2" width="22" height="22" align="absmiddle" alt="Max Atlas"> Max Atlas — the reason anything works on *your* phone
+## <img src="docs/assets/ic-atlas.svg?v=5" width="32" height="32" align="absmiddle" alt="Max Atlas"> Max Atlas — the reason anything works on *your* phone
 
-<p align="center"><img src="docs/assets/atlas-cycle.svg?v=2" width="100%" alt="Max Atlas: Discover, Understand, Map, Adapt, Execute, Verify, Learn — what works here is proven here"></p>
+<p align="center"><img src="docs/assets/atlas-cycle.svg?v=5" width="100%" alt="Max Atlas: Discover, Understand, Map, Adapt, Execute, Verify, Learn — what works here is proven here"></p>
 
 Two phones of the same model can expose different kernel interfaces; two kernels can name the same
 interface in different units and let you write it or not. Max Atlas asks each interface whether it is
@@ -390,27 +397,27 @@ Full page: **[docs/max-atlas.md](docs/max-atlas.md)**.
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="max-ai"></a>
 
-## <img src="docs/assets/ic-ai.svg?v=2" width="22" height="22" align="absmiddle" alt="Max AI"> Max AI — one measured change at a time
+## <img src="docs/assets/ic-ai.svg?v=5" width="32" height="32" align="absmiddle" alt="Max AI"> Max AI — one measured change at a time
 
-<p align="center"><img src="docs/assets/max-ai.svg?v=2" width="100%" alt="Max AI: Notice, Decide, Ask, Verify, Remember — one measured change at a time, and a list of what it will never do"></p>
+<p align="center"><img src="docs/assets/max-ai.svg?v=5" width="100%" alt="Max AI: Notice, Decide, Ask, Verify, Remember — one measured change at a time, and a list of what it will never do"></p>
 
 Max AI watches how the device is actually behaving — speed, heat, battery, memory pressure, which app
 is in front — and when the readings say something should change, it changes **one thing**, then
 measures whether that helped. It is a loop, not a preset:
 
-- <img src="docs/assets/ic-notice.svg?v=2" width="20" height="20" align="absmiddle" alt="Notice"> **Notice** — it reads this device: temperature, load, battery, memory, the active app. *You notice
+- <img src="docs/assets/ic-notice.svg?v=5" width="28" height="28" align="absmiddle" alt="Notice"> **Notice** — it reads this device: temperature, load, battery, memory, the active app. *You notice
   nothing: it is watching, not acting.*
-- <img src="docs/assets/ic-decide.svg?v=2" width="20" height="20" align="absmiddle" alt="Decide"> **Decide** — against your objective (speed, balance, battery), it picks the *smallest* change that
+- <img src="docs/assets/ic-decide.svg?v=5" width="28" height="28" align="absmiddle" alt="Decide"> **Decide** — against your objective (speed, balance, battery), it picks the *smallest* change that
   could close the gap. *One control moves, not eight.*
-- <img src="docs/assets/ic-ask.svg?v=2" width="20" height="20" align="absmiddle" alt="Ask"> **Ask** — a safety layer with absolute priority says yes or no before anything is written. *A
+- <img src="docs/assets/ic-ask.svg?v=5" width="28" height="28" align="absmiddle" alt="Ask"> **Ask** — a safety layer with absolute priority says yes or no before anything is written. *A
   protected interface is never touched, engine on or off.*
-- <img src="docs/assets/ic-verify.svg?v=2" width="20" height="20" align="absmiddle" alt="Verify"> **Verify** — the value is read back, then the result is measured after a response window. *A change
+- <img src="docs/assets/ic-verify.svg?v=5" width="28" height="28" align="absmiddle" alt="Verify"> **Verify** — the value is read back, then the result is measured after a response window. *A change
   that did not hold is not counted as a win.*
-- <img src="docs/assets/ic-remember.svg?v=2" width="20" height="20" align="absmiddle" alt="Remember"> **Remember** — the outcome is recorded as a complete, measured episode. *It trusts what has been
+- <img src="docs/assets/ic-remember.svg?v=5" width="28" height="28" align="absmiddle" alt="Remember"> **Remember** — the outcome is recorded as a complete, measured episode. *It trusts what has been
   right, and stops trusting what has been wrong.*
 
 **Why it is not a preset:** a preset applies the same numbers to every device and never finds out
@@ -440,39 +447,39 @@ Full page: **[docs/max-ai.md](docs/max-ai.md)**.
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="what-you-can-control"></a>
 
-## <img src="docs/assets/ic-sliders.svg?v=2" width="22" height="22" align="absmiddle" alt="Controls"> What you can control
+## <img src="docs/assets/ic-sliders.svg?v=5" width="32" height="32" align="absmiddle" alt="Controls"> What you can control
 
-<p align="center"><img src="docs/assets/domains.svg?v=3" width="100%" alt="Ten control domains: CPU, GPU, memory, display, responsiveness, thermal, power, storage and compiler, network, audio"></p>
+<p align="center"><img src="docs/assets/domains.svg?v=5" width="100%" alt="Ten control domains: CPU, GPU, memory, display, responsiveness, thermal, power, storage and compiler, network, audio"></p>
 
 Ten areas, each in its own hub. The line under each name is the app's **own** one-line description of
 the area, quoted from the interface.
 
-- <img src="docs/assets/ic-cpu.svg?v=2" width="20" height="20" align="absmiddle" alt="CPU"> **CPU** — *Cores, governor, vendor boost and kernel preferences.* Turn individual cores on or off,
+- <img src="docs/assets/ic-cpu.svg?v=5" width="28" height="28" align="absmiddle" alt="CPU"> **CPU** — *Cores, governor, vendor boost and kernel preferences.* Turn individual cores on or off,
   pin scheduling groups to clusters, set a floor and ceiling per cluster, choose governors, edit kernel
   preferences.
-- <img src="docs/assets/ic-gpu.svg?v=2" width="20" height="20" align="absmiddle" alt="GPU"> **GPU** — *GPU frequencies and graphics-specific vendor parameters.* Frequency presets and manual
+- <img src="docs/assets/ic-gpu.svg?v=5" width="28" height="28" align="absmiddle" alt="GPU"> **GPU** — *GPU frequencies and graphics-specific vendor parameters.* Frequency presets and manual
   bounds, GPU governor, shader-core power policy, the vendor boost pipeline, and a documented
   thermal-throttle bypass.
-- <img src="docs/assets/ic-memory.svg?v=2" width="20" height="20" align="absmiddle" alt="Memory"> **Memory** — *Compression, VM behaviour and swappiness.* Size ZRAM or turn it off, pick the
+- <img src="docs/assets/ic-memory.svg?v=5" width="28" height="28" align="absmiddle" alt="Memory"> **Memory** — *Compression, VM behaviour and swappiness.* Size ZRAM or turn it off, pick the
   compression engine, tune swappiness and reclaim. The engine reads **memory stall pressure**, not fill
   percentage — a nearly-full-but-idle device and a stalling device need opposite responses.
-- <img src="docs/assets/ic-display.svg?v=2" width="20" height="20" align="absmiddle" alt="Display"> **Display** — *Refresh rate, colour and canvas scale.* Refresh rate, colour channels, saturation,
+- <img src="docs/assets/ic-display.svg?v=5" width="28" height="28" align="absmiddle" alt="Display"> **Display** — *Refresh rate, colour and canvas scale.* Refresh rate, colour channels, saturation,
   gamut and HDR response, brightness curves, night light, animation scales, screen timeout.
-- <img src="docs/assets/ic-touch.svg?v=2" width="20" height="20" align="absmiddle" alt="Responsiveness"> **Responsiveness** — *Touch, frame pacing and scheduling latency.* Touch sampling and smoothing,
+- <img src="docs/assets/ic-touch.svg?v=5" width="28" height="28" align="absmiddle" alt="Responsiveness"> **Responsiveness** — *Touch, frame pacing and scheduling latency.* Touch sampling and smoothing,
   double-tap to wake, FPS GO / GED parameters, frame-aware scheduling.
-- <img src="docs/assets/ic-thermal.svg?v=2" width="20" height="20" align="absmiddle" alt="Thermal"> **Thermal** — *Temperatures, throttling and thermal parameters.* Live zone temperatures, thermal
+- <img src="docs/assets/ic-thermal.svg?v=5" width="28" height="28" align="absmiddle" alt="Thermal"> **Thermal** — *Temperatures, throttling and thermal parameters.* Live zone temperatures, thermal
   policy, and what the device is throttling right now.
-- <img src="docs/assets/ic-battery.svg?v=2" width="20" height="20" align="absmiddle" alt="Power"> **Power** — *Charging, bypass, sleep and battery health.* Charge current limits, a charge ceiling to
+- <img src="docs/assets/ic-battery.svg?v=5" width="28" height="28" align="absmiddle" alt="Power"> **Power** — *Charging, bypass, sleep and battery health.* Charge current limits, a charge ceiling to
   slow battery wear, bypass charging, aggressive doze, standby whitelist, battery health.
-- <img src="docs/assets/ic-storage.svg?v=2" width="20" height="20" align="absmiddle" alt="Storage and compiler"> **Storage & compiler** — *Compilation mode and storage health.* Re-run ART compilation with a chosen
+- <img src="docs/assets/ic-storage.svg?v=5" width="28" height="28" align="absmiddle" alt="Storage and compiler"> **Storage & compiler** — *Compilation mode and storage health.* Re-run ART compilation with a chosen
   filter, reset compiled state, storage health.
-- <img src="docs/assets/ic-network.svg?v=2" width="20" height="20" align="absmiddle" alt="Network"> **Network** — *Traffic scheduling and link state.* TCP congestion algorithm, fast-open/SACK/ECN, SYN
+- <img src="docs/assets/ic-network.svg?v=5" width="28" height="28" align="absmiddle" alt="Network"> **Network** — *Traffic scheduling and link state.* TCP congestion algorithm, fast-open/SACK/ECN, SYN
   cookies, socket reuse, I/O scheduler tunables, link state.
-- <img src="docs/assets/ic-audio.svg?v=2" width="20" height="20" align="absmiddle" alt="Audio"> **Audio** — *Output devices, streams and declared effects.* Read what the platform declares for the
+- <img src="docs/assets/ic-audio.svg?v=5" width="28" height="28" align="absmiddle" alt="Audio"> **Audio** — *Output devices, streams and declared effects.* Read what the platform declares for the
   primary output — sample rate and frames per buffer — every endpoint the device announces (outputs
   first, then inputs), and the effects the audio engine reports. Read-only by design, and honest about
   silence: a device that declares no effects says so instead of showing an empty switch.
@@ -508,23 +515,23 @@ Two things make profiles more than bookmarks:
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="watching"></a>
 
-## <img src="docs/assets/ic-pulse.svg?v=2" width="22" height="22" align="absmiddle" alt="Live readings"> Watching, measuring, diagnosing
+## <img src="docs/assets/ic-pulse.svg?v=5" width="32" height="32" align="absmiddle" alt="Live readings"> Watching, measuring, diagnosing
 
-- <img src="docs/assets/ic-pulse.svg?v=2" width="20" height="20" align="absmiddle" alt="Max Live"> **Max Live** — the live picture: current readings, what automation is allowed to do now and why, what
+- <img src="docs/assets/ic-pulse.svg?v=5" width="28" height="28" align="absmiddle" alt="Max Live"> **Max Live** — the live picture: current readings, what automation is allowed to do now and why, what
   it would do next, and whether it can be undone.
-- <img src="docs/assets/ic-phone.svg?v=2" width="20" height="20" align="absmiddle" alt="Home"> **Home** — device state, the active app, the running profile, temperatures and storage at a glance.
-- <img src="docs/assets/ic-display.svg?v=2" width="20" height="20" align="absmiddle" alt="FPS overlay"> **FPS overlay** — a draggable on-screen readout of FPS, CPU and RAM over any game, with a fallback
+- <img src="docs/assets/ic-phone.svg?v=5" width="28" height="28" align="absmiddle" alt="Home"> **Home** — device state, the active app, the running profile, temperatures and storage at a glance.
+- <img src="docs/assets/ic-display.svg?v=5" width="28" height="28" align="absmiddle" alt="FPS overlay"> **FPS overlay** — a draggable on-screen readout of FPS, CPU and RAM over any game, with a fallback
   reading method and a **Vulkan/OpenGL** label when that is how the app renders.
-- <img src="docs/assets/ic-cpu.svg?v=2" width="20" height="20" align="absmiddle" alt="Process monitor"> **Process monitor** — per-process CPU and RAM, force-stop, SIGKILL, and a floating overlay.
-- <img src="docs/assets/ic-doc.svg?v=2" width="20" height="20" align="absmiddle" alt="Log viewer"> **Log viewer** — live logcat with filtering and search, plus a shareable report whose **glossary is
+- <img src="docs/assets/ic-cpu.svg?v=5" width="28" height="28" align="absmiddle" alt="Process monitor"> **Process monitor** — per-process CPU and RAM, force-stop, SIGKILL, and a floating overlay.
+- <img src="docs/assets/ic-doc.svg?v=5" width="28" height="28" align="absmiddle" alt="Log viewer"> **Log viewer** — live logcat with filtering and search, plus a shareable report whose **glossary is
   written into the log file itself**.
-- <img src="docs/assets/ic-verify.svg?v=2" width="20" height="20" align="absmiddle" alt="Diagnostics"> **Diagnostics** — a live diagnostic centre, per-control route health, a reproducible device blueprint,
+- <img src="docs/assets/ic-verify.svg?v=5" width="28" height="28" align="absmiddle" alt="Diagnostics"> **Diagnostics** — a live diagnostic centre, per-control route health, a reproducible device blueprint,
   and a support report you choose to send.
-- <img src="docs/assets/ic-question.svg?v=2" width="20" height="20" align="absmiddle" alt="Why it did not work"> **"Why didn't it work?"** — for a per-app setting: what it wanted, what the hardware is holding, and
+- <img src="docs/assets/ic-question.svg?v=5" width="28" height="28" align="absmiddle" alt="Why it did not work"> **"Why didn't it work?"** — for a per-app setting: what it wanted, what the hardware is holding, and
   where to look next.
 
 Nothing here phones home. The support report is assembled locally, minimised, and leaves the device
@@ -532,13 +539,13 @@ only when you send it.
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="languages"></a>
 
-## <img src="docs/assets/ic-globe.svg?v=2" width="22" height="22" align="absmiddle" alt="Languages"> Languages
+## <img src="docs/assets/ic-globe.svg?v=5" width="32" height="32" align="absmiddle" alt="Languages"> Languages
 
-<p align="center"><img src="docs/assets/locales.svg?v=2" width="100%" alt="84 languages, and right-to-left is first class"></p>
+<p align="center"><img src="docs/assets/locales.svg?v=5" width="100%" alt="84 languages, and right-to-left is first class"></p>
 
 - **84 locales** plus English; the picker follows the system language without a restart.
 - **Light and dark**, with a themable key colour and a custom palette screen.
@@ -546,11 +553,11 @@ only when you send it.
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="requirements"></a>
 
-## <img src="docs/assets/ic-checklist.svg?v=2" width="22" height="22" align="absmiddle" alt="Requirements"> Requirements
+## <img src="docs/assets/ic-checklist.svg?v=5" width="32" height="32" align="absmiddle" alt="Requirements"> Requirements
 
 | | |
 | --- | --- |
@@ -565,63 +572,38 @@ device. Details: **[docs/compatibility.md](docs/compatibility.md)**.
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="install"></a>
 
-## <img src="docs/assets/ic-download.svg?v=2" width="22" height="22" align="absmiddle" alt="Install"> Install
+## <img src="docs/assets/ic-download.svg?v=5" width="32" height="32" align="absmiddle" alt="Install"> Install
 
 MaxManager ships as a **systemless module** — nothing in `/system` is modified permanently, and
 uninstalling puts everything back.
 
-1. Flash `MaxManager-V2.zip` in **Magisk** or **KernelSU** (or a compatible root manager).
+<p align="center"><img src="docs/assets/install-flow.svg?v=5" width="100%" alt="Install in four steps: flash the module in Magisk or KernelSU, reboot, grant it root when your root manager asks, then open the app and walk through setup"></p>
+
+1. Download the module from **[Releases](https://github.com/nader295/Max-Manger/releases/latest)** and flash it in **Magisk** or **KernelSU** (or a compatible root manager).
 2. Reboot.
-3. Open **MaxManager** and walk through **Setup**, which explains what *your* device exposes.
+3. **Grant it root** — accept the superuser prompt your root manager shows when MaxManager asks.
+4. Open **MaxManager** and walk through **Setup**, which explains what *your* device exposes.
 
-For a step-by-step flashing guide and the exact three files a custom ROM needs, see
-**[the module README](mainfiles/README.md)**.
+The v1.0 release notes, and how to verify the download, are in
+**[docs/releases/v1.0.md](docs/releases/v1.0.md)**.
 
-Builds come from CI as workflow artifacts: the flashable module, a developer bundle, and checksums —
-see **[docs/building.md](docs/building.md#releases)** for what each release channel contains. If the
+The same release carries **`MaxManager-checksums.txt`** — one digest for the package and one for
+each of its contents — so you can verify the download before flashing it; the two commands are in
+**[docs/releases/v1.0.md](docs/releases/v1.0.md)**. If the
 module fails to reach a stable boot twice in a row, it disables itself and says so in its own
 description.
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
-
-<a id="for-rom-developers"></a>
-
-## <img src="docs/assets/ic-cube.svg?v=2" width="22" height="22" align="absmiddle" alt="ROM developers"> For ROM developers
-
-<p align="center"><img src="docs/assets/integration.svg?v=3" width="100%" alt="Three integration paths — systemless module, AOSP integration from android/aosp, KernelSU Next — and the three names that must agree: the binary path, the init service and the SELinux labels"></p>
-
-The integration kit ships in this repository under **`android/aosp/`** — Soong build files, an init
-service, a sepolicy domain and a privileged-permission allowlist. `android/kernelsu/` holds the same
-module packaged for KernelSU Next.
-
-**What you get:** a privileged control app, five native binaries (the device service, chipset profiles,
-the thermal daemon, a utility configurator and a game preloader), and a module that installs and
-removes itself without touching `/system` permanently.
-
-**What you need:** a platform-signed, privileged build of the app; the daemon on
-`/system/bin/sys.maxmanager-service`; the init service; and the sepolicy rules. Three names must agree
-exactly — the binary path, the init service and the SELinux label — and the diagram above shows them.
-
-> **Permission first.** MaxManager is **proprietary software**. The kit is here so maintainers can
-> evaluate and integrate it with the copyright holder's **written permission** — [`LICENSE`](LICENSE)
-> grants no right otherwise. Ask first via [Support](#support).
-
-Start here: **[docs/rom-integration.md](docs/rom-integration.md)** — three integration paths, the
-checklist, and the mismatches we found in the kit, reported rather than papered over.
-
-<p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
-
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="what-it-wont-do"></a>
 
-## <img src="docs/assets/ic-shield.svg?v=2" width="22" height="22" align="absmiddle" alt="Never touched"> What it will not do
+## <img src="docs/assets/ic-shield.svg?v=5" width="32" height="32" align="absmiddle" alt="Never touched"> What it will not do
 
 The parts of the app you cannot turn off, and would not want to:
 
@@ -641,11 +623,11 @@ rather than as a pass. That sentence is a rule in this project, not a hedge.
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="documentation"></a>
 
-## <img src="docs/assets/ic-doc.svg?v=2" width="22" height="22" align="absmiddle" alt="Documentation"> Documentation
+## <img src="docs/assets/ic-doc.svg?v=5" width="32" height="32" align="absmiddle" alt="Documentation"> Documentation
 
 This page is the tour. The answers you reach for afterwards live in **[`docs/`](docs/README.md)**:
 
@@ -659,18 +641,18 @@ This page is the tour. The answers you reach for afterwards live in **[`docs/`](
 | [profiles.md](docs/profiles.md) | Chipset strategies and the module's native executables |
 | [thermal.md](docs/thermal.md) | The thermal daemon: zone fusion, policy, prediction, learning |
 | [architecture.md](docs/architecture.md) | How the app, the daemons and the kernel interfaces fit together |
-| [building.md](docs/building.md) | Building from source, CI artifacts, releases, and the numbers behind every claim |
+| [releases/v1.0.md](docs/releases/v1.0.md) | The v1.0 release notes, and how to verify the download |
 | [verification.md](docs/verification.md) | How every claim here is measured — and what cannot be measured |
 | [faq.md](docs/faq.md) | The questions that keep coming back |
 | [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) | The third-party components, with their notices |
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="faq"></a>
 
-## <img src="docs/assets/ic-question.svg?v=2" width="22" height="22" align="absmiddle" alt="FAQ"> FAQ
+## <img src="docs/assets/ic-question.svg?v=5" width="32" height="32" align="absmiddle" alt="FAQ"> FAQ
 
 <details>
 <summary><b>Does it need root?</b></summary>
@@ -731,27 +713,27 @@ an open-source project. Third-party components keep their own licences and are c
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="support"></a>
 
-## <img src="docs/assets/ic-bubble.svg?v=2" width="22" height="22" align="absmiddle" alt="Support"> Support
+## <img src="docs/assets/ic-bubble.svg?v=5" width="32" height="32" align="absmiddle" alt="Support"> Support
 
 - **Telegram:** [@ROBINHOOD_GROUP_RODIN](https://t.me/ROBINHOOD_GROUP_RODIN) — bug reports, ideas, builds.
 - **Issues:** please include the device, the ROM, the root manager and what the app showed. If it said
   `status_unknown`, say so — that is a fact about your device, not a bug you have to fix first.
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="from-the-maker"></a>
 
-## <img src="docs/assets/makers-mark-dark.svg?v=2" width="22" height="22" align="absmiddle" alt="Maker's mark"> From the maker
+## <img src="docs/assets/makers-mark-dark.svg?v=5" width="22" height="22" align="absmiddle" alt="Maker's mark"> From the maker
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/makers-mark-dark.svg?v=2">
-    <source media="(prefers-color-scheme: light)" srcset="docs/assets/makers-mark-light.svg?v=2">
-    <img src="docs/assets/makers-mark-dark.svg?v=2" width="110" alt="The maker's mark: an M drawn in one line">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/makers-mark-dark.svg?v=5">
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/makers-mark-light.svg?v=5">
+    <img src="docs/assets/makers-mark-dark.svg?v=5" width="110" alt="The maker's mark: an M drawn in one line">
   </picture>
 </p>
 
@@ -769,7 +751,7 @@ The app is built the same way it looks: one measured change at a time, on a real
 
 <a id="licence"></a>
 
-## <img src="docs/assets/ic-seal.svg?v=2" width="22" height="22" align="absmiddle" alt="Licence"> Licence
+## <img src="docs/assets/ic-seal.svg?v=5" width="32" height="32" align="absmiddle" alt="Licence"> Licence
 
 **Proprietary.** Copyright (C) 2026 **Nader Magdy**. All rights reserved. See [`LICENSE`](LICENSE) for
 the full terms — no right is granted to use, copy, modify or distribute without the copyright holder's
@@ -781,11 +763,11 @@ their notices are in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="credits"></a>
 
-## <img src="docs/assets/ic-credit.svg?v=2" width="22" height="22" align="absmiddle" alt="Credits"> Credits
+## <img src="docs/assets/ic-credit.svg?v=5" width="32" height="32" align="absmiddle" alt="Credits"> Credits
 
 MaxManager is not written alone. These are the works it thanks — and every notice their licences
 require stays in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md), which remains the binding list.

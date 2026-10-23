@@ -2,15 +2,15 @@
 
 <p align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner-dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="docs/assets/banner-light.svg?v=2">
-  <img src="docs/assets/banner-dark.svg?v=2" width="100%"
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner-dark.svg?v=5">
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/banner-light.svg?v=5">
+  <img src="docs/assets/banner-dark.svg?v=5" width="100%"
        alt="MaxManager — ضبط أداء يسأل قبل أن يفعل">
 </picture>
 </p>
 
 <p align="center">
-  <a href="https://github.com/catui0041-alt/Gg/actions/workflows/build.yml"><img alt="البناء" src="https://github.com/catui0041-alt/Gg/actions/workflows/build.yml/badge.svg?v=2"></a>
+  <a href="https://github.com/nader295/Max-Manger/releases/latest"><img alt="التنزيل" src="https://img.shields.io/badge/download-latest_release-2ea44f?style=for-the-badge"></a>
   <img alt="أندرويد" src="https://img.shields.io/badge/Android-10%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white">
   <img alt="جذر" src="https://img.shields.io/badge/root-required-607D8F?style=for-the-badge">
   <img alt="لغات" src="https://img.shields.io/badge/languages-84%2B-607D8F?style=for-the-badge">
@@ -25,18 +25,25 @@
 <p align="center">
   <a href="#التثبيت"><b>ثبّت الوحدة</b></a> ·
   <a href="#كيف-تبدو"><b>انظر الشاشات</b></a> ·
+  <a href="#max-ai"><b>تعرّف على Max AI</b></a> ·
   <a href="docs/README.md"><b>اقرأ الوثائق</b></a>
 </p>
+
+<p align="center"><b>هذا المستودع هو الوجه العام لـMaxManager</b> — الوثائق واللقطات والتنزيلات.
+والتطبيق وطبقته الأصلية <b>مصدر مغلق</b>: لا شيء هنا يُبنى، وسطور الأوامر المنقولة في هذه
+الصفحات تُشغَّل داخل ذلك المستودع.</p>
+
+<p align="center"><img src="docs/assets/stats-ar.svg?v=5" width="100%" alt="٦٥ شاشة، ٨٤ لغة، عشرة مجالات ضبط، صفر قياس عن بُعد"></p>
 
 | | |
 | --- | --- |
 | **المنصّة** | أندرويد 10 أو أحدث (API 29) · `arm64-v8a` و`armeabi-v7a` |
 | **الجذر** | Magisk · KernelSU · KernelSU Next — أو Shizuku لجزء منه |
-| **الشاشات** | ٦١ شاشة في عشرة مجالات ضبط، ومعها رفّ أدوات |
+| **الشاشات** | ٦٥ شاشة في عشرة مجالات ضبط، ومعها رفّ أدوات |
 | **اللغات** | ٨٤ لغة زائد الإنجليزيّة، والاتجاه من اليمين مفروض ببوابة |
 | **الرخصة** | مملوكة — ولا تُستعمل إلا بإذن كتابيّ من صاحب الحقّ |
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="المحتويات"></a>
 
@@ -55,51 +62,53 @@
 | ٨ | [اللغات](#اللغات) | ٨٤ لغة، والاتجاه من اليمين مفروض ببوابة |
 | ٩ | [المتطلبات](#المتطلبات) | هل يعمل على هاتفي؟ |
 | ١٠ | [التثبيت](#التثبيت) | كيف أُشغّله |
-| ١١ | [لمطوّري الروم](#لمطوّري-الروم) | عدّة الدمج في AOSP |
-| ١٢ | [ما لن يفعله](#ما-لن-يفعله) | القواعد التي لا تُطفأ |
-| ١٣ | [الوثائق](#الوثائق) | كل صفحة تحت `docs/` |
-| ١٤ | [الأسئلة الشائعة](#الأسئلة) | الأسئلة التي تتكرّر |
-| ١٥ | [الدعم](#الدعم) | إلى أين يذهب البلاغ |
+| ١١ | [ما لن يفعله](#ما-لن-يفعله) | القواعد التي لا تُطفأ |
+| ١٢ | [الوثائق](#الوثائق) | كل صفحة تحت `docs/` |
+| ١٣ | [الأسئلة الشائعة](#الأسئلة) | الأسئلة التي تتكرّر |
+| ١٤ | [الدعم](#الدعم) | إلى أين يذهب البلاغ |
+| ١٥ | [من الصانع](#من-الصانع) | لماذا لا شيء هنا مولَّد |
 | ١٦ | [الرخصة](#الرخصة) | مملوكة، ومكتوبة صراحةً |
 | ١٧ | [الفضل](#credits) | مَن كتب ما لم يكتبه هذا المشروع |
 
 </details>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="في-عشر-ثوانٍ"></a>
 
-## <img src="docs/assets/ic-timer.svg?v=2" width="22" height="22" align="absmiddle" alt="في عشر ثوانٍ"> في عشر ثوانٍ
+## <img src="docs/assets/ic-timer.svg?v=5" width="32" height="32" align="absmiddle" alt="في عشر ثوانٍ"> في عشر ثوانٍ
 
 **MaxManager لوحة تحكّم في الأداء والطاقة لأندرويد المتجذّر — لا تعرض لك إلا الضوابط الموجودة فعلًا
 على جهازك.**
 
 التجذير يمنحك مئات واجهات النواة وخريطة واحدة لا توجد. ومعظم تطبيقات الضبط تجيب على ذلك بجدار
 مفاتيح: نصفها لا يفعل شيئًا على عتادك، ولا واحد منها يخبرك بما غيّره، وحين ينكسر شيء تكتشف ذلك لاحقًا.
-MaxManager مبنيّ بالاتجاه المعاكس.
+MaxManager مبنيّ بالاتجاه المعاكس — على أربع قواعد:
 
-- **الضابط الذي لا تكشفه نواتك ليس على الشاشة.** لا معطَّلًا بل **غائبًا**.
-- **كل تغيير يُثبَّت لا يُفترض.** تُقرأ القيمة بعد كتابتها، والتغيير الذي لم يستقرّ يُبلَّغ عنه كفشل
-  مع محاولة رجوع.
-- **حين لا يعلم يقول `status_unknown`.** لا صفراً معقولًا قط.
-- **لا شيء يعمل خلف ظهرك.** المحرّكات مطفأة حتى تشغّلها، وكل كتابة تمرّ بمسار واحد مُدقَّق.
+<p align="center"><img src="docs/assets/pillars-ar.svg?v=5" width="100%" alt="أربع قواعد: الضابط الذي لا تكشفه نواتك غائب لا معطَّل؛ وكل تغيير يُثبَّت بقراءته بعد كتابته؛ والقيمة المجهولة تظهر status_unknown لا صفرًا معقولًا؛ ولا شيء يعمل خلف ظهرك — المحرّكات مطفأة حتى تشغّلها وكل كتابة تمرّ بمسار واحد مُدقَّق"></p>
 
-وأبوابٌ بابان حسب من أنت:
-
-| **أريد استعماله** | **أبني رومات** |
-| --- | --- |
-| [كيف يبدو](#كيف-تبدو) · [ما تتحكم فيه](#ما-تتحكم-فيه) · [التثبيت](#التثبيت) | [لمطوّري الروم](#لمطوّري-الروم) — عدّة الدمج في `android/aosp/` |
-| ٦١ شاشة في عشرة مجالات ضبط، وأدوات مساعدة | ملفّات Soong وخدمة init ونطاق sepolicy وقائمة صلاحيات مُمتَزَجة |
-| [المتطلبات](#المتطلبات): أندرويد 10+ وجذر (أو Shizuku لجزء منها) | الإذن أولًا: برمجيات مملوكة، والدمج بإذن كتابي |
+**ابدأ من هنا ←** [كيف يبدو](#كيف-تبدو) · [ما تتحكم فيه](#ما-تتحكم-فيه) ·
+[المتطلبات](#المتطلبات) · [التثبيت](#التثبيت)
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="كيف-تبدو"></a>
 <a id="اللقطات"></a>
 
-## <img src="docs/assets/ic-phone.svg?v=2" width="22" height="22" align="absmiddle" alt="الشاشات"> كيف يبدو
+## <img src="docs/assets/ic-phone.svg?v=5" width="32" height="32" align="absmiddle" alt="الشاشات"> كيف يبدو
+
+<table>
+  <tr>
+    <td align="center" width="25%"><a href="docs/screenshots/02-now-home.png"><img src="docs/screenshots/02-now-home.png" width="220" alt="MaxManager — الرئيسية"></a><br><b>الرئيسية</b><br><sub>الجهاز في نظرة واحدة</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/03-max-ai.png"><img src="docs/screenshots/03-max-ai.png" width="220" alt="MaxManager — Max AI"></a><br><b>Max AI</b><br><sub>تغيير واحد مقيس في كل مرّة</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/07-control-hub.png"><img src="docs/screenshots/07-control-hub.png" width="220" alt="MaxManager — التحكّم"></a><br><b>التحكّم</b><br><sub>عشرة مجالات في مركز واحد</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/26-apps-list.png"><img src="docs/screenshots/26-apps-list.png" width="220" alt="MaxManager — التطبيقات"></a><br><b>التطبيقات</b><br><sub>ملفّ خاصّ لكل تطبيق</sub></td>
+  </tr>
+</table>
+
+<p align="center"><sub>أربع منها أولًا. وافتح أيّ مجموعة أدناه لتتصفّح الباقي — كل إطار لقطة حقيقية.</sub></p>
 
 <!-- screenshots:start -->
 <details open>
@@ -156,7 +165,7 @@ MaxManager مبنيّ بالاتجاه المعاكس.
 </details>
 
 <details>
-<summary><b>مجالات التحكّم</b> · ١٠ إطارات</summary>
+<summary><b>مجالات التحكّم</b> · ١١ إطارًا</summary>
 
 <table>
   <tr>
@@ -169,12 +178,12 @@ MaxManager مبنيّ بالاتجاه المعاكس.
     <td align="center" width="25%"><a href="docs/screenshots/11-control-hub-2.png"><img src="docs/screenshots/11-control-hub-2.png" width="140" alt="MaxManager — التحكّم (٢)"></a><br><sub><b>التحكّم (٢)</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/12-hub-display.png"><img src="docs/screenshots/12-hub-display.png" width="140" alt="MaxManager — العرض"></a><br><sub><b>العرض</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/13-hub-responsiveness.png"><img src="docs/screenshots/13-hub-responsiveness.png" width="140" alt="MaxManager — الاستجابة"></a><br><sub><b>الاستجابة</b></sub></td>
-    <td align="center" width="25%"><a href="docs/screenshots/51-cpu-hub.png"><img src="docs/screenshots/51-cpu-hub.png" width="140" alt="MaxManager — مجال المعالج"></a><br><sub><b>مجال المعالج</b></sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/14-hub-power.png"><img src="docs/screenshots/14-hub-power.png" width="140" alt="MaxManager — الطاقة"></a><br><sub><b>الطاقة</b></sub></td>
   </tr>
   <tr>
+    <td align="center" width="25%"><a href="docs/screenshots/51-cpu-hub.png"><img src="docs/screenshots/51-cpu-hub.png" width="140" alt="MaxManager — مجال المعالج"></a><br><sub><b>مجال المعالج</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/52-memory-hub.png"><img src="docs/screenshots/52-memory-hub.png" width="140" alt="MaxManager — مجال الذاكرة"></a><br><sub><b>مجال الذاكرة</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/53-storage-hub.png"><img src="docs/screenshots/53-storage-hub.png" width="140" alt="MaxManager — مجال التخزين"></a><br><sub><b>مجال التخزين</b></sub></td>
-    <td align="center" width="25%"></td>
     <td align="center" width="25%"></td>
   </tr>
 </table>
@@ -236,7 +245,7 @@ MaxManager مبنيّ بالاتجاه المعاكس.
 </details>
 
 <details>
-<summary><b>الإعدادات والأدوات</b> · ١٣ إطارًا</summary>
+<summary><b>الإعدادات والأدوات</b> · ١٦ إطارًا</summary>
 
 <table>
   <tr>
@@ -247,28 +256,28 @@ MaxManager مبنيّ بالاتجاه المعاكس.
   </tr>
   <tr>
     <td align="center" width="25%"><a href="docs/screenshots/36-backup-plan.png"><img src="docs/screenshots/36-backup-plan.png" width="140" alt="MaxManager — خطة النسخ"></a><br><sub><b>خطة النسخ</b></sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/37-backup-apps.png"><img src="docs/screenshots/37-backup-apps.png" width="140" alt="MaxManager — تطبيقات النسخ"></a><br><sub><b>تطبيقات النسخ</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/38-permissions.png"><img src="docs/screenshots/38-permissions.png" width="140" alt="MaxManager — الأذونات"></a><br><sub><b>الأذونات</b></sub></td>
-    <td align="center" width="25%"><a href="docs/screenshots/41-activity-launcher.png"><img src="docs/screenshots/41-activity-launcher.png" width="140" alt="MaxManager — الأنشطة"></a><br><sub><b>الأنشطة</b></sub></td>
-    <td align="center" width="25%"><a href="docs/screenshots/42-set-edit.png"><img src="docs/screenshots/42-set-edit.png" width="140" alt="MaxManager — محرّر الخصائص"></a><br><sub><b>محرّر الخصائص</b></sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/39-permissions-app.png"><img src="docs/screenshots/39-permissions-app.png" width="140" alt="MaxManager — أذونات تطبيق"></a><br><sub><b>أذونات تطبيق</b></sub></td>
   </tr>
   <tr>
+    <td align="center" width="25%"><a href="docs/screenshots/40-permissions-2.png"><img src="docs/screenshots/40-permissions-2.png" width="140" alt="MaxManager — الأذونات (٢)"></a><br><sub><b>الأذونات (٢)</b></sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/41-activity-launcher.png"><img src="docs/screenshots/41-activity-launcher.png" width="140" alt="MaxManager — الأنشطة"></a><br><sub><b>الأنشطة</b></sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/42-set-edit.png"><img src="docs/screenshots/42-set-edit.png" width="140" alt="MaxManager — محرّر الخصائص"></a><br><sub><b>محرّر الخصائص</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/58-backup-scope.png"><img src="docs/screenshots/58-backup-scope.png" width="140" alt="MaxManager — ما يُنسخ"></a><br><sub><b>ما يُنسخ</b></sub></td>
+  </tr>
+  <tr>
     <td align="center" width="25%"><a href="docs/screenshots/59-settings-about.png"><img src="docs/screenshots/59-settings-about.png" width="140" alt="MaxManager — حول التطبيق"></a><br><sub><b>حول التطبيق</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/60-settings-advanced.png"><img src="docs/screenshots/60-settings-advanced.png" width="140" alt="MaxManager — الوضع المتقدّم"></a><br><sub><b>الوضع المتقدّم</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/61-settings-service.png"><img src="docs/screenshots/61-settings-service.png" width="140" alt="MaxManager — الخدمة والسجلّ"></a><br><sub><b>الخدمة والسجلّ</b></sub></td>
-  </tr>
-  <tr>
     <td align="center" width="25%"><a href="docs/screenshots/62-language.png"><img src="docs/screenshots/62-language.png" width="140" alt="MaxManager — اللغة"></a><br><sub><b>اللغة</b></sub></td>
-    <td align="center" width="25%"></td>
-    <td align="center" width="25%"></td>
-    <td align="center" width="25%"></td>
   </tr>
 </table>
 
 </details>
 
 <details>
-<summary><b>الشبكة والتخزين و HUD</b> · ٧ إطارات</summary>
+<summary><b>الشبكة والتخزين و HUD</b> · ٨ إطارات</summary>
 
 <table>
   <tr>
@@ -279,9 +288,9 @@ MaxManager مبنيّ بالاتجاه المعاكس.
   </tr>
   <tr>
     <td align="center" width="25%"><a href="docs/screenshots/47-fps-overlay-metrics.png"><img src="docs/screenshots/47-fps-overlay-metrics.png" width="140" alt="MaxManager — مقاييس HUD"></a><br><sub><b>مقاييس HUD</b></sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/48-fps-overlay-source.png"><img src="docs/screenshots/48-fps-overlay-source.png" width="140" alt="MaxManager — مصدر HUD"></a><br><sub><b>مصدر HUD</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/63-compiler-mode.png"><img src="docs/screenshots/63-compiler-mode.png" width="140" alt="MaxManager — وضع التجميع"></a><br><sub><b>وضع التجميع</b></sub></td>
     <td align="center" width="25%"><a href="docs/screenshots/64-compiler-apps.png"><img src="docs/screenshots/64-compiler-apps.png" width="140" alt="MaxManager — تجميع التطبيقات"></a><br><sub><b>تجميع التطبيقات</b></sub></td>
-    <td align="center" width="25%"></td>
   </tr>
 </table>
 
@@ -307,11 +316,11 @@ MaxManager مبنيّ بالاتجاه المعاكس.
 
 </details>
 
-> **الملتقط ٦٧ من ٧٢ إطارًا** · والخيارات الإضافيّة ٠. والإطار غير الملتقط يغيب من الشبكة أعلاه ولا يظهر مكسورًا؛ و<a href="docs/screenshots/README.md">عقد الالتقاط</a> يذكرها كلّها.
+> **الملتقط ٧٢ من ٧٢ إطارًا** · والخيارات الإضافيّة ٠. والإطار غير الملتقط يغيب من الشبكة أعلاه ولا يظهر مكسورًا؛ و<a href="docs/screenshots/">مجلّد اللقطات</a> يحملها كلّها.
 <!-- screenshots:end -->
 
 وكل إطار هنا **لقطة حقيقية من جهاز**، مأخوذة بحسب العقد في
-**[`docs/screenshots/`](docs/screenshots/README.md)**: صور PNG بدقة 1162×2480، ودون 400 كيلوبايت
+**[`docs/screenshots/`](docs/screenshots/)**: صور PNG بدقة 1162×2480، ودون 400 كيلوبايت
 للإطار، وخيار شريط حالة واحد عبر كل الإطارات، وسمة داكنة في اللقطات كلها، مع نسخ `-light` و`-ar`. والشبكة
 **مولَّدة من الإطارات الموجودة** — `tools/screenshot_gallery.py` لا تكتب `<img>` إلا لملفّ PNG موجود
 فعلًا، فالإطار الذي لم يُلتقط **غائب لا مكسور**، والإطار المُسقَط باسمه الصحيح يظهر في أول تشغيل
@@ -325,13 +334,13 @@ MaxManager مبنيّ بالاتجاه المعاكس.
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="لماذا-هكذا"></a>
 
-## <img src="docs/assets/ic-layers.svg?v=2" width="22" height="22" align="absmiddle" alt="ثلاث طبقات"> لماذا بُني هكذا
+## <img src="docs/assets/ic-layers.svg?v=5" width="32" height="32" align="absmiddle" alt="ثلاث طبقات"> لماذا بُني هكذا
 
-<p align="center"><img src="docs/assets/control-plane.svg?v=2" width="100%" alt="مسار كتابة واحد: الشاشة، والحكم، وسجلّ الملكية، والتحقّق والرجوع، ثم واجهة النواة — والضابط الذي مساره غير مُثبَت هنا يُوسم كذلك"></p>
+<p align="center"><img src="docs/assets/control-plane.svg?v=5" width="100%" alt="طريق واحد لكل تغيير: تلمس، ومالك واحد يقرّر هل هو آمن، وكتابة جذر واحدة مُدقَّقة تطبّقه، ثم يُقرأ الجهاز بعدها — فإن ثبت التغيير بقي، وإن لم يثبت أُبلِغ عنه وتُراجع"></p>
 
 ثلاث طبقات، لا تتداخل:
 
@@ -347,13 +356,13 @@ MaxManager مبنيّ بالاتجاه المعاكس.
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="max-atlas"></a>
 
-## <img src="docs/assets/ic-atlas.svg?v=2" width="22" height="22" align="absmiddle" alt="Max Atlas"> Max Atlas — سبب أن أي شيء يعمل على هاتفك أنت
+## <img src="docs/assets/ic-atlas.svg?v=5" width="32" height="32" align="absmiddle" alt="Max Atlas"> Max Atlas — سبب أن أي شيء يعمل على هاتفك أنت
 
-<p align="center"><img src="docs/assets/atlas-cycle.svg?v=2" width="100%" alt="Max Atlas: اكتشف، افهم، ارسم الخريطة، تكيّف، نفّذ، تحقّق، تعلّم — ما يعمل هنا يُثبَت هنا"></p>
+<p align="center"><img src="docs/assets/atlas-cycle.svg?v=5" width="100%" alt="Max Atlas: اكتشف، افهم، ارسم الخريطة، تكيّف، نفّذ، تحقّق، تعلّم — ما يعمل هنا يُثبَت هنا"></p>
 
 هاتفان من الطراز نفسه قد يكشفان واجهات نواة مختلفة؛ ونواتان قد تسمّيان الواجهة نفسها بوحدات
 مختلفة، وتسمحان بكتابتها أو لا. Max Atlas يسألك كل واجهة: هل هي **هنا**؟ وما اسمها؟ وبأي وحدة
@@ -384,26 +393,26 @@ MaxManager مبنيّ بالاتجاه المعاكس.
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="max-ai"></a>
 
-## <img src="docs/assets/ic-ai.svg?v=2" width="22" height="22" align="absmiddle" alt="Max AI"> Max AI — تغيير واحد مقيس في كل مرّة
+## <img src="docs/assets/ic-ai.svg?v=5" width="32" height="32" align="absmiddle" alt="Max AI"> Max AI — تغيير واحد مقيس في كل مرّة
 
-<p align="center"><img src="docs/assets/max-ai.svg?v=2" width="100%" alt="Max AI: راقب، قرّر، اسأل، تحقّق، تذكّر — تغيير واحد مقيس في كل مرّة، وقائمة بما لن يفعله أبدًا"></p>
+<p align="center"><img src="docs/assets/max-ai.svg?v=5" width="100%" alt="Max AI: راقب، قرّر، اسأل، تحقّق، تذكّر — تغيير واحد مقيس في كل مرّة، وقائمة بما لن يفعله أبدًا"></p>
 
 Max AI يراقب سلوك الجهاز فعليًّا — السرعة والحرارة والبطاقة والضغط على الذاكرة والتطبيق الظاهر —
 وحين تقول القراءات إن شيئًا يجب أن يتغيّر، يغيّر **شيئًا واحدًا**، ثم يقيس هل كان ذلك مفيدًا. إنه
 حلقة لا إعداد جاهز:
 
-- <img src="docs/assets/ic-notice.svg?v=2" width="20" height="20" align="absmiddle" alt="راقب"> **راقب** — يقرأ هذا الجهاز: الحرارة والحمل والبطاقة والذاكرة والتطبيق النشط. *لا تلاحظ شيئًا:
+- <img src="docs/assets/ic-notice.svg?v=5" width="28" height="28" align="absmiddle" alt="راقب"> **راقب** — يقرأ هذا الجهاز: الحرارة والحمل والبطاقة والذاكرة والتطبيق النشط. *لا تلاحظ شيئًا:
   يراقب لا يتصرّف.*
-- <img src="docs/assets/ic-decide.svg?v=2" width="20" height="20" align="absmiddle" alt="قرّر"> **قرّر** — مقابل هدفك (سرعة أو توازن أو بطاقة)، يختار *أصغر* تغيير يمكن أن يسدّ الفجوة. *مضبوط واحد
+- <img src="docs/assets/ic-decide.svg?v=5" width="28" height="28" align="absmiddle" alt="قرّر"> **قرّر** — مقابل هدفك (سرعة أو توازن أو بطاقة)، يختار *أصغر* تغيير يمكن أن يسدّ الفجوة. *مضبوط واحد
   يتحرك لا ثمانية.*
-- <img src="docs/assets/ic-ask.svg?v=2" width="20" height="20" align="absmiddle" alt="اسأل"> **اسأل** — طبقة سلامة بأولوية مطلقة تقول نعم أو لا قبل أي كتابة. *لا تُلمس واجهة محميّة أبدًا،
+- <img src="docs/assets/ic-ask.svg?v=5" width="28" height="28" align="absmiddle" alt="اسأل"> **اسأل** — طبقة سلامة بأولوية مطلقة تقول نعم أو لا قبل أي كتابة. *لا تُلمس واجهة محميّة أبدًا،
   المحرّك مُشغَّلًا كان أو مطفأً.*
-- <img src="docs/assets/ic-verify.svg?v=2" width="20" height="20" align="absmiddle" alt="تحقّق"> **تحقّق** — تُقرأ القيمة، ثم يُقاس الأثر بعد نافذة استجابة. *التغيير الذي لم يستقرّ لا يُحسب فوزًا.*
-- <img src="docs/assets/ic-remember.svg?v=2" width="20" height="20" align="absmiddle" alt="تذكّر"> **تذكّر** — تُسجَّل النتيجة كحلقة كاملة مقيسة. *يثق بما أصاب، ويزيل ثقته بما أخطأ.*
+- <img src="docs/assets/ic-verify.svg?v=5" width="28" height="28" align="absmiddle" alt="تحقّق"> **تحقّق** — تُقرأ القيمة، ثم يُقاس الأثر بعد نافذة استجابة. *التغيير الذي لم يستقرّ لا يُحسب فوزًا.*
+- <img src="docs/assets/ic-remember.svg?v=5" width="28" height="28" align="absmiddle" alt="تذكّر"> **تذكّر** — تُسجَّل النتيجة كحلقة كاملة مقيسة. *يثق بما أصاب، ويزيل ثقته بما أخطأ.*
 
 **لماذا ليس إعدادًا جاهزًا:** الإعداد الجاهز يطبّق الأرقام نفسها على كل جهاز ولا يكتشف أبداً إن كانت
 قد نفعت. أمّا Max AI فلا يتحدّث إلا بمفردات Max Atlas على هاتفك أنت، وانتصاراته مقيسة لا مُتوقَّعة،
@@ -428,39 +437,39 @@ Max AI يراقب سلوك الجهاز فعليًّا — السرعة والح
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="ما-تتحكم-فيه"></a>
 
-## <img src="docs/assets/ic-sliders.svg?v=2" width="22" height="22" align="absmiddle" alt="الضوابط"> ما تتحكم فيه
+## <img src="docs/assets/ic-sliders.svg?v=5" width="32" height="32" align="absmiddle" alt="الضوابط"> ما تتحكم فيه
 
-<p align="center"><img src="docs/assets/domains.svg?v=3" width="100%" alt="عشرة مجالات ضبط: المعالج، وبطاقة الرسوم، والذاكرة، والعرض، والاستجابة، والحرارة، والطاقة، والتخزين والمترجم، والشبكة، والصوت"></p>
+<p align="center"><img src="docs/assets/domains.svg?v=5" width="100%" alt="عشرة مجالات ضبط: المعالج، وبطاقة الرسوم، والذاكرة، والعرض، والاستجابة، والحرارة، والطاقة، والتخزين والمترجم، والشبكة، والصوت"></p>
 
 عشرة مجالات، لكل منها واجهته الخاصة. والسطر تحت كل اسم هو **وصف التطبيق نفسه** للمجال كما في
 الواجهة حرفيًّا.
 
-- <img src="docs/assets/ic-cpu.svg?v=2" width="20" height="20" align="absmiddle" alt="المعالج"> **المعالج (CPU)** — *الأنوية والحكّام وتسريع المزوّد وتفضيلات النواة.* تشغيل الأنوية أو إيقافها،
+- <img src="docs/assets/ic-cpu.svg?v=5" width="28" height="28" align="absmiddle" alt="المعالج"> **المعالج (CPU)** — *الأنوية والحكّام وتسريع المزوّد وتفضيلات النواة.* تشغيل الأنوية أو إيقافها،
   وتثبيت مجموعات الجدولة على العناقيد، وحدّ أدنى وأقصى لكل عنقود، واختيار الحكّام، وتعديل تفضيلات
   النواة.
-- <img src="docs/assets/ic-gpu.svg?v=2" width="20" height="20" align="absmiddle" alt="بطاقة الرسوم"> **بطاقة الرسوم (GPU)** — *ترددات بطاقة الرسوم ومعاملات المزوّد الخاصة بالرسوم.* ترددات جاهزة وحدود
+- <img src="docs/assets/ic-gpu.svg?v=5" width="28" height="28" align="absmiddle" alt="بطاقة الرسوم"> **بطاقة الرسوم (GPU)** — *ترددات بطاقة الرسوم ومعاملات المزوّد الخاصة بالرسوم.* ترددات جاهزة وحدود
   يدوية، وحكّام بطاقة الرسوم، وسياسة طاقة أنوية الشيدر، ومسار تسريع المزوّد، وتجاوز مُوثَّق لاختناق
   الحرارة.
-- <img src="docs/assets/ic-memory.svg?v=2" width="20" height="20" align="absmiddle" alt="الذاكرة"> **الذاكرة** — *الضغط وسلوك الذاكرة الافتراضية وswappiness.* تحديد حجم ZRAM أو إيقافه، واختيار محرّك
+- <img src="docs/assets/ic-memory.svg?v=5" width="28" height="28" align="absmiddle" alt="الذاكرة"> **الذاكرة** — *الضغط وسلوك الذاكرة الافتراضية وswappiness.* تحديد حجم ZRAM أو إيقافه، واختيار محرّك
   الضغط، وضبط swappiness والاسترداد. والمحرّك يقرأ **ضغط توقّف الذاكرة** لا نسبة الامتلاء — فالجهاز
   الممتلئ الخامل يحتاج عكس ما يحتاجه المتوقّف.
-- <img src="docs/assets/ic-display.svg?v=2" width="20" height="20" align="absmiddle" alt="العرض"> **العرض** — *معدّل التحديث واللون ومقياس اللوحة.* معدّل التحديث، وقنوات اللون، والتشبّع، ونطاق الألوان
+- <img src="docs/assets/ic-display.svg?v=5" width="28" height="28" align="absmiddle" alt="العرض"> **العرض** — *معدّل التحديث واللون ومقياس اللوحة.* معدّل التحديث، وقنوات اللون، والتشبّع، ونطاق الألوان
   واستجابة HDR، ومنحنيات السطوع، والضوء الليلي، ومقاييس الحركة، ومهلة الشاشة.
-- <img src="docs/assets/ic-touch.svg?v=2" width="20" height="20" align="absmiddle" alt="الاستجابة"> **الاستجابة** — *اللمس وإيقاع الإطارات وزمن الجدولة.* أخذ عيّنات اللمس وتنعيمه، والضغط المزدوج
+- <img src="docs/assets/ic-touch.svg?v=5" width="28" height="28" align="absmiddle" alt="الاستجابة"> **الاستجابة** — *اللمس وإيقاع الإطارات وزمن الجدولة.* أخذ عيّنات اللمس وتنعيمه، والضغط المزدوج
   للاستيقاظ، ومعاملات FPS GO / GED، والجدولة الواعية بالإطارات.
-- <img src="docs/assets/ic-thermal.svg?v=2" width="20" height="20" align="absmiddle" alt="الحرارة"> **الحرارة** — *الحرارات والاختناق والمعاملات الحرارية.* حرارات المناطق الحيّة، وسياسة الحرارة، وما
+- <img src="docs/assets/ic-thermal.svg?v=5" width="28" height="28" align="absmiddle" alt="الحرارة"> **الحرارة** — *الحرارات والاختناق والمعاملات الحرارية.* حرارات المناطق الحيّة، وسياسة الحرارة، وما
   يُخنق الجهاز الآن.
-- <img src="docs/assets/ic-battery.svg?v=2" width="20" height="20" align="absmiddle" alt="الطاقة"> **الطاقة** — *الشحن والتخطي والنوم وصحة البطاقة.* حدود تيار الشحن، وسقف شحن يبطئ تآكل البطاقة،
+- <img src="docs/assets/ic-battery.svg?v=5" width="28" height="28" align="absmiddle" alt="الطاقة"> **الطاقة** — *الشحن والتخطي والنوم وصحة البطاقة.* حدود تيار الشحن، وسقف شحن يبطئ تآكل البطاقة،
   والشحن بالتخطيّ، والغوص القاسي، وقائمة الانتظار، وصحة البطاقة.
-- <img src="docs/assets/ic-storage.svg?v=2" width="20" height="20" align="absmiddle" alt="التخزين والمترجم"> **التخزين والمترجم** — *وضع التجميع وصحة التخزين.* إعادة تجميع ART بفلتر مختار، وإعادة ضبط الحالة
+- <img src="docs/assets/ic-storage.svg?v=5" width="28" height="28" align="absmiddle" alt="التخزين والمترجم"> **التخزين والمترجم** — *وضع التجميع وصحة التخزين.* إعادة تجميع ART بفلتر مختار، وإعادة ضبط الحالة
   المجمَّعة، وصحة التخزين.
-- <img src="docs/assets/ic-network.svg?v=2" width="20" height="20" align="absmiddle" alt="الشبكة"> **الشبكة** — *جدولة الحركة وحالة الربط.* خوارزمية احتقان TCP، والفتح السريع/SACK/ECN، وملفات SYN،
+- <img src="docs/assets/ic-network.svg?v=5" width="28" height="28" align="absmiddle" alt="الشبكة"> **الشبكة** — *جدولة الحركة وحالة الربط.* خوارزمية احتقان TCP، والفتح السريع/SACK/ECN، وملفات SYN،
   وإعادة استخدام المقابس، ومعاملات مجدول الإدخال/الإخراج، وحالة الربط.
-- <img src="docs/assets/ic-audio.svg?v=2" width="20" height="20" align="absmiddle" alt="الصوت"> **الصوت** — *أجهزة الإخراج والدفقات والمؤثرات المُعلَنة.* اقرأ ما تُعلنه المنصّة للمخرج الأساسيّ —
+- <img src="docs/assets/ic-audio.svg?v=5" width="28" height="28" align="absmiddle" alt="الصوت"> **الصوت** — *أجهزة الإخراج والدفقات والمؤثرات المُعلَنة.* اقرأ ما تُعلنه المنصّة للمخرج الأساسيّ —
   معدّل العيّنة ودورة المخزن — وكلّ طرف يعلنه الجهاز (المخارج أولًا ثم المداخل)، والمؤثرات التي يبلّغ
   بها محرّك الصوت. **قراءة فقط بقرار**، وصادقة عن الصمت: جهاز لا يُعلن مؤثرات يقول ذلك، ولا يُعرض له
   مفتاح فارغ.
@@ -492,34 +501,34 @@ Max AI يراقب سلوك الجهاز فعليًّا — السرعة والح
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="المراقبة"></a>
 
-## <img src="docs/assets/ic-pulse.svg?v=2" width="22" height="22" align="absmiddle" alt="قراءات حيّة"> المراقبة والقياس والتشخيص
+## <img src="docs/assets/ic-pulse.svg?v=5" width="32" height="32" align="absmiddle" alt="قراءات حيّة"> المراقبة والقياس والتشخيص
 
-- <img src="docs/assets/ic-pulse.svg?v=2" width="20" height="20" align="absmiddle" alt="Max Live"> **Max Live** — الصورة الحيّة: القراءات الحالية، وما يُسمح للأتمتة بفعله الآن ولماذا، وما ستفعله بعد
+- <img src="docs/assets/ic-pulse.svg?v=5" width="28" height="28" align="absmiddle" alt="Max Live"> **Max Live** — الصورة الحيّة: القراءات الحالية، وما يُسمح للأتمتة بفعله الآن ولماذا، وما ستفعله بعد
   ذلك، وهل يمكن التراجع عنه.
-- <img src="docs/assets/ic-phone.svg?v=2" width="20" height="20" align="absmiddle" alt="الرئيسية"> **الرئيسية** — حالة الجهاز، والتطبيق النشط، والملفّ الجاري، والحرارات والتخزين في نظرة.
-- <img src="docs/assets/ic-display.svg?v=2" width="20" height="20" align="absmiddle" alt="طبقة FPS"> **طبقة FPS** — عدّاد قابل للسحب فوق أي لعبة (FPS والمعالج والذاكرة)، بطريقة قراءة احتياطية، ووسم
+- <img src="docs/assets/ic-phone.svg?v=5" width="28" height="28" align="absmiddle" alt="الرئيسية"> **الرئيسية** — حالة الجهاز، والتطبيق النشط، والملفّ الجاري، والحرارات والتخزين في نظرة.
+- <img src="docs/assets/ic-display.svg?v=5" width="28" height="28" align="absmiddle" alt="طبقة FPS"> **طبقة FPS** — عدّاد قابل للسحب فوق أي لعبة (FPS والمعالج والذاكرة)، بطريقة قراءة احتياطية، ووسم
   **Vulkan/OpenGL** حين تُصيِّر اللعبة كذلك.
-- <img src="docs/assets/ic-cpu.svg?v=2" width="20" height="20" align="absmiddle" alt="مراقب العمليات"> **مراقب العمليات** — المعالج والذاكرة لكل عملية، وإيقاف قسري، وSIGKILL، وطبقة عائمة.
-- <img src="docs/assets/ic-doc.svg?v=2" width="20" height="20" align="absmiddle" alt="عارض السجلّات"> **عارض السجلّات** — logcat حيّ بتصفية وبحث، وتقرير قابل للمشاركة **معجمه مكتوب في ملفّ السجلّ نفسه**.
-- <img src="docs/assets/ic-verify.svg?v=2" width="20" height="20" align="absmiddle" alt="التشخيص"> **التشخيص** — مركز تشخيص حيّ، وصحّة مسار كل ضابط، وطبقة أزرق قابلة لإعادة الإنتاج، وتقرير دعم تختار
+- <img src="docs/assets/ic-cpu.svg?v=5" width="28" height="28" align="absmiddle" alt="مراقب العمليات"> **مراقب العمليات** — المعالج والذاكرة لكل عملية، وإيقاف قسري، وSIGKILL، وطبقة عائمة.
+- <img src="docs/assets/ic-doc.svg?v=5" width="28" height="28" align="absmiddle" alt="عارض السجلّات"> **عارض السجلّات** — logcat حيّ بتصفية وبحث، وتقرير قابل للمشاركة **معجمه مكتوب في ملفّ السجلّ نفسه**.
+- <img src="docs/assets/ic-verify.svg?v=5" width="28" height="28" align="absmiddle" alt="التشخيص"> **التشخيص** — مركز تشخيص حيّ، وصحّة مسار كل ضابط، وطبقة أزرق قابلة لإعادة الإنتاج، وتقرير دعم تختار
   أنت إرساله.
-- <img src="docs/assets/ic-question.svg?v=2" width="20" height="20" align="absmiddle" alt="لماذا لم تعمل"> **«لماذا لم تعمل؟»** — لإعداد خاصّ بتطبيق: ما أراده، وما تحتفظ به العتادة، وأين تنظر بعد ذلك.
+- <img src="docs/assets/ic-question.svg?v=5" width="28" height="28" align="absmiddle" alt="لماذا لم تعمل"> **«لماذا لم تعمل؟»** — لإعداد خاصّ بتطبيق: ما أراده، وما تحتفظ به العتادة، وأين تنظر بعد ذلك.
 
 ولا شيء هنا يتصل بخادم. وتقرير الدعم يُبنى محليًّا ويُصغَّر، ولا يغادر الجهاز إلا حين ترسله أنت.
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="اللغات"></a>
 
-## <img src="docs/assets/ic-globe.svg?v=2" width="22" height="22" align="absmiddle" alt="اللغات"> اللغات
+## <img src="docs/assets/ic-globe.svg?v=5" width="32" height="32" align="absmiddle" alt="اللغات"> اللغات
 
-<p align="center"><img src="docs/assets/locales.svg?v=2" width="100%" alt="٨٤ لغة، والاتجاه من اليمين إلى اليسار مواطن أوّل"></p>
+<p align="center"><img src="docs/assets/locales.svg?v=5" width="100%" alt="٨٤ لغة، والاتجاه من اليمين إلى اليسار مواطن أوّل"></p>
 
 - **٨٤ لغة** زائد الإنجليزية؛ والمنتقي يتبع لغة النظام دون إعادة تشغيل.
 - **فاتح وداكن**، بلون مفتاح قابل للسمات وشاشة لوحة ألوان مخصّصة.
@@ -527,11 +536,11 @@ Max AI يراقب سلوك الجهاز فعليًّا — السرعة والح
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="المتطلبات"></a>
 
-## <img src="docs/assets/ic-checklist.svg?v=2" width="22" height="22" align="absmiddle" alt="المتطلبات"> المتطلبات
+## <img src="docs/assets/ic-checklist.svg?v=5" width="32" height="32" align="absmiddle" alt="المتطلبات"> المتطلبات
 
 | | |
 | --- | --- |
@@ -546,57 +555,37 @@ Max AI يراقب سلوك الجهاز فعليًّا — السرعة والح
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="التثبيت"></a>
 
-## <img src="docs/assets/ic-download.svg?v=2" width="22" height="22" align="absmiddle" alt="التثبيت"> التثبيت
+## <img src="docs/assets/ic-download.svg?v=5" width="32" height="32" align="absmiddle" alt="التثبيت"> التثبيت
 
 MaxManager يأتي **وحدة بلا نظام** (systemless) — لا شيء في `/system` يُعدَّل دائمًا، والإلغاء يُعيد
 كل شيء.
 
-1. افلش `MaxManager-V2.zip` في **Magisk** أو **KernelSU** (أو مدير جذر متوافق).
-2. أعد التشغيل.
-3. افتح **MaxManager** وامشِ في **الإعداد** الذي يشرح ما يكشفه *جهازك*.
+<p align="center"><img src="docs/assets/install-flow-ar.svg?v=5" width="100%" alt="التثبيت في أربع خطوات: افلش الوحدة في Magisk أو KernelSU، ثم أعد التشغيل، ثم امنحه الجذر حين يطلبه مدير الجذر، ثم افتح التطبيق وامشِ في الإعداد"></p>
 
-والنسخ تأتي من CI كمخرجات سير العمل: الوحدة القابلة للتفليش، وحزمة المطوّر، وملفات التحقّق — انظر
-**[docs/building.md](docs/building.md#releases)** لمحتوى كل قناة إصدار. وإذا فشلت الوحدة في بلوغ إقلاع
+1. نزّل الوحدة من **[الإصدارات](https://github.com/nader295/Max-Manger/releases/latest)** وافلشها في **Magisk** أو **KernelSU** (أو مدير جذر متوافق).
+2. أعد التشغيل.
+3. **امنحه الجذر** — اقبل نافذة الصلاحية التي يعرضها مدير الجذر حين يطلبها MaxManager.
+4. افتح **MaxManager** وامشِ في **الإعداد** الذي يشرح ما يكشفه *جهازك*.
+
+ملاحظات الإصدار v1.0، وكيف تتحقّق من التنزيل، في
+**[docs/releases/v1.0.md](docs/releases/v1.0.md)**.
+
+والإصدار نفسه يحمل **`MaxManager-checksums.txt`** — بصمة للحزمة وبصمة لكل ما فيها — فتُتحقّق من
+التنزيل قبل تفليشه؛ والأمران في **[docs/releases/v1.0.md](docs/releases/v1.0.md)**. وإذا فشلت
+الوحدة في بلوغ إقلاع
 مستقرّ مرّتين متتاليتين تُعطّل نفسها وتقول ذلك في وصفها.
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
-
-<a id="لمطوّري-الروم"></a>
-
-## <img src="docs/assets/ic-cube.svg?v=2" width="22" height="22" align="absmiddle" alt="مطوّرو الروم"> لمطوّري الروم
-
-<p align="center"><img src="docs/assets/integration.svg?v=3" width="100%" alt="ثلاثة مسارات للدمج — الوحدة بلا نظام، ودمج AOSP من android/aosp، وKernelSU Next — والأسماء الثلاثة التي يجب أن تتفق: مسار الثنائي وخدمة init ووسوم SELinux"></p>
-
-عدّة الدمج موجودة في هذا المستودع تحت **`android/aosp/`** — ملفّات Soong، وخدمة init، ونطاق sepolicy،
-وقائمة صلاحيات مُمتَزَجة. و`android/kernelsu/` تحمل الوحدة نفسها مُحزَّمة لـKernelSU Next.
-
-**ما تحصل عليه:** تطبيق تحكّم مُمتَزَج، وخمسة ثنائيات أصلية (خدمة الجهاز، وملفات الشرائح، وحارس
-الحرارة، ومهيّئ أدوات، ومحمّل ألعاب)، ووحدة تُثبَّت وتُزال دون تعديل دائم في `/system`.
-
-**وما تحتاجه:** نسخة موقّعة منصّة ومُمتَزَجة للتطبيق؛ والثنائي على `/system/bin/sys.maxmanager-service`؛
-وخدمة init؛ وقواعد sepolicy. وثلاثة أسماء يجب أن تتفق حرفيًّا — مسار الثنائي وخدمة init ووسم SELinux —
-والرسم أعلاه يعرضها.
-
-> **الإذن أولًا.** MaxManager **برمجيات مملوكة**. والعدّة هنا ليقيّمها المنظّمون ويدمجوها **بإذن
-> كتابي** من صاحب الحقوق — [`LICENSE`](LICENSE) لا تمنح حقًّا بخلاف ذلك. اسأل أولًا عبر
-> [الدعم](#الدعم).
-
-ابدأ من هنا: **[docs/rom-integration.md](docs/rom-integration.md)** — ثلاثة مسارات للدمج، وقائمة التحقّق،
-وتعارضات وجدناها في العدّة وأُبلِّغ عنها بدل تلميعها.
-
-<p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
-
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="ما-لن-يفعله"></a>
 
-## <img src="docs/assets/ic-shield.svg?v=2" width="22" height="22" align="absmiddle" alt="لا تُلمس"> ما لن يفعله
+## <img src="docs/assets/ic-shield.svg?v=5" width="32" height="32" align="absmiddle" alt="لا تُلمس"> ما لن يفعله
 
 أجزاء التطبيق التي لا تستطيع إطفاءها، ولن تودّ ذلك:
 
@@ -616,11 +605,11 @@ MaxManager يأتي **وحدة بلا نظام** (systemless) — لا شيء ف
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="الوثائق"></a>
 
-## <img src="docs/assets/ic-doc.svg?v=2" width="22" height="22" align="absmiddle" alt="الوثائق"> الوثائق
+## <img src="docs/assets/ic-doc.svg?v=5" width="32" height="32" align="absmiddle" alt="الوثائق"> الوثائق
 
 هذه الصفحة هي الجولة. والجواب الذي تصل إليه بعدها في **[`docs/`](docs/README.md)**:
 
@@ -634,18 +623,18 @@ MaxManager يأتي **وحدة بلا نظام** (systemless) — لا شيء ف
 | [profiles.md](docs/profiles.md) | سلوكيات الشرائح والتنفيذيات الأصلية للوحدة |
 | [thermal.md](docs/thermal.md) | حارس الحرارة: دمج المناطق، والسياسة، والتوقّع، والتعلّم |
 | [architecture.md](docs/architecture.md) | كيف تلتفّق التطبيق والحراس وواجهات النواة |
-| [building.md](docs/building.md) | البناء من المصدر، ومخرجات CI، والإصدارات، والأرقام خلف كل ادّعاء |
+| [releases/v1.0.md](docs/releases/v1.0.md) | ملاحظات إصدار ‎v1.0‎، وكيف تتحقّق من التنزيل |
 | [verification.md](docs/verification.md) | كيف يُقاس كل ادّعاء هنا — وما لا يمكن قياسه |
 | [faq.md](docs/faq.md) | الأسئلة التي تتكرّر |
 | [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) | مكوّنات الطرف الثالث مع إشعاراتها |
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="الأسئلة"></a>
 
-## <img src="docs/assets/ic-question.svg?v=2" width="22" height="22" align="absmiddle" alt="الأسئلة"> الأسئلة الشائعة
+## <img src="docs/assets/ic-question.svg?v=5" width="32" height="32" align="absmiddle" alt="الأسئلة"> الأسئلة الشائعة
 
 <details>
 <summary><b>هل يحتاج إلى جذر؟</b></summary>
@@ -703,19 +692,44 @@ MaxManager يأتي **وحدة بلا نظام** (systemless) — لا شيء ف
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="الدعم"></a>
 
-## <img src="docs/assets/ic-bubble.svg?v=2" width="22" height="22" align="absmiddle" alt="الدعم"> الدعم
+## <img src="docs/assets/ic-bubble.svg?v=5" width="32" height="32" align="absmiddle" alt="الدعم"> الدعم
 
 - **تيليجرام:** [@ROBINHOOD_GROUP_RODIN](https://t.me/ROBINHOOD_GROUP_RODIN) — بلاغات الأفكار والبناء.
 - **البلاغات:** من فضلك اذكر الجهاز، والروم، ومدير الجذر، وما عرضه التطبيق. وإن قال
   `status_unknown` فقل ذلك — إنه حقيقة عن جهازك لا خطأ عليك إصلاحه أولًا.
 
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
+
+<a id="من-الصانع"></a>
+
+## <img src="docs/assets/makers-mark-dark.svg?v=5" width="22" height="22" align="absmiddle" alt="وسم الصانع"> من الصانع
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/makers-mark-dark.svg?v=5">
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/makers-mark-light.svg?v=5">
+    <img src="docs/assets/makers-mark-dark.svg?v=5" width="110" alt="وسم الصانع: حرف M مرسوم بخطّ واحد">
+  </picture>
+</p>
+
+لا صورة في هذه الصفحة خرجت من مولّد صور. كل رسمة هنا ملفّ متجهيّ في `docs/assets/` يولّده هذا
+المستودع من لوحة التطبيق نفسها ثم يقيسه (`tools/gen_readme_assets.py` و`tools/svg_review.py`)؛
+والوسم أعلاه يرسمه `tools/makers_mark.py` الذي يتحقّق أيضًا أنّ التطبيق يرسم **الخطّ نفسه** وقت
+التشغيل. وكل لقطة في [`docs/screenshots/`](docs/screenshots/) من هاتف حقيقي.
+
+والتطبيق يُبنى بالطريقة التي يُعرض بها: تغيير واحد مقيس في كل مرّة، على جهاز حقيقي.
+
+— **Nader Magdy**، صانع MaxManager
+
+<p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
+
 <a id="الرخصة"></a>
 
-## <img src="docs/assets/ic-seal.svg?v=2" width="22" height="22" align="absmiddle" alt="الرخصة"> الرخصة
+## <img src="docs/assets/ic-seal.svg?v=5" width="32" height="32" align="absmiddle" alt="الرخصة"> الرخصة
 
 **مملوكة.** حقوق النشر (C) 2026 **Nader Magdy**. جميع الحقوق محفوظة. انظر [`LICENSE`](LICENSE) للبنود
 الكاملة — لا يُمنح أي حقّ استعمال أو نسخ أو تعديل أو توزيع دون إذن كتابي سابق من صاحب الحقوق.
@@ -726,11 +740,11 @@ MaxManager يأتي **وحدة بلا نظام** (systemless) — لا شيء ف
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 
----
+<p align="center"><img src="docs/assets/divider.svg?v=5" width="100%" alt=""></p>
 
 <a id="credits"></a>
 
-## <img src="docs/assets/ic-credit.svg?v=2" width="22" height="22" align="absmiddle" alt="الفضل"> الفضل
+## <img src="docs/assets/ic-credit.svg?v=5" width="32" height="32" align="absmiddle" alt="الفضل"> الفضل
 
 ‏MaxManager لم يُكتب وحده. هذه الأعمال نشكره عليها — وكلّ إشعار تفرضه رخصتها يبقى في
 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)، وهو القائمة الملزمة.

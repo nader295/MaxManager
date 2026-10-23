@@ -2,6 +2,10 @@
 > that holds the app; this page is the language itself, published so the interface can be read and
 > judged.
 
+> **Context.** The gate commands quoted in this document run inside the **private repository**
+> that holds the app; this page is the language itself, published so the interface can be read and
+> judged.
+
 ---
 version: alpha
 name: MaxManager Design Language
@@ -74,8 +78,8 @@ typography:
     fontWeight: Bold
   live-value-large:
     fontFamily: monospace
-    fontSize: 34sp
-    lineHeight: 38sp
+    fontSize: 28sp
+    lineHeight: 32sp
   live-value-medium:
     fontFamily: monospace
     fontSize: 16sp
@@ -171,9 +175,9 @@ nothing here is drawn from a screenshot:
 
 <p align="center">
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="docs/assets/design-language-light.svg?v=2">
-  <img src="docs/assets/design-language.svg?v=2" width="100%"
-       alt="The MaxManager design language: one accent that follows the theme and three fixed warning colours, three typefaces with one job each, a single 4dp spacing scale, five meaningful corner radii, and a motion budget of at most 360ms">
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/design-language-light.svg?v=5">
+  <img src="docs/assets/design-language.svg?v=5" width="100%"
+       alt="The MaxManager look: one accent that follows the theme, two fixed warning colours, three typefaces with one job each, five meaningful corner radii, and motion between 90 and 360 ms">
 </picture>
 </p>
 
@@ -221,8 +225,10 @@ same instinct produced `status_unknown` at the data layer and the five-state tru
   is the thing you came here for". It is the *only* colour that follows the user's theme. There is no
   fixed hex for it, deliberately: theming is a feature, and pinning the accent would make the product
   fight the phone it lives on.
-- The README surface uses `#5FD9AC` as its accent on dark, which is byte-identical to the app's
-  Positive-on-dark tone. The page borrows the product's own green rather than inventing a brand colour.
+- The README surface uses its own blue accent — `#5AA9FF` on dark, `#1F6FEB` on light — and
+  deliberately **not** the app's green. In the app, green is the `Positive` tone and means "healthy";
+  spending it on decoration would blur the one place it carries meaning. The status tones below stay the
+  app's own wherever an image shows a state.
 
 ### Semantic tones (fixed)
 
@@ -300,7 +306,7 @@ Three faces, each with one job:
 | `labelLarge` | 14sp | SemiBold | 20sp | 0.4sp | Buttons and prominent chips |
 | `labelMedium` | 12sp | SemiBold | 16sp | 0.5sp | Badges |
 | `labelSmall` | 11sp | Bold | 16sp | 0.6sp | The "console eyebrow" — status labels |
-| mono `live-value-large` | 34sp | SemiBold | 38sp | 0 | The headline reading on a metric card |
+| mono `live-value-large` | 28sp | SemiBold | 32sp | 0 | The headline reading on a metric card |
 | mono `live-value-medium` | 16sp | SemiBold | 20sp | 0 | In-row readings |
 | mono `live-value-small` | 12sp | Medium | 16sp | 0 | Dense tables |
 
@@ -443,6 +449,20 @@ Row padding `MaxSpace.rowPaddingHorizontal` (14dp) / `MaxSpace.rowPaddingVertica
 - Every tone-bearing component also renders an icon and a text label. Tone is never the only carrier of
   meaning, so state survives colour blindness, greyscale screenshots and high-contrast modes.
 
+## Voice
+
+The interface writes like an engineer who knows the device: the name of the product is always
+**Max AI** (never `MAX AI`, and never transliterated in Arabic), and a label says what the control
+does — “Free memory”, not “Optimize” — so the copy and the glyph cannot drift apart. Marketing
+adjectives and dead copy do not ship: every AI-labelled string in `values/` has a call site, held by
+`VisualIdentityTest`.
+
+**No implementation detail in the main message.** A raw node path (`/sys/…`, `/proc/…`) never
+appears in a title, subtitle, loading line or empty state; it belongs in help or an expressly
+opened technical detail. The reader is told what is happening on their phone, not which kernel file
+the app just opened — the second reads as a debug log, not as a product. Held by the
+`user facing CPU copy names no kernel internals` case in `VisualIdentityTest`.
+
 ## Motion
 
 | Token | Duration | Use |
@@ -456,6 +476,11 @@ Row padding `MaxSpace.rowPaddingHorizontal` (14dp) / `MaxSpace.rowPaddingVertica
 *anything longer than `deliberate` is decoration and is not allowed.* Two consequences:
 
 1. Nothing in the app loops forever. A perpetual animation is a decoration by definition.
+   The primary routes and the app shell are held to this in `VisualIdentityTest` — they may not
+   contain an infinite transition at all, and every `tween` there must stay at or below
+   `MaxDuration.deliberate`. (Live instruments such as a sparkline's freshness beacon are allowed
+   to loop only where the loop itself carries the reading, and that exception is declared in the
+   component's own KDoc.)
 2. Motion is never the only signal that something changed — a state change is also a change in text,
    icon or tone.
 
@@ -491,8 +516,9 @@ words, and the app's screens are shipped as real captures rather than as mockups
 The public page is a **second register** of the same language, and is documented here so it stops being
 an unwritten one.
 
-- It reuses the product's own accent on dark (`#5FD9AC` — the app's Positive-on-dark tone) and the same
-  4dp-derived rhythm, the same 22dp panel radius and the same 1dp hairline.
+- It uses a page accent of its own (`#5AA9FF` on dark, `#1F6FEB` on light — `SURFACE_DARK` and
+  `SURFACE_LIGHT` in the asset generator) over the app's own panel colours, and the same 4dp-derived
+  rhythm, the same 22dp panel radius and the same 1dp hairline.
 - It declares a **page palette** of its own for ink and secondary text, because those values come from
   the theme at runtime in the app and therefore have no fixed hex to import. The palette is listed in
   the README asset generator (private repository) and checked by the gate.
@@ -517,6 +543,10 @@ an unwritten one.
 - Reserve two title lines in a card so a row of cards aligns.
 - Pair every tone with an icon and a word.
 - Keep motion at or under `MaxDuration.deliberate` (360ms) and never loop it in the app.
+- Let the **name and the glyph** carry Max AI, not a glow: the AI entry is a flat surface with a
+  hairline, like every other control. A star is a mark, not a lighting effect.
+- Let a glyph say what the control does. A rocket over “free memory” or “game preloading” promises a
+  launch that never happens; a broom and a cache ring describe the operation.
 
 ### Don't
 
@@ -554,7 +584,7 @@ Measured, and stated rather than implied.
 
 1. **`MaxMetricType` is dead.** `MaxMetricType` (`valueLarge` 34sp, `valueMedium` 22sp, `valueSmall`
    16sp) appears exactly once in the repository: its own definition. The scale actually in use is
-   `MonoValueStyle*` (`theme/Type.kt` — 34sp / 16sp / 12sp), referenced from 18 files in 60 call sites.
+   `MonoValueStyle*` (`theme/Type.kt` — 28sp / 16sp / 12sp), referenced from 18 files in 60 call sites.
    So the metric scale has two spellings, one of them unused, and `valueMedium` disagrees with its live
    counterpart (22sp against 16sp). Not removed here: deleting a token object is a code change that
    belongs in its own reviewed task, and the honest first step is to say so.
