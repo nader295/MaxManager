@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "latest": {
+    "code": 2,
+    "name": "V2.1",
+    "url": "https://github.com/nader295/Max-Manger/releases/download/v2.1/MaxManager-V2.1.zip",
+    "sha256": "151ad0fdf612f55913b7a316fdd3fa1b909c7303826b2f7206b913e5952780b4",
+    "size": 23293633,
+    "notes": {
+      "en": "Fixed a bug causing continuous restarts, which led to overheating and excessive resource usage.\nGame Space now changes its color based on the active thermal profile.\nFixed notifications that were showing the wrong profile instead of the one actually applied.",
+      "ar": "إصلاح خطأ تسبب في إعادة التشغيل المستمرة، مما أدى إلى ارتفاع الحرارة والاستهلاك المفرط للموارد.\nأصبحت ألوان Game Space تتغير حسب ملف الحرارة النشط.\nإصلاح الإشعارات التي كانت تعرض ملفًا غير صحيح بدلًا من الملف المطبّق فعليًا."
+    },
+    "force": false,
+    "page": "https://github.com/nader295/Max-Manger/releases/tag/v2.1"
+  },
+  "minimum": {
+    "code": 0,
+    "notes": {
+      "en": "",
+      "ar": ""
+    }
+  },
+  "maintenance": {
+    "active": false,
+    "blocking": false,
+    "notes": {
+      "en": "",
+      "ar": ""
+    }
+  }
+}
