@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 28" width="960" height="28" role="img" aria-labelledby="dvt dvd">
+  <title id="dvt">Section divider</title>
+  <desc id="dvd">A thin line with a pulse travelling along it and a small mark in the middle.</desc>
+  <defs>
+    <linearGradient id="dv-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9BBACB" stop-opacity="0"/>
+      <stop offset="0.25" stop-color="#9BBACB" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#5AA9FF" stop-opacity="0.9"/>
+      <stop offset="0.75" stop-color="#9BBACB" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#9BBACB" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="40" y="13" width="880" height="2" rx="1" fill="url(#dv-line)"/>
+  <circle cx="480" cy="14" r="7" fill="none" stroke="#5AA9FF" stroke-width="1.8"/>
+  <circle cx="480" cy="14" r="3" fill="#5AA9FF">
+    <animate attributeName="opacity" values="1;0.35;1" keyTimes="0;0.5;1" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="450" cy="14" r="2" fill="#9BBACB" opacity="0.7"/>
+  <circle cx="510" cy="14" r="2" fill="#9BBACB" opacity="0.7"/>
+  <circle cx="40" cy="14" r="4.5" fill="#5AA9FF" opacity="0">
+    <animate attributeName="cx" values="40;920" keyTimes="0;1" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.95;0.95;0" keyTimes="0;0.12;0.88;1" dur="7s" repeatCount="indefinite"/>
+  </circle>
+</svg>

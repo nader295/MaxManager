@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 224" width="720" height="224" role="img" aria-labelledby="stt std">
+  <title id="stt">MaxManager بالأرقام</title>
+  <desc id="std">65 screens, 84 languages, ten control domains and zero telemetry — measured from the source tree where the tree can measure.</desc>
+  <defs>
+    <linearGradient id="st" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B242C"/>
+      <stop offset="1" stop-color="#101820"/>
+    </linearGradient>
+    <linearGradient id="st-card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#151F27"/>
+      <stop offset="1" stop-color="#0E1418"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.0" y="0.0" width="720.0" height="224.0" rx="22" fill="url(#st)" stroke="#243340" stroke-width="1.5"/>
+  <rect x="34.0" y="6.0" width="652.0" height="1.4" rx="0.7" fill="#E8F1F7" opacity="0.10"/>
+  <circle cx="360.0" cy="30.0" r="190.0" fill="#5AA9FF" opacity="0.03">
+    <animate attributeName="opacity" values="0.03;0.08;0.03" keyTimes="0;0.5;1" dur="10.0s" repeatCount="indefinite"/>
+  </circle>
+  <rect x="543.0" y="18" width="162" height="188" rx="18" fill="url(#st-card)" stroke="#243340" stroke-width="1.4"/>
+  <rect x="590.0" y="48.0" width="16" height="28" rx="4" fill="none" stroke="#9BBACB" stroke-width="2"/>
+  <rect x="593.0" y="51.0" width="10" height="16" rx="2" fill="#5AA9FF" opacity="0.30">
+    <animate attributeName="opacity" values="0.25;0.85;0.25" keyTimes="0;0.5;1" dur="4s" begin="0.0s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="613.0" y="43.0" width="22" height="38" rx="4" fill="none" stroke="#9BBACB" stroke-width="2"/>
+  <rect x="616.0" y="46.0" width="16" height="26" rx="2" fill="#5AA9FF" opacity="0.30">
+    <animate attributeName="opacity" values="0.25;0.85;0.25" keyTimes="0;0.5;1" dur="4s" begin="0.6s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="642.0" y="48.0" width="16" height="28" rx="4" fill="none" stroke="#9BBACB" stroke-width="2"/>
+  <rect x="645.0" y="51.0" width="10" height="16" rx="2" fill="#5AA9FF" opacity="0.30">
+    <animate attributeName="opacity" values="0.25;0.85;0.25" keyTimes="0;0.5;1" dur="4s" begin="1.2s" repeatCount="indefinite"/>
+  </rect>
+  <text x="624.0" y="136.0" font-size="54" fill="#E8F1F7" text-anchor="middle" font-weight="800" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">65</text>
+  <text x="624.0" y="182.0" font-size="22" fill="#93A9B8" text-anchor="middle" direction="rtl" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">شاشة</text>
+  <rect x="367.0" y="18" width="162" height="188" rx="18" fill="url(#st-card)" stroke="#243340" stroke-width="1.4"/>
+  <circle cx="448.0" cy="62.0" r="22" fill="none" stroke="#9BBACB" stroke-width="2"/>
+  <ellipse cx="448.0" cy="62.0" rx="9" ry="22" fill="none" stroke="#5AA9FF" stroke-width="2">
+    <animate attributeName="rx" values="9;20;9" keyTimes="0;0.5;1" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+  <path d="M426.0 62.0 H470.0" fill="none" stroke="#9BBACB" stroke-width="1.6" stroke-linecap="round"/>
+  <text x="448.0" y="136.0" font-size="54" fill="#E8F1F7" text-anchor="middle" font-weight="800" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">84</text>
+  <text x="448.0" y="182.0" font-size="22" fill="#93A9B8" text-anchor="middle" direction="rtl" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">لغة</text>
+  <rect x="191.0" y="18" width="162" height="188" rx="18" fill="url(#st-card)" stroke="#243340" stroke-width="1.4"/>
+  <circle cx="248.0" cy="56.0" r="4.4" fill="#5AA9FF" opacity="0.4">
+    <animate attributeName="opacity" values="0.35;1;0.35" keyTimes="0;0.5;1" dur="3.6s" begin="0.00s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="260.0" cy="56.0" r="4.4" fill="#5AA9FF" opacity="0.4">
+    <animate attributeName="opacity" values="0.35;1;0.35" keyTimes="0;0.5;1" dur="3.6s" begin="0.22s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="272.0" cy="56.0" r="4.4" fill="#5AA9FF" opacity="0.4">
+    <animate attributeName="opacity" values="0.35;1;0.35" keyTimes="0;0.5;1" dur="3.6s" begin="0.44s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="284.0" cy="56.0" r="4.4" fill="#5AA9FF" opacity="0.4">
+    <animate attributeName="opacity" values="0.35;1;0.35" keyTimes="0;0.5;1" dur="3.6s" begin="0.66s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="296.0" cy="56.0" r="4.4" fill="#5AA9FF" opacity="0.4">
+    <animate attributeName="opacity" values="0.35;1;0.35" keyTimes="0;0.5;1" dur="3.6s" begin="0.88s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="248.0" cy="70.0" r="4.4" fill="#5AA9FF" opacity="0.4">
+    <animate attributeName="opacity" values="0.35;1;0.35" keyTimes="0;0.5;1" dur="3.6s" begin="1.10s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="260.0" cy="70.0" r="4.4" fill="#5AA9FF" opacity="0.4">
+    <animate attributeName="opacity" values="0.35;1;0.35" keyTimes="0;0.5;1" dur="3.6s" begin="1.32s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="272.0" cy="70.0" r="4.4" fill="#5AA9FF" opacity="0.4">
+    <animate attributeName="opacity" values="0.35;1;0.35" keyTimes="0;0.5;1" dur="3.6s" begin="1.54s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="284.0" cy="70.0" r="4.4" fill="#5AA9FF" opacity="0.4">
+    <animate attributeName="opacity" values="0.35;1;0.35" keyTimes="0;0.5;1" dur="3.6s" begin="1.76s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="296.0" cy="70.0" r="4.4" fill="#5AA9FF" opacity="0.4">
+    <animate attributeName="opacity" values="0.35;1;0.35" keyTimes="0;0.5;1" dur="3.6s" begin="1.98s" repeatCount="indefinite"/>
+  </circle>
+  <text x="272.0" y="136.0" font-size="54" fill="#E8F1F7" text-anchor="middle" font-weight="800" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">10</text>
+  <text x="272.0" y="182.0" font-size="22" fill="#93A9B8" text-anchor="middle" direction="rtl" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">مجالات ضبط</text>
+  <rect x="15.0" y="18" width="162" height="188" rx="18" fill="url(#st-card)" stroke="#243340" stroke-width="1.4"/>
+  <circle cx="96.0" cy="62.0" r="8" fill="none" stroke="#9BBACB" stroke-width="2" opacity="0.85"/>
+  <circle cx="96.0" cy="62.0" r="16" fill="none" stroke="#9BBACB" stroke-width="2" opacity="0.6"/>
+  <circle cx="96.0" cy="62.0" r="24" fill="none" stroke="#9BBACB" stroke-width="2" opacity="0.38"/>
+  <circle cx="96.0" cy="62.0" r="3.4" fill="#9BBACB"/>
+  <path d="M71.0 87.0 L121.0 37.0" fill="none" stroke="#D99A6C" stroke-width="3.4" stroke-linecap="round" stroke-dasharray="71" stroke-dashoffset="0">
+    <animate attributeName="stroke-dashoffset" values="71;0;0;71" keyTimes="0;0.2;0.85;1" dur="7s" repeatCount="indefinite"/>
+  </path>
+  <text x="96.0" y="136.0" font-size="54" fill="#5AA9FF" text-anchor="middle" font-weight="800" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">0</text>
+  <text x="96.0" y="182.0" font-size="22" fill="#93A9B8" text-anchor="middle" direction="rtl" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">قياس عن بُعد</text>
+</svg>

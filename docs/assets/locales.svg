@@ -9,7 +9,7 @@
   </defs>
   <rect x="0.0" y="0.0" width="720.0" height="300.0" rx="22" fill="url(#lo)" stroke="#243340" stroke-width="1.5"/>
   <rect x="34.0" y="6.0" width="652.0" height="1.4" rx="0.7" fill="#E8F1F7" opacity="0.10"/>
-  <circle cx="614.0" cy="74.0" r="152.0" fill="#5FD9AC" opacity="0.04">
+  <circle cx="614.0" cy="74.0" r="152.0" fill="#5AA9FF" opacity="0.04">
     <animate attributeName="opacity" values="0.04;0.09;0.04" keyTimes="0;0.5;1" dur="10.0s" repeatCount="indefinite"/>
   </circle>
   <text x="36.0" y="62.0" font-size="38" fill="#E8F1F7" font-weight="700" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">84 languages</text>

@@ -1,46 +1,96 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-labelledby="bt bd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" width="960" height="360" role="img" aria-labelledby="bt bd">
   <title id="bt">MaxManager — performance control that asks before it acts</title>
-  <desc id="bd">MaxManager, adaptive chip-aware performance control for rooted Android, with Max AI and Max Atlas, in 84 languages, and with no telemetry.</desc>
+  <desc id="bd">MaxManager, adaptive chip-aware performance control for rooted Android, with Max AI and Max Atlas, in 84 languages, and with no telemetry. A shield with a tick turns in a slow orbit beside the name.</desc>
   <defs>
     <linearGradient id="bn" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#1B242C"/>
       <stop offset="1" stop-color="#101820"/>
     </linearGradient>
-  </defs>
-  <defs>
+    <linearGradient id="bn-glare" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#BBDCFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#BBDCFF" stop-opacity="0.11"/>
+      <stop offset="1" stop-color="#BBDCFF" stop-opacity="0"/>
+    </linearGradient>
     <clipPath id="bn-wipe">
-      <rect x="40" y="44" width="480" height="88">
-        <animate attributeName="width" values="0;480" keyTimes="0;1" dur="1.3s" repeatCount="1" fill="freeze"/>
+      <rect x="40" y="44" width="520" height="96">
+        <animate attributeName="width" values="0;520" keyTimes="0;1" dur="1.3s" repeatCount="1" fill="freeze"/>
       </rect>
     </clipPath>
   </defs>
-  <rect x="0.0" y="0.0" width="960.0" height="280.0" rx="22" fill="url(#bn)" stroke="#243340" stroke-width="1.5"/>
+  <rect x="0.0" y="0.0" width="960.0" height="360.0" rx="22" fill="url(#bn)" stroke="#243340" stroke-width="1.5"/>
   <rect x="34.0" y="6.0" width="892.0" height="1.4" rx="0.7" fill="#E8F1F7" opacity="0.10"/>
-  <circle cx="838.0" cy="58.0" r="150.0" fill="#5FD9AC" opacity="0.06">
-    <animate attributeName="opacity" values="0.06;0.13;0.06" keyTimes="0;0.5;1" dur="9.0s" repeatCount="indefinite"/>
+  <circle cx="832.0" cy="182.0" r="150.0" fill="#5AA9FF" opacity="0.06">
+    <animate attributeName="opacity" values="0.06;0.14;0.06" keyTimes="0;0.5;1" dur="9.0s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="772.0" cy="238.0" r="112.0" fill="#9BBACB" opacity="0.05">
-    <animate attributeName="opacity" values="0.05;0.11;0.05" keyTimes="0;0.5;1" dur="11.0s" repeatCount="indefinite"/>
+  <circle cx="150.0" cy="330.0" r="170.0" fill="#9BBACB" opacity="0.04">
+    <animate attributeName="opacity" values="0.04;0.09;0.04" keyTimes="0;0.5;1" dur="12.0s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="880" cy="140" r="62" fill="none" stroke="#9BBACB" stroke-width="1.4" opacity="0.42"/>
-  <circle cx="880" cy="140" r="46" fill="none" stroke="#243340" stroke-width="1.4"/>
-  <circle cx="880" cy="140" r="38" fill="#5FD9AC" opacity="0.08">
-    <animate attributeName="opacity" values="0.06;0.14;0.06" keyTimes="0;0.5;1" dur="7s" repeatCount="indefinite"/>
+  <circle cx="832" cy="182" r="82" fill="none" stroke="#243340" stroke-width="1.6"/>
+  <circle cx="832" cy="182" r="60" fill="#5AA9FF" opacity="0.08">
+    <animate attributeName="opacity" values="0.06;0.15;0.06" keyTimes="0;0.5;1" dur="7s" repeatCount="indefinite"/>
   </circle>
-  <path d="M880 106 910 117v22c0 16-12 28-30 34-18-6-30-18-30-34v-22z" fill="none" stroke="#9BBACB" stroke-width="2.6" opacity="0.85"/>
-  <path d="M866 140 876 150 896 128" fill="none" stroke="#5FD9AC" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="48" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" values="48;0;0;48" keyTimes="0;0.14;0.86;1" dur="9.6s" begin="0.0s" repeatCount="indefinite"/>
-  </path>
-  <circle cx="880.0" cy="78.0" r="5.5" fill="#5FD9AC" opacity="0">
-    <animate attributeName="opacity" values="0;0;1;0.55;0" keyTimes="0;0.90;0.94;0.97;1" dur="6.0s" repeatCount="indefinite"/>
-  </circle>
-  <g clip-path="url(#bn-wipe)">
-  <text x="40.0" y="112.0" font-size="60" fill="#E8F1F7" font-weight="800" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">MaxManager</text>
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="0 832 182;360 832 182" keyTimes="0;1" dur="48s" repeatCount="indefinite"/>
+    <circle cx="832" cy="182" r="116" fill="none" stroke="#9BBACB" stroke-width="1.6" stroke-dasharray="2 9" stroke-linecap="round" opacity="0.55"/>
+    <circle cx="726.9" cy="133.0" r="7" fill="#5AA9FF" opacity="1.0"/>
+    <circle cx="927.0" cy="115.5" r="5.5" fill="#9BBACB" opacity="1.0"/>
+    <circle cx="821.9" cy="297.6" r="5" fill="#D99A6C" opacity="1.0"/>
   </g>
-  <rect x="40.0" y="130.0" width="96" height="6" rx="3.0" fill="#5FD9AC">
-    <animate attributeName="width" values="96;230;230;96" keyTimes="0;0.16;0.84;1" dur="8s" repeatCount="indefinite"/>
-    <animate attributeName="fill" values="#5FD9AC;#A8F0D6;#5FD9AC" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite"/>
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="360 832 182;0 832 182" keyTimes="0;1" dur="34s" repeatCount="indefinite"/>
+    <circle cx="832" cy="182" r="94" fill="none" stroke="#5AA9FF" stroke-width="1.8" stroke-dasharray="16 22" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <path d="M832.0 142.9 L866.5 155.6 L866.5 180.8 C866.5 199.2 852.7 213.1 832.0 219.9 C811.3 213.1 797.5 199.2 797.5 180.8 L797.5 155.6 Z" fill="#101820" fill-opacity="0.55" stroke="#9BBACB" stroke-width="3" stroke-linejoin="round" opacity="0.95"/>
+  <path d="M816.0 184.0 L828.0 196.0 L851.0 170.0" fill="none" stroke="#5AA9FF" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="62" stroke-dashoffset="0">
+    <animate attributeName="stroke-dashoffset" values="62;0;0;62" keyTimes="0;0.14;0.86;1" dur="9.6s" begin="0.0s" repeatCount="indefinite"/>
+  </path>
+  <circle cx="716" cy="64" r="2.6" fill="#5AA9FF" opacity="0.18">
+    <animate attributeName="opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="5.0s" begin="0.0s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="926" cy="78" r="2.2" fill="#9BBACB" opacity="0.18">
+    <animate attributeName="opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6.0s" begin="1.4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="930" cy="296" r="2.8" fill="#5AA9FF" opacity="0.18">
+    <animate attributeName="opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="5.5s" begin="2.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="712" cy="304" r="2.2" fill="#D99A6C" opacity="0.18">
+    <animate attributeName="opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6.5s" begin="0.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="790" cy="36" r="2.0" fill="#9BBACB" opacity="0.18">
+    <animate attributeName="opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="5.0s" begin="3.0s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="880" cy="328" r="2.0" fill="#5AA9FF" opacity="0.18">
+    <animate attributeName="opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6.0s" begin="1.9s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="698" cy="186" r="2.4" fill="#9BBACB" opacity="0.18">
+    <animate attributeName="opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="5.5s" begin="2.6s" repeatCount="indefinite"/>
+  </circle>
+  <rect x="12" y="18" width="120" height="324" fill="url(#bn-glare)" opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 0;820 0;820 0" keyTimes="0;0.55;0.8;1" dur="11s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.55;0.58;0.77;0.8;1" dur="11s" repeatCount="indefinite"/>
   </rect>
-  <text x="40.0" y="190.0" font-size="31" fill="#9BBACB" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">Performance control that asks before it acts.</text>
-  <text x="40.0" y="234.0" font-size="28" fill="#93A9B8" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">Every switch you see works here — or it is not shown.</text>
+  <g clip-path="url(#bn-wipe)">
+  <text x="40.0" y="112.0" font-size="64" fill="#E8F1F7" font-weight="800" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">MaxManager</text>
+  </g>
+  <rect x="40.0" y="136.0" width="96" height="6" rx="3.0" fill="#5AA9FF">
+    <animate attributeName="width" values="96;230;230;96" keyTimes="0;0.16;0.84;1" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="fill" values="#5AA9FF;#BBDCFF;#5AA9FF" keyTimes="0;0.5;1" dur="8s" repeatCount="indefinite"/>
+  </rect>
+  <g>
+    <animate attributeName="opacity" values="0;0;1" keyTimes="0;0.4;1" dur="1.4s" begin="0s" fill="freeze"/>
+    <text x="40.0" y="196.0" font-size="36" fill="#9BBACB" font-weight="600" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">Performance control that</text>
+  </g>
+  <g>
+    <animate attributeName="opacity" values="0;0;1" keyTimes="0;0.4;1" dur="1.4s" begin="0s" fill="freeze"/>
+    <text x="40.0" y="240.0" font-size="36" fill="#9BBACB" font-weight="600" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">asks before it acts.</text>
+  </g>
+  <rect x="40.0" y="268.0" width="184.8" height="46.0" rx="23.0" fill="#5AA9FF" opacity="0.10"/>
+  <rect x="40.0" y="268.0" width="184.8" height="46.0" rx="23.0" fill="none" stroke="#5AA9FF" stroke-width="1.2" opacity="0.40"/>
+  <text x="132.4" y="300.2" font-size="28" fill="#5AA9FF" text-anchor="middle" font-weight="600" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">65 screens</text>
+  <rect x="238.8" y="268.0" width="216.2" height="46.0" rx="23.0" fill="#9BBACB" opacity="0.10"/>
+  <rect x="238.8" y="268.0" width="216.2" height="46.0" rx="23.0" fill="none" stroke="#9BBACB" stroke-width="1.2" opacity="0.40"/>
+  <text x="346.9" y="300.2" font-size="28" fill="#9BBACB" text-anchor="middle" font-weight="600" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">84 languages</text>
+  <rect x="469.0" y="268.0" width="216.2" height="46.0" rx="23.0" fill="#D99A6C" opacity="0.10"/>
+  <rect x="469.0" y="268.0" width="216.2" height="46.0" rx="23.0" fill="none" stroke="#D99A6C" stroke-width="1.2" opacity="0.40"/>
+  <text x="577.0" y="300.2" font-size="28" fill="#D99A6C" text-anchor="middle" font-weight="600" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">No telemetry</text>
 </svg>

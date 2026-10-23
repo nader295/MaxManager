@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 236" width="720" height="236" role="img" aria-labelledby="int ind">
+  <title id="int">Install in four steps</title>
+  <desc id="ind">Flash the module in Magisk or KernelSU, reboot, grant MaxManager root when your root manager asks, then open the app and walk through setup.</desc>
+  <defs>
+    <linearGradient id="in" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B242C"/>
+      <stop offset="1" stop-color="#101820"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.0" y="0.0" width="720.0" height="236.0" rx="22" fill="url(#in)" stroke="#243340" stroke-width="1.5"/>
+  <rect x="34.0" y="6.0" width="652.0" height="1.4" rx="0.7" fill="#E8F1F7" opacity="0.10"/>
+  <circle cx="360.0" cy="80.0" r="200.0" fill="#5AA9FF" opacity="0.03">
+    <animate attributeName="opacity" values="0.03;0.08;0.03" keyTimes="0;0.5;1" dur="10.0s" repeatCount="indefinite"/>
+  </circle>
+  <path d="M146.0 72.0 H238.0" fill="none" stroke="#9BBACB" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="4 10" stroke-dashoffset="0" opacity="0.8">
+    <animate attributeName="stroke-dashoffset" values="0;-28" keyTimes="0;1" dur="1.6s" repeatCount="indefinite"/>
+  </path>
+  <path d="M314.0 72.0 H406.0" fill="none" stroke="#9BBACB" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="4 10" stroke-dashoffset="0" opacity="0.8">
+    <animate attributeName="stroke-dashoffset" values="0;-28" keyTimes="0;1" dur="1.6s" repeatCount="indefinite"/>
+  </path>
+  <path d="M482.0 72.0 H574.0" fill="none" stroke="#9BBACB" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="4 10" stroke-dashoffset="0" opacity="0.8">
+    <animate attributeName="stroke-dashoffset" values="0;-28" keyTimes="0;1" dur="1.6s" repeatCount="indefinite"/>
+  </path>
+  <circle cx="108.0" cy="72.0" r="6.5" fill="#5AA9FF">
+    <animate attributeName="cx" values="108.0;276.0;444.0;612.0;612.0" keyTimes="0;0.27;0.54;0.81;1" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="108.0" cy="72.0" r="32" fill="#101820" stroke="#5AA9FF" stroke-width="2.4"/>
+  <circle cx="108.0" cy="72.0" r="28" fill="#5AA9FF" opacity="0">
+    <animate attributeName="opacity" values="0;0.3;0" keyTimes="0;0.5;1" dur="8s" begin="-4.00s" repeatCount="indefinite"/>
+  </circle>
+  <text x="108.0" y="83.0" font-size="30" fill="#E8F1F7" text-anchor="middle" font-weight="800" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">1</text>
+  <text x="108.0" y="152.0" font-size="24" fill="#E8F1F7" text-anchor="middle" font-weight="700" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">Flash</text>
+  <text x="108.0" y="184.0" font-size="21" fill="#93A9B8" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">in Magisk or</text>
+  <text x="108.0" y="210.0" font-size="21" fill="#93A9B8" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">KernelSU</text>
+  <circle cx="276.0" cy="72.0" r="32" fill="#101820" stroke="#5AA9FF" stroke-width="2.4"/>
+  <circle cx="276.0" cy="72.0" r="28" fill="#5AA9FF" opacity="0">
+    <animate attributeName="opacity" values="0;0.3;0" keyTimes="0;0.5;1" dur="8s" begin="-1.84s" repeatCount="indefinite"/>
+  </circle>
+  <text x="276.0" y="83.0" font-size="30" fill="#E8F1F7" text-anchor="middle" font-weight="800" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">2</text>
+  <text x="276.0" y="152.0" font-size="24" fill="#E8F1F7" text-anchor="middle" font-weight="700" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">Reboot</text>
+  <text x="276.0" y="184.0" font-size="21" fill="#93A9B8" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">Fully</text>
+  <text x="276.0" y="210.0" font-size="21" fill="#93A9B8" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">reversible</text>
+  <circle cx="444.0" cy="72.0" r="32" fill="#101820" stroke="#5AA9FF" stroke-width="2.4"/>
+  <circle cx="444.0" cy="72.0" r="28" fill="#5AA9FF" opacity="0">
+    <animate attributeName="opacity" values="0;0.3;0" keyTimes="0;0.5;1" dur="8s" begin="0.32s" repeatCount="indefinite"/>
+  </circle>
+  <text x="444.0" y="83.0" font-size="30" fill="#E8F1F7" text-anchor="middle" font-weight="800" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">3</text>
+  <text x="444.0" y="152.0" font-size="24" fill="#E8F1F7" text-anchor="middle" font-weight="700" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">Grant root</text>
+  <text x="444.0" y="184.0" font-size="21" fill="#93A9B8" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">Accept the</text>
+  <text x="444.0" y="210.0" font-size="21" fill="#93A9B8" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">root prompt</text>
+  <circle cx="612.0" cy="72.0" r="32" fill="#101820" stroke="#5AA9FF" stroke-width="2.4"/>
+  <circle cx="612.0" cy="72.0" r="28" fill="#5AA9FF" opacity="0">
+    <animate attributeName="opacity" values="0;0.3;0" keyTimes="0;0.5;1" dur="8s" begin="2.48s" repeatCount="indefinite"/>
+  </circle>
+  <text x="612.0" y="83.0" font-size="30" fill="#E8F1F7" text-anchor="middle" font-weight="800" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">4</text>
+  <text x="612.0" y="152.0" font-size="24" fill="#E8F1F7" text-anchor="middle" font-weight="700" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">Open the app</text>
+  <text x="612.0" y="184.0" font-size="21" fill="#93A9B8" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">Setup reads</text>
+  <text x="612.0" y="210.0" font-size="21" fill="#93A9B8" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">your device</text>
+</svg>
