@@ -52,7 +52,7 @@
       "thumb_width": 260,
       "expected": { "width": 1280, "height": 576 },
       "frames": [
-        { "stem": "70-game-lobby", "route": "gamelobby", "en": "Game lobby", "ar": "لوبي الألعاب" },
+        { "stem": "70-game-lobby", "route": "gamelobby", "en": "Game lobby", "ar": "لوبي الألعاب", "animated": "70-game-lobby.webp" },
         { "stem": "71-game-launch", "route": "gamelobby", "en": "Launching", "ar": "بدء التشغيل" },
         { "stem": "72-game-panel", "route": "gamelobby", "en": "Side panel", "ar": "اللوحة الجانبية" }
       ]

@@ -171,7 +171,7 @@ maintainer works from.
 | 67 | `67-file-manager.png` | مدير الملفات | `filemanager` |
 | 68 | `68-task-monitor.png` | مراقب المهام | `processmanager` |
 | 69 | `69-audio-studio.png` | استوديو الصوت | `audio_studio` |
-| 70 | `70-game-lobby.png` | لوبي الألعاب — أفقية | `gamelobby` |
+| 70 | `70-game-lobby.png` · `70-game-lobby.webp` | لوبي الألعاب — أفقية (ولقطة متحركة ٢٠ ثانية) | `gamelobby` |
 | 71 | `71-game-launch.png` | بدء تشغيل اللعبة — أفقية | `gamelobby` |
 | 72 | `72-game-panel.png` | اللوحة الجانبية أثناء اللعب — أفقية | `gamelobby` |
 
