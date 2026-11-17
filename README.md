@@ -146,7 +146,7 @@ when something breaks you find out later. MaxManager is built the other way roun
 
 <table>
   <tr>
-    <td align="center" width="33%"><a href="docs/screenshots/70-game-lobby.png"><img src="docs/screenshots/70-game-lobby.png" width="260" alt="MaxManager — Game lobby"></a><br><sub><b>Game lobby</b></sub></td>
+    <td align="center" width="33%"><a href="docs/screenshots/70-game-lobby.webp"><img src="docs/screenshots/70-game-lobby.webp" width="260" alt="MaxManager — Game lobby"></a><br><sub><b>Game lobby</b></sub></td>
     <td align="center" width="33%"><a href="docs/screenshots/71-game-launch.png"><img src="docs/screenshots/71-game-launch.png" width="260" alt="MaxManager — Launching"></a><br><sub><b>Launching</b></sub></td>
     <td align="center" width="33%"><a href="docs/screenshots/72-game-panel.png"><img src="docs/screenshots/72-game-panel.png" width="260" alt="MaxManager — Side panel"></a><br><sub><b>Side panel</b></sub></td>
   </tr>

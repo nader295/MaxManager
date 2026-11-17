@@ -146,7 +146,7 @@ MaxManager مبنيّ بالاتجاه المعاكس — على أربع قوا
 
 <table>
   <tr>
-    <td align="center" width="33%"><a href="docs/screenshots/70-game-lobby.png"><img src="docs/screenshots/70-game-lobby.png" width="260" alt="MaxManager — لوبي الألعاب"></a><br><sub><b>لوبي الألعاب</b></sub></td>
+    <td align="center" width="33%"><a href="docs/screenshots/70-game-lobby.webp"><img src="docs/screenshots/70-game-lobby.webp" width="260" alt="MaxManager — لوبي الألعاب"></a><br><sub><b>لوبي الألعاب</b></sub></td>
     <td align="center" width="33%"><a href="docs/screenshots/71-game-launch.png"><img src="docs/screenshots/71-game-launch.png" width="260" alt="MaxManager — بدء التشغيل"></a><br><sub><b>بدء التشغيل</b></sub></td>
     <td align="center" width="33%"><a href="docs/screenshots/72-game-panel.png"><img src="docs/screenshots/72-game-panel.png" width="260" alt="MaxManager — اللوحة الجانبية"></a><br><sub><b>اللوحة الجانبية</b></sub></td>
   </tr>
