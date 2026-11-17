@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>‏MaxManager — تحكّم في الأداء، مع الدليل</title>
-<meta name="description" content="‏MaxManager وحدة بلا لمس النظام لأندرويد بصلاحيات الجذر. يقرأ الواجهات التي يعرضها جهازك، ويكتب عبر مسار واحد مُدقّق، ويعيد قراءة كل تغيير، ويعرض القيمة المجهولة مجهولة — لا صفرًا مقنعًا.">
+<title>‏MaxManager — تحكّم في أداء أندرويد بصلاحيات الجذر</title>
+<meta name="description" content="‏MaxManager مدير أداء لأندرويد بصلاحيات الجذر: تحكّم في المعالج والرسوميات والذاكرة والحرارة والبطارية، ومسار كتابة واحد مُدقّق، وتحقّق من كل تغيير.">
 <meta name="theme-color" content="#f2f4ef" data-theme-color>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://nader295.github.io/MaxManager/ar/">
@@ -13,10 +13,12 @@
 <link rel="alternate" hreflang="x-default" href="https://nader295.github.io/MaxManager/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%230038ff'/%3E%3Cpath%20d='M8%2023V9l8%2010%208-10v14'%20fill='none'%20stroke='%23fff'%20stroke-width='2.4'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="../site/site.css">
+<link rel="sitemap" type="application/xml" href="https://nader295.github.io/MaxManager/sitemap.xml">
+<link rel="preload" as="image" href="../screenshots/thumbs/02-now-home.webp" type="image/webp" fetchpriority="high">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MaxManager">
-<meta property="og:title" content="‏MaxManager — تحكّم في الأداء، مع الدليل">
-<meta property="og:description" content="مسار كتابة واحد مُدقّق، وقراءة مرتجعة، وأنماط لكل تطبيق، وstatus_unknown بدل صفر مقنع.">
+<meta property="og:title" content="‏MaxManager — تحكّم في أداء أندرويد بصلاحيات الجذر">
+<meta property="og:description" content="مدير أداء بصلاحيات الجذر: مسار كتابة واحد مُدقّق، وقراءة مرتجعة، وأنماط لكل تطبيق، وstatus_unknown بدل صفر مقنع.">
 <meta property="og:url" content="https://nader295.github.io/MaxManager/ar/">
 <meta property="og:image" content="https://nader295.github.io/MaxManager/store/feature-ar.png">
 <meta property="og:image:width" content="1024">
@@ -25,8 +27,8 @@
 <meta property="og:locale" content="ar_AR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="‏MaxManager — تحكّم في الأداء، مع الدليل">
-<meta name="twitter:description" content="مسار كتابة واحد مُدقّق، وقراءة مرتجعة، وstatus_unknown بدل صفر مقنع.">
+<meta name="twitter:title" content="‏MaxManager — تحكّم في أداء أندرويد بصلاحيات الجذر">
+<meta name="twitter:description" content="مدير أداء بصلاحيات الجذر: مسار كتابة واحد مُدقّق، وقراءة مرتجعة، وstatus_unknown بدل صفر مقنع.">
 <meta name="twitter:image" content="https://nader295.github.io/MaxManager/store/feature-ar.png">
 <script type="application/ld+json">
 {
@@ -102,6 +104,40 @@
  ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://nader295.github.io/MaxManager/ar/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "هل يحتاج إلى جذر؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "نعم، لمستوى التحكّم الكامل. MaxManager وحدة بلا لمس النظام لـMagisk أو KernelSU: يصل التطبيق إلى النواة عبر جسر جذر واحد مُدقّق، وتعمل الخدمات كعمليات في جانب النظام. ويُكتشف Shizuku أيضًا ويفتح عدة أدوات قراءة وكتابة، لكنه ليس بديلًا عن الوحدة." }
+    },
+    {
+      "@type": "Question",
+      "name": "ماذا يستطيع مدير أداء بصلاحيات الجذر أن يغيّر؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "يعرض MaxManager ما تنشره النواة فعلًا: حدود تردد المعالج والرسوميات، والمحكّمات، وسلوك الذاكرة وZRAM، ومعدّل التحديث، وزمن اللمس والجدولة، وقراءات الحرارة، والشحن وصحّة البطارية، وإعدادات الشبكة، وتصريف ART. ولا يبتكر مفتاحًا حين تغيب الواجهة، ويُقرأ كل تغيير مقبول من الجهاز." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يجعل الألعاب أسرع؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "يمكنه إزالة الحدود القابلة للإزالة وتطبيق نمط لكل تطبيق أثناء وجود اللعبة في المقدمة: حدود المعالج والرسوميات، وإعدادات الجدولة واللمس، وسياسة تراعي الحرارة. ولا يستطيع أن يجعل هاتفًا ساخنًا باردًا أو أن يعد بمعدّل إطارات لا يحتمله العتاد. النتيجة التي تراها هي المقيسة، وتبقى status_unknown ظاهرة حين لا يجيب الجهاز." }
+    },
+    {
+      "@type": "Question",
+      "name": "لماذا تظهر قيمة مجهولة status_unknown بدل 0؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لأن 0 ادّعاء. المشروع يمنع التليمتري المُصنَّع: عندما لا يعرف، يقول ذلك بدل عرض صفر يبدو معقولًا." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يرسل بياناتي إلى مكان ما؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا قياس عن بُعد، ولا تحليلات، ولا رفع صامت. تقرير التشخيص يُبنى محليًّا ويُقلَّل، ولا يغادر جهازك إلا إذا سلّمت الملف بنفسك." }
+    }
+  ]
+}
+</script>
 </head>
 <body id="top">
 <a class="skip" href="#main">تجاوز إلى المحتوى</a>
@@ -164,8 +200,8 @@
   <section class="hero" id="hero" aria-labelledby="hero-title">
     <div class="shell hero__grid">
       <div class="hero__copy">
-        <h1 class="hero__title" id="hero-title">تحكّم في الأداء، <em>مع الدليل.</em></h1>
-        <p class="hero__lede">يقرأ MaxManager الواجهات التي يكشفها نواتك فعلًا، ويكتب عبر مسار واحد مُدقّق، ثم يعيد قراءة كل تغيير من الجهاز. وإن لم يستقرّ التغيير، سترى ذلك — لا علامة نجاح خضراء.</p>
+        <h1 class="hero__title" id="hero-title">تحكّم في أداء أندرويد بصلاحيات الجذر، <em>مع الدليل.</em></h1>
+        <p class="hero__lede">‏MaxManager مدير أداء لأندرويد بصلاحيات الجذر. يقرأ واجهات النواة التي يكشفها هاتفك فعلًا، ويكتب عبر مسار واحد مُدقّق، ثم يعيد قراءة كل تغيير من الجهاز. وإن لم يستقرّ التغيير، سترى ذلك — لا علامة نجاح خضراء.</p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="#install">ثبّت الوحدة</a>
           <a class="index-link" href="#screens">انظر الشاشات</a>
@@ -181,7 +217,7 @@
         <span class="hero__ghost" aria-hidden="true">v5.0</span>
         <span class="stage-label" aria-hidden="true">لقطة حقيقية</span>
         <figure class="phone phone--main">
-          <img src="../screenshots/02-now-home.png" width="1162" height="2480" fetchpriority="high" decoding="async" alt="شاشة الرئيسية: إجراءات سريعة فوق قراءات حيّة للجهد والأنوية المتصلة وهامش التقييد وضغط الذاكرة وسرعة التنزيل ومعدّل التحديث.">
+          <img src="../screenshots/thumbs/02-now-home.webp" width="640" height="1366" fetchpriority="high" decoding="async" alt="شاشة الرئيسية: إجراءات سريعة فوق قراءات حيّة للجهد والأنوية المتصلة وهامش التقييد وضغط الذاكرة وسرعة التنزيل ومعدّل التحديث.">
         </figure>
         <p class="capture">الرئيسية، اللقطة ٠٢ من ٨٨</p>
       </div>
@@ -709,7 +745,7 @@
             <li class="install-step">
               <span class="install-step__n">٠١</span>
               <h3>احصل على الوحدة</h3>
-              <p>نزّل <code>MaxManager-&lt;version&gt;.zip</code> من آخر تشغيل ناجح أو من إصدار. لا تثبّت <code>MaxManager-developer-bundle.zip</code> — ذلك لمطوّري ROM.</p>
+              <p>نزّل وحدة <code>.zip</code> من <a href="https://github.com/nader295/MaxManager/releases/latest">أحدث إصدار</a> أو من آخر تشغيل ناجح. لا تثبّت <code>MaxManager-developer-bundle.zip</code> — ذلك لمطوّري ROM.</p>
             </li>
             <li class="install-step">
               <span class="install-step__n">٠٢</span>
@@ -745,7 +781,8 @@
 
         <aside class="aside-box">
           <h3>من أين يأتي البناء</h3>
-          <p>CI هو مسار البناء، وكل إصدار يُنشر <a href="https://github.com/nader295/MaxManager/releases">هنا</a> ومعه وحدته القابلة للفلاش وحزمة المطوّر والمجاميع. ومخرجات سير العمل من آخر تشغيل ناجح بديلٌ حين تريد البناء الذي لم يُنشر بعد.</p>
+          <p>كل إصدار يُنشر <a href="https://github.com/nader295/MaxManager/releases">على صفحة الإصدارات</a> ومعه الوحدة القابلة للتفليش وحزمة التطبيق وملفات التحقّق. وتبقى مخرجات CI بديلًا لبناء لم يُنشر بعد.</p>
+          <a class="btn btn--primary" href="https://github.com/nader295/MaxManager/releases/latest">نزّل أحدث إصدار</a>
           <a class="btn btn--line" href="https://github.com/PanditJi-9/Xx/actions/workflows/build.yml">تشغيلات سير العمل</a>
           <a class="btn btn--line" href="https://github.com/nader295/MaxManager/blob/main/docs/building.md#releases">البناء والإصدارات</a>
         </aside>
@@ -848,6 +885,18 @@
         <details>
           <summary>هل سيعمل على هاتفي؟</summary>
           <div class="faq__body"><p>غالبًا — لكنك لا تحتاج إلى التخمين. يحلّ MaxManager القدرات لكل واجهة قبل عرض أي شيء، فالمقبض الذي لا يكشفه جهازك لا يظهر أبدًا كمفتاح لا يفعل شيئًا. افتحه واقرأ الخريطة: ذلك الجواب عن هاتفك، وهو أفضل من أي قائمة.</p></div>
+        </details>
+        <details>
+          <summary>ماذا يستطيع مدير أداء بصلاحيات الجذر أن يغيّر؟</summary>
+          <div class="faq__body"><p>يعرض MaxManager ما تنشره النواة فعلًا: حدود تردد المعالج والرسوميات، والمحكّمات، وسلوك الذاكرة وZRAM، ومعدّل التحديث، وزمن اللمس والجدولة، وقراءات الحرارة، والشحن وصحّة البطارية، وإعدادات الشبكة، وتصريف ART. ولا يبتكر مفتاحًا حين تغيب الواجهة، ويُقرأ كل تغيير مقبول من الجهاز.</p></div>
+        </details>
+        <details>
+          <summary>هل يجعل الألعاب أسرع؟</summary>
+          <div class="faq__body"><p>يمكنه إزالة الحدود القابلة للإزالة وتطبيق نمط لكل تطبيق أثناء وجود اللعبة في المقدمة: حدود المعالج والرسوميات، وإعدادات الجدولة واللمس، وسياسة تراعي الحرارة. ولا يستطيع أن يجعل هاتفًا ساخنًا باردًا أو أن يعد بمعدّل إطارات لا يحتمله العتاد. النتيجة التي تراها هي المقيسة، وتبقى <code>status_unknown</code> ظاهرة حين لا يجيب الجهاز.</p></div>
+        </details>
+        <details>
+          <summary>هل يساعد على عمر البطارية؟</summary>
+          <div class="faq__body"><p>يمنحك المقابض التي تؤثّر في الطاقة — سقف الشحن، والشحن بالتجاوز، والخمول، وسلوك النوم، وسياسة كل تطبيق — ويعرض أثرها المقيس بدل نسبة تسويقية. ومقدار ما توفّره من البطارية يعتمد على جهازك وROM وما تغيّره فعلًا.</p></div>
         </details>
         <details>
           <summary>هل Max AI مفعّل افتراضيًّا؟</summary>

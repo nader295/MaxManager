@@ -1,0 +1,75 @@
+name: Feature request
+description: Propose a control, workflow, or usability improvement.
+title: "[Feature] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A useful request starts with the problem, not only the control. Explain what you are trying to do and what the app currently makes difficult.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Max AI
+        - CPU or GPU
+        - Memory or ZRAM
+        - Thermal or power
+        - Display or responsiveness
+        - Per-app profiles
+        - Game Space
+        - Diagnostics and reports
+        - Interface, language, or accessibility
+        - Documentation or repository
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do, and where does the current behaviour get in the way?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: Describe the smallest change that would solve the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Existing controls, profiles, or workarounds you tried.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: safety
+    attributes:
+      label: Does this touch a protected or hardware-sensitive area?
+      options:
+        - "No — interface or documentation only"
+        - "Yes — performance or thermal behaviour"
+        - "Yes — root, SELinux, boot, or storage"
+        - Not sure
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: I understand that an unavailable control stays absent rather than becoming a switch that does nothing.
+          required: true
+        - label: I am not asking for a fabricated benchmark, telemetry, or a success claim without verification.
+          required: true

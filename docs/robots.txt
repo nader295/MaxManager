@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nader295.github.io/MaxManager/sitemap.xml

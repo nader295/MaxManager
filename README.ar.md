@@ -22,7 +22,8 @@
 </p>
 
 <p align="center">
-  <a href="#التثبيت"><b>ثبّت الوحدة</b></a> ·
+  <a href="https://github.com/nader295/MaxManager/releases/latest"><b>نزّل أحدث إصدار</b></a> ·
+  <a href="#التثبيت"><b>التثبيت</b></a> ·
   <a href="#كيف-تبدو"><b>انظر الشاشات</b></a> ·
   <a href="#max-ai"><b>تعرّف على Max AI</b></a> ·
   <a href="docs/README.md"><b>اقرأ الوثائق</b></a>
@@ -91,10 +92,10 @@ MaxManager مبنيّ بالاتجاه المعاكس — على أربع قوا
 
 <table>
   <tr>
-    <td align="center" width="25%"><a href="docs/screenshots/02-now-home.png"><img src="docs/screenshots/02-now-home.png" width="220" alt="MaxManager — الرئيسية"></a><br><b>الرئيسية</b><br><sub>الجهاز في نظرة واحدة</sub></td>
-    <td align="center" width="25%"><a href="docs/screenshots/03-max-ai.png"><img src="docs/screenshots/03-max-ai.png" width="220" alt="MaxManager — Max AI"></a><br><b>Max AI</b><br><sub>تغيير واحد مقيس في كل مرّة</sub></td>
-    <td align="center" width="25%"><a href="docs/screenshots/07-control-hub.png"><img src="docs/screenshots/07-control-hub.png" width="220" alt="MaxManager — التحكّم"></a><br><b>التحكّم</b><br><sub>عشرة مجالات في مركز واحد</sub></td>
-    <td align="center" width="25%"><a href="docs/screenshots/26-apps-list.png"><img src="docs/screenshots/26-apps-list.png" width="220" alt="MaxManager — التطبيقات"></a><br><b>التطبيقات</b><br><sub>ملفّ خاصّ لكل تطبيق</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/02-now-home.png"><img src="docs/screenshots/thumbs/02-now-home.webp" width="220" alt="MaxManager — الرئيسية"></a><br><b>الرئيسية</b><br><sub>الجهاز في نظرة واحدة</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/03-max-ai.png"><img src="docs/screenshots/thumbs/03-max-ai.webp" width="220" alt="MaxManager — Max AI"></a><br><b>Max AI</b><br><sub>تغيير واحد مقيس في كل مرّة</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/07-control-hub.png"><img src="docs/screenshots/thumbs/07-control-hub.webp" width="220" alt="MaxManager — التحكّم"></a><br><b>التحكّم</b><br><sub>عشرة مجالات في مركز واحد</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/26-apps-list.png"><img src="docs/screenshots/thumbs/26-apps-list.webp" width="220" alt="MaxManager — التطبيقات"></a><br><b>التطبيقات</b><br><sub>ملفّ خاصّ لكل تطبيق</sub></td>
   </tr>
 </table>
 
@@ -544,7 +545,18 @@ MaxManager يأتي **وحدة بلا نظام** (systemless) — لا شيء ف
 
 <p align="center"><img src="docs/assets/install-flow-ar.svg?v=5" width="100%" alt="التثبيت في أربع خطوات: افلش الوحدة في Magisk أو KernelSU، ثم أعد التشغيل، ثم امنحه الجذر حين يطلبه مدير الجذر، ثم افتح التطبيق وامشِ في الإعداد"></p>
 
-1. افلش `MaxManager-V2.zip` في **Magisk** أو **KernelSU** (أو مدير جذر متوافق).
+**أي مسار يناسبك؟**
+
+| ما لديك | ما تثبّته | ما يعمل |
+| --- | --- | --- |
+| **جذر** — Magisk أو KernelSU أو KernelSU Next | وحدة `.zip` + التطبيق | مستوى التحكّم الكامل وكل مجال منشور |
+| **Shizuku فقط** — بلا جذر | التطبيق `.apk` | مجموعة قراءة وكتابة موثّقة؛ ومقابض الوحدة وحدها تبقى غائبة |
+| **لا هذا ولا ذاك** | التطبيق `.apk` | تصفّح للقراءة فقط وخريطة القدرات |
+
+**[نزّل أحدث إصدار](https://github.com/nader295/MaxManager/releases/latest)** — وحدة `.zip` وحزمة `.apk`
+مرفقتان هناك بأحجامهما وملفات التحقّق.
+
+1. نزّل وحدة `.zip` من [الإصدارات](https://github.com/nader295/MaxManager/releases/latest)، ثم افلشها في **Magisk** أو **KernelSU** (أو مدير جذر متوافق).
 2. أعد التشغيل.
 3. **امنحه الجذر** — اقبل نافذة الصلاحية التي يعرضها مدير الجذر حين يطلبها MaxManager.
 4. افتح **MaxManager** وامشِ في **الإعداد** الذي يشرح ما يكشفه *جهازك*.
@@ -552,9 +564,9 @@ MaxManager يأتي **وحدة بلا نظام** (systemless) — لا شيء ف
 لدليل تفليش خطوة بخطوة، والملفّات الثلاثة التي يحتاجها الروم المخصّص، انظر
 **[README داخل الوحدة](mainfiles/README.md)**.
 
-والنسخ تأتي من CI كمخرجات سير العمل: الوحدة القابلة للتفليش، وحزمة المطوّر، وملفات التحقّق — انظر
-**[docs/building.md](docs/building.md#releases)** لمحتوى كل قناة إصدار. وإذا فشلت الوحدة في بلوغ إقلاع
-مستقرّ مرّتين متتاليتين تُعطّل نفسها وتقول ذلك في وصفها.
+كل إصدار يُنشر على **[صفحة الإصدارات](https://github.com/nader295/MaxManager/releases)** ومعه
+وحدته القابلة للتفليش وحزمة التطبيق وملفات التحقّق. وتبقى مخرجات CI بديلًا حين تريد البناء الذي لم
+يُنشر بعد. وإذا فشلت الوحدة في بلوغ إقلاع مستقرّ مرّتين متتاليتين تُعطّل نفسها وتقول ذلك في وصفها.
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>
 

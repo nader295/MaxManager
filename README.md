@@ -22,7 +22,8 @@
 </p>
 
 <p align="center">
-  <a href="#install"><b>Install the module</b></a> ·
+  <a href="https://github.com/nader295/MaxManager/releases/latest"><b>Download the latest release</b></a> ·
+  <a href="#install"><b>Install</b></a> ·
   <a href="#what-it-looks-like"><b>See the screens</b></a> ·
   <a href="#max-ai"><b>Meet Max AI</b></a> ·
   <a href="docs/README.md"><b>Read the docs</b></a>
@@ -91,10 +92,10 @@ when something breaks you find out later. MaxManager is built the other way roun
 
 <table>
   <tr>
-    <td align="center" width="25%"><a href="docs/screenshots/02-now-home.png"><img src="docs/screenshots/02-now-home.png" width="220" alt="MaxManager — Home"></a><br><b>Home</b><br><sub>the device, at a glance</sub></td>
-    <td align="center" width="25%"><a href="docs/screenshots/03-max-ai.png"><img src="docs/screenshots/03-max-ai.png" width="220" alt="MaxManager — Max AI"></a><br><b>Max AI</b><br><sub>one measured change at a time</sub></td>
-    <td align="center" width="25%"><a href="docs/screenshots/07-control-hub.png"><img src="docs/screenshots/07-control-hub.png" width="220" alt="MaxManager — Control"></a><br><b>Control</b><br><sub>ten domains, one hub</sub></td>
-    <td align="center" width="25%"><a href="docs/screenshots/26-apps-list.png"><img src="docs/screenshots/26-apps-list.png" width="220" alt="MaxManager — Apps"></a><br><b>Apps</b><br><sub>a profile for each app</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/02-now-home.png"><img src="docs/screenshots/thumbs/02-now-home.webp" width="220" alt="MaxManager — Home"></a><br><b>Home</b><br><sub>the device, at a glance</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/03-max-ai.png"><img src="docs/screenshots/thumbs/03-max-ai.webp" width="220" alt="MaxManager — Max AI"></a><br><b>Max AI</b><br><sub>one measured change at a time</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/07-control-hub.png"><img src="docs/screenshots/thumbs/07-control-hub.webp" width="220" alt="MaxManager — Control"></a><br><b>Control</b><br><sub>ten domains, one hub</sub></td>
+    <td align="center" width="25%"><a href="docs/screenshots/26-apps-list.png"><img src="docs/screenshots/thumbs/26-apps-list.webp" width="220" alt="MaxManager — Apps"></a><br><b>Apps</b><br><sub>a profile for each app</sub></td>
   </tr>
 </table>
 
@@ -561,7 +562,18 @@ uninstalling puts everything back.
 
 <p align="center"><img src="docs/assets/install-flow.svg?v=5" width="100%" alt="Install in four steps: flash the module in Magisk or KernelSU, reboot, grant it root when your root manager asks, then open the app and walk through setup"></p>
 
-1. Flash `MaxManager-V2.zip` in **Magisk** or **KernelSU** (or a compatible root manager).
+**Which path fits you?**
+
+| What you have | What to install | What works |
+| --- | --- | --- |
+| **Root** — Magisk, KernelSU or KernelSU Next | The module `.zip` + the app | The full control plane and every published domain |
+| **Shizuku only** — no root | The app `.apk` | A documented read-and-write subset; the module-only controls stay absent |
+| **Neither** | The app `.apk` | Read-only browsing and the capability map |
+
+**[Download the latest release](https://github.com/nader295/MaxManager/releases/latest)** — the module
+`.zip` and the app `.apk` are attached there with their sizes and checksums.
+
+1. Download the module `.zip` from [Releases](https://github.com/nader295/MaxManager/releases/latest), then flash it in **Magisk** or **KernelSU** (or a compatible root manager).
 2. Reboot.
 3. **Grant it root** — accept the superuser prompt your root manager shows when MaxManager asks.
 4. Open **MaxManager** and walk through **Setup**, which explains what *your* device exposes.
@@ -569,10 +581,10 @@ uninstalling puts everything back.
 For a step-by-step flashing guide and the exact three files a custom ROM needs, see
 **[the module README](mainfiles/README.md)**.
 
-Builds come from CI as workflow artifacts: the flashable module, a developer bundle, and checksums —
-see **[docs/building.md](docs/building.md#releases)** for what each release channel contains. If the
-module fails to reach a stable boot twice in a row, it disables itself and says so in its own
-description.
+Every release is published on the **[Releases page](https://github.com/nader295/MaxManager/releases)**
+with its flashable module, app package and checksums attached. CI workflow artifacts remain the
+alternative when you want the build that has not been released yet. If the module fails to reach a
+stable boot twice in a row, it disables itself and says so in its own description.
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
 

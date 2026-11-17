@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MaxManager — performance control, with the receipts</title>
-<meta name="description" content="MaxManager is a systemless module for rooted Android. It reads the interfaces your kernel exposes, writes through one audited path, reads every change back, and shows an unknown value as unknown — never as a plausible zero.">
+<title>MaxManager — root and performance control for Android</title>
+<meta name="description" content="MaxManager is a root performance manager for Android: CPU, GPU, memory, thermal and battery controls, one audited write path, and verified changes.">
 <meta name="theme-color" content="#f2f4ef" data-theme-color>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://nader295.github.io/MaxManager/">
@@ -13,10 +13,12 @@
 <link rel="alternate" hreflang="ar" href="https://nader295.github.io/MaxManager/ar/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%230038ff'/%3E%3Cpath%20d='M8%2023V9l8%2010%208-10v14'%20fill='none'%20stroke='%23fff'%20stroke-width='2.4'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="site/site.css">
+<link rel="sitemap" type="application/xml" href="https://nader295.github.io/MaxManager/sitemap.xml">
+<link rel="preload" as="image" href="screenshots/thumbs/02-now-home.webp" type="image/webp" fetchpriority="high">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MaxManager">
-<meta property="og:title" content="MaxManager — performance control, with the receipts">
-<meta property="og:description" content="One audited write path, read-back verification, per-app profiles, and status_unknown instead of a plausible zero.">
+<meta property="og:title" content="MaxManager — root and performance control for Android">
+<meta property="og:description" content="A root performance manager with one audited write path, read-back verification, per-app profiles, and status_unknown instead of a plausible zero.">
 <meta property="og:url" content="https://nader295.github.io/MaxManager/">
 <meta property="og:image" content="https://nader295.github.io/MaxManager/store/feature-en.png">
 <meta property="og:image:width" content="1024">
@@ -25,8 +27,8 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ar_AR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MaxManager — performance control, with the receipts">
-<meta name="twitter:description" content="One audited write path, read-back verification, and status_unknown instead of a plausible zero.">
+<meta name="twitter:title" content="MaxManager — root and performance control for Android">
+<meta name="twitter:description" content="A root performance manager with one audited write path, read-back verification, and status_unknown instead of a plausible zero.">
 <meta name="twitter:image" content="https://nader295.github.io/MaxManager/store/feature-en.png">
 <script type="application/ld+json">
 {
@@ -102,6 +104,40 @@
  ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://nader295.github.io/MaxManager/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does it need root?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, for the full control plane. MaxManager is a systemless module for Magisk or KernelSU: the app reaches the kernel through one audited root bridge, and the daemons run as system-side processes. Shizuku is detected too and unlocks several read-and-write tools, but it is not a substitute for the module." }
+    },
+    {
+      "@type": "Question",
+      "name": "What can a root performance manager change?",
+      "acceptedAnswer": { "@type": "Answer", "text": "MaxManager exposes what the kernel actually publishes: CPU and GPU frequency bounds, governors, memory and ZRAM behaviour, refresh rate, touch and scheduling latency, thermal readings, charging and battery health, network tunables, and ART compilation. It does not invent a switch when an interface is absent, and every accepted write is read back from the device." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it make games run better?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It can remove avoidable limits and apply a per-app profile while a game is in front: CPU and GPU bounds, scheduler and touch settings, and thermal-aware policy. It cannot make a hot phone cold or promise a frame rate the hardware cannot hold. The result you see is the measured one, and status_unknown stays visible when the device does not answer." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does an unknown value show status_unknown instead of 0?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because 0 is a claim. The project forbids fabricated telemetry: when it does not know, it says so rather than showing a plausible-looking zero." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it send my data anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No telemetry, no analytics, no silent uploads. The diagnostic report is built locally and minimized, and it leaves your device only if you hand the file over yourself." }
+    }
+  ]
+}
+</script>
 </head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
@@ -164,8 +200,8 @@
   <section class="hero" id="hero" aria-labelledby="hero-title">
     <div class="shell hero__grid">
       <div class="hero__copy">
-        <h1 class="hero__title" id="hero-title">Performance control, <em>with the receipts.</em></h1>
-        <p class="hero__lede">MaxManager reads the interfaces your kernel actually exposes, writes through one audited path, and reads every change back. If the phone did not settle, you see that — not a green check.</p>
+        <h1 class="hero__title" id="hero-title">Root performance control, <em>with the receipts.</em></h1>
+        <p class="hero__lede">MaxManager is a root performance manager for Android. It reads the kernel interfaces your phone actually exposes, writes through one audited path, and reads every change back. If the phone did not settle, you see that — not a green check.</p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="#install">Install the module</a>
           <a class="index-link" href="#screens">See the screens</a>
@@ -181,7 +217,7 @@
         <span class="hero__ghost" aria-hidden="true">v5.0</span>
         <span class="stage-label" aria-hidden="true">Real capture</span>
         <figure class="phone phone--main">
-          <img src="screenshots/02-now-home.png" width="1162" height="2480" fetchpriority="high" decoding="async" alt="The Home screen: quick actions above live readings for voltage, cores online, throttle headroom, memory pressure, download rate and refresh rate.">
+          <img src="screenshots/thumbs/02-now-home.webp" width="640" height="1366" fetchpriority="high" decoding="async" alt="The Home screen: quick actions above live readings for voltage, cores online, throttle headroom, memory pressure, download rate and refresh rate.">
         </figure>
         <p class="capture">Home, capture 02 of 88</p>
       </div>
@@ -709,7 +745,7 @@
             <li class="install-step">
               <span class="install-step__n">01</span>
               <h3>Get the module</h3>
-              <p>Download <code>MaxManager-&lt;version&gt;.zip</code> from the latest green workflow run or a release. Do not flash <code>MaxManager-developer-bundle.zip</code> — that one is for ROM developers.</p>
+              <p>Download the module <code>.zip</code> from the <a href="https://github.com/nader295/MaxManager/releases/latest">latest release</a> or the latest green workflow run. Do not flash <code>MaxManager-developer-bundle.zip</code> — that one is for ROM developers.</p>
             </li>
             <li class="install-step">
               <span class="install-step__n">02</span>
@@ -745,7 +781,8 @@
 
         <aside class="aside-box">
           <h3>Where the build comes from</h3>
-          <p>CI is the build path, and every release is published <a href="https://github.com/nader295/MaxManager/releases">here</a> with its flashable module, developer bundle and checksums attached. The workflow artifacts of the latest green run are the alternative when you want the build that has not been released yet.</p>
+          <p>Every release is published <a href="https://github.com/nader295/MaxManager/releases">on the Releases page</a> with the flashable module, app package and checksums. CI workflow artifacts remain the alternative for a build that has not been released yet.</p>
+          <a class="btn btn--primary" href="https://github.com/nader295/MaxManager/releases/latest">Download latest release</a>
           <a class="btn btn--line" href="https://github.com/PanditJi-9/Xx/actions/workflows/build.yml">Workflow runs</a>
           <a class="btn btn--line" href="https://github.com/nader295/MaxManager/blob/main/docs/building.md#releases">Build and releases</a>
         </aside>
@@ -848,6 +885,18 @@
         <details>
           <summary>Will it work on my phone?</summary>
           <div class="faq__body"><p>Probably — but you do not have to guess. MaxManager resolves capabilities per interface before showing anything, so a control your device does not expose never appears as a switch that does nothing. Open it and read the map: that answer is about your phone, which is better than any list.</p></div>
+        </details>
+        <details>
+          <summary>What can a root performance manager change?</summary>
+          <div class="faq__body"><p>MaxManager exposes what the kernel actually publishes: CPU and GPU frequency bounds, governors, memory and ZRAM behaviour, refresh rate, touch and scheduling latency, thermal readings, charging and battery health, network tunables, and ART compilation. It does not invent a switch when an interface is absent, and every accepted write is read back from the device.</p></div>
+        </details>
+        <details>
+          <summary>Can it make games run better?</summary>
+          <div class="faq__body"><p>It can remove avoidable limits and apply a per-app profile while a game is in front: CPU and GPU bounds, scheduler and touch settings, and thermal-aware policy. It cannot make a hot phone cold or promise a frame rate the hardware cannot hold. The result you see is the measured one, and <code>status_unknown</code> stays visible when the device does not answer.</p></div>
+        </details>
+        <details>
+          <summary>Does it help battery life?</summary>
+          <div class="faq__body"><p>It gives you the controls that affect power — charge ceiling, bypass charging, doze, sleep behaviour and per-app policy — and shows their measured effect instead of a marketing percentage. How much battery you save depends on your device, your ROM and what you actually change.</p></div>
         </details>
         <details>
           <summary>Is Max AI on by default?</summary>

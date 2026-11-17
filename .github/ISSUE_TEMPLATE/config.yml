@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation and compatibility
+    url: https://github.com/nader295/MaxManager/blob/main/docs/README.md
+    about: Read the feature map, compatibility notes, and FAQ before filing.
+  - name: Telegram release channel
+    url: https://t.me/GetMaxManager
+    about: Releases and announcements.
+  - name: Telegram community
+    url: https://t.me/MaxManagerChat
+    about: Ask other users and share device reports.

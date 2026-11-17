@@ -2526,8 +2526,8 @@ a:hover .arrow,
     opacity: 0;
     transform: translateY(18px);
     transition:
-      opacity 620ms var(--ease),
-      transform 620ms var(--ease);
+      opacity 320ms var(--ease),
+      transform 320ms var(--ease);
   }
 
   .js .reveal.is-in {
@@ -3340,7 +3340,7 @@ h4 {
   }
 
   .dot {
-    animation: none;
+    animation: pulse 360ms var(--ease) 240ms 1 both;
   }
 
   @keyframes rise {

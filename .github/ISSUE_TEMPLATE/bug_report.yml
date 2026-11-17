@@ -1,0 +1,95 @@
+name: Bug or device report
+description: Report a reproducible problem, an unsupported control, or a device-specific failure.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please keep the report factual: what you expected, what happened, and what the app measured.
+
+        Do not paste passwords, keystores, private keys, or personal data. The in-app diagnostic report is designed to be safe to share.
+
+  - type: input
+    id: version
+    attributes:
+      label: MaxManager version
+      description: The version shown in Settings or on the release page.
+      placeholder: v5.0
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device and chipset
+      placeholder: Samsung Galaxy Tab S9 · Snapdragon 8 Gen 2
+    validations:
+      required: true
+
+  - type: input
+    id: android
+    attributes:
+      label: Android version and ROM
+      placeholder: Android 13 · One UI 5.1 (stock)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: access
+    attributes:
+      label: Access mode
+      options:
+        - Root — Magisk or KernelSU
+        - Shizuku only
+        - Basic / read-only
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Number the steps so someone else can repeat them.
+      placeholder: |
+        1. Open ...
+        2. Change ...
+        3. See ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Include the exact status, error, or status_unknown value when possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostic report or logs
+      description: Paste the minimized report from Settings → Diagnostics. Remove anything private first.
+      render: text
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: I removed secrets, tokens, keystores, and personal data from this report.
+          required: true
+        - label: I can reproduce this, or I have stated clearly that I cannot.
+          required: true
