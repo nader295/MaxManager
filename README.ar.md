@@ -667,7 +667,9 @@ MaxManager يأتي **وحدة بلا نظام** (systemless) — لا شيء ف
 
 ## <img src="docs/assets/ic-bubble.svg?v=5" width="32" height="32" align="absmiddle" alt="الدعم"> الدعم
 
-- **تيليجرام:** [@ROBINHOOD_GROUP_RODIN](https://t.me/ROBINHOOD_GROUP_RODIN) — بلاغات الأفكار والبناء.
+- **القناة:** [@GetMaxManager](https://t.me/GetMaxManager) — الإصدارات والإعلانات.
+- **المجموعة:** [@MaxManagerChat](https://t.me/MaxManagerChat) — بلاغات الأفكار والبناء.
+- **الموقع:** [https://nader295.github.io/MaxManager/](https://nader295.github.io/MaxManager/) · **المستودع:** [https://github.com/nader295/MaxManager](https://github.com/nader295/MaxManager)
 - **البلاغات:** من فضلك اذكر الجهاز، والروم، ومدير الجذر، وما عرضه التطبيق. وإن قال
   `status_unknown` فقل ذلك — إنه حقيقة عن جهازك لا خطأ عليك إصلاحه أولًا.
 
@@ -702,6 +704,6 @@ MaxManager يأتي **وحدة بلا نظام** (systemless) — لا شيء ف
 | [COPG](https://github.com/AlirezaParsi/COPG) | AlirezaParsi | Apache-2.0 |
 
 <sub><b>اسمك غير موجود في القائمة؟</b> إن كان لك عمل يُستخدم هنا ولم يُذكر أعلاه، راسلني في
-الخاص — أو تجدني في [المجموعة](https://t.me/ROBINHOOD_GROUP_RODIN) — وسيُضاف.</sub>
+الخاص — أو تجدني في [المجموعة](https://t.me/MaxManagerChat) — وسيُضاف.</sub>
 
 <p align="right"><sub><a href="#top">↑ أعلى الصفحة</a></sub></p>

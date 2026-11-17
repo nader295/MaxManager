@@ -65,7 +65,7 @@ the difference between a module that boots and one that removes itself.
 
 | Version | Channel | What it contains | Where to get it |
 | --- | --- | --- | --- |
-| **v1.0** | `stable` | First single-sourced release: one module zip, one version string, priv-app + five daemons | **CI Artifacts** → [latest run](https://github.com/catui0041-alt/Gg/actions/workflows/build.yml) |
+| **v1.0** | `stable` | First single-sourced release: one module zip, one version string, priv-app + five daemons | **CI Artifacts** → [https://github.com/nader295/MaxManager](https://github.com/nader295/MaxManager) |
 | v1.0 | developer | Integration bundle (AOSP kit, KernelSU packaging, checksums) | Same run, `MaxManager-developer-bundle.zip` |
 
 **Measured status, stated plainly: this repository has 0 published GitHub *Releases*.** The build

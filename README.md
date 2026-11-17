@@ -688,7 +688,9 @@ an open-source project. Third-party components keep their own licences and are c
 
 ## <img src="docs/assets/ic-bubble.svg?v=5" width="32" height="32" align="absmiddle" alt="Support"> Support
 
-- **Telegram:** [@ROBINHOOD_GROUP_RODIN](https://t.me/ROBINHOOD_GROUP_RODIN) — bug reports, ideas, builds.
+- **Channel:** [@GetMaxManager](https://t.me/GetMaxManager) — releases and announcements.
+- **Group:** [@MaxManagerChat](https://t.me/MaxManagerChat) — bug reports, ideas, builds.
+- **Website:** [https://nader295.github.io/MaxManager/](https://nader295.github.io/MaxManager/) · **Repository:** [https://github.com/nader295/MaxManager](https://github.com/nader295/MaxManager)
 - **Issues:** please include the device, the ROM, the root manager and what the app showed. If it said
   `status_unknown`, say so — that is a fact about your device, not a bug you have to fix first.
 
@@ -725,6 +727,6 @@ require stays in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md), which remai
 | [Islandify](https://github.com/bughunter11/Islandify) | (c) 2026 bughunter11 | MIT |
 
 <sub><b>Missing from this list?</b> If a work of yours ends up used here and is not named above,
-message me privately — or find me in the [group](https://t.me/ROBINHOOD_GROUP_RODIN) — and I will add it.</sub>
+message me privately — or find me in the [group](https://t.me/MaxManagerChat) — and I will add it.</sub>
 
 <p align="right"><sub><a href="#top">↑ Back to top</a></sub></p>
