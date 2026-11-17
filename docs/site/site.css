@@ -3386,3 +3386,291 @@ h4 {
     display: none;
   }
 }
+
+/* ── 28. legibility & response polish ────────────────────────────────────
+   أمر المالك: «حسن تصميم الموقع اكثر» (2026-11-17).
+
+   طبقة نهائية لا تغيّر هوية الموقع ولا شبكته: ترفع الحروف الدقيقة إلى
+   حجم يُقرأ، وتمنح المعرض استجابةً محسوسة، وتصلح ثلاثة عيوب مقيسة لا
+   ذوقية:
+   (أ) لم يكن في الملف كله scroll-padding، فكل انتقال من التنقّل يضع
+       عنوان القسم تحت الشريط اللاصق (72px).
+   (ب) شارة «عرض» كانت opacity:0 ولا تظهر إلا بالتحويم — أي أنها غائبة
+       تمامًا على شاشة لمس.
+   (ج) أعداد المرشّحات كانت كلها بلون التمييز، فكل الأعداد تُنافس العين
+       ولا يُعرف أيّها المضغوط.
+   ───────────────────────────────────────────────────────────────────── */
+
+html {
+  scroll-padding-top: 88px;
+}
+
+/* 28.1 التنفّس الطباعي */
+h1,
+h2,
+h3,
+.hero__title,
+.section-head h2,
+.lede {
+  text-wrap: balance;
+}
+
+p,
+.hero__lede,
+.specs li {
+  text-wrap: pretty;
+}
+
+/* العربية لا تُوازَن كالإنجليزية: قصّ السطر يفسد التشكيل والصلة. */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] .hero__title {
+  text-wrap: pretty;
+}
+
+/* الأرقام تُحاذى عموديًّا فلا ترتجف الصفوف مع كل قراءة جديدة. */
+.specs,
+.filters__count,
+.shot__n,
+.capture,
+.stage-label,
+.stat__value,
+.measured__value,
+.table td,
+.release__tag {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 28.2 الشريط اللاصق: ظلّ خفيف يُعلن أنه طافٍ فوق القسم لا جزء منه. */
+.masthead {
+  transition: box-shadow var(--standard) var(--ease);
+}
+
+.masthead.is-scrolled {
+  box-shadow:
+    0 1px 0 var(--line),
+    0 14px 34px -22px rgba(21, 19, 15, 0.55);
+}
+
+/* 28.3 الحروف الدقيقة: 7–9px كانت تُقرأ ضجيجًا. درجة واحدة أعلى مع
+   تتبّع أضيق، فبقيت تقنية وصارت مقروءة. */
+.section-head__index {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+.filter {
+  gap: 7px;
+  padding-block: 15px 14px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.filters__count {
+  font-size: 10px;
+}
+
+.shot__n {
+  font-size: 9.5px;
+}
+
+.shot__open {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.capture {
+  font-size: 9px;
+}
+
+.stage-label {
+  font-size: 8.5px;
+}
+
+.release__inner {
+  font-size: 11.5px;
+}
+
+/* 28.4 المرشّحات: العدد محايد، ولا يتلوّن إلا للمضغوط أو تحت المؤشّر. */
+.filters__count {
+  color: var(--muted);
+  opacity: 0.7;
+  transition: color var(--quick) var(--ease), opacity var(--quick) var(--ease);
+}
+
+.filter:hover .filters__count {
+  color: var(--fg-2);
+  opacity: 1;
+}
+
+.filter[aria-pressed="true"] .filters__count {
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* 28.5 التركيز بالكيبورد: كان غير مرئي على البطاقات والمرشّحات. */
+.shot {
+  border-radius: 14px;
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+  transition: outline-color var(--quick) var(--ease);
+}
+
+.shot:focus-visible {
+  outline-color: var(--accent);
+}
+
+.filter:focus-visible,
+.btn:focus-visible,
+.theme:focus-visible,
+.menu summary:focus-visible,
+.link-arrow:focus-visible,
+.nav__link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* 28.6 شريط الإصدار: كان شريط حالة رقيقًا على خلفية الصفحة نفسها؛ صار
+   سطر سجلّ له سطحه وحدّه وارتفاعه فيُقرأ إعلانَ إصدار. */
+.release {
+  background: var(--surface);
+  border-block-start: 1px solid var(--line);
+}
+
+.release__inner {
+  min-height: 54px;
+  gap: 14px;
+}
+
+.release__tag {
+  padding: 3px 8px;
+  letter-spacing: 0.02em;
+}
+
+.release__text {
+  letter-spacing: 0.01em;
+  color: var(--fg-2);
+}
+
+.release__link {
+  padding-block-end: 2px;
+  border-block-end: 1px solid var(--line-strong);
+  transition: color var(--quick) var(--ease), border-color var(--quick) var(--ease);
+}
+
+.release__link:hover {
+  border-block-end-color: var(--accent);
+}
+
+/* الهاتف كان يقصّ السطر الثالث من نصّ الإصدار في منتصف الحرف (overflow:
+   hidden على صندوق ارتفاعه سطران). الشبكة تمنح النصّ عرض العمود كاملًا
+   فيصير سطرين كاملين، ويأخذ الرابط سطره. */
+@media (max-width: 720px) {
+  .release__inner {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: 4px 12px;
+    min-height: 0;
+    padding-block: 10px 12px;
+  }
+
+  .release__text {
+    display: block;
+    padding-block: 0;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+  }
+
+  .release__link {
+    grid-column: 2;
+    justify-self: end;
+    padding-block: 0;
+  }
+}
+
+/* 28.7 عنوان القسم: «02 / Screens» كان يطفو في عمود عرضه 273px. خطّ
+   رقيق يصل الشارة بالعنوان فيصير العمود بنيةً لا فراغًا. */
+@media (min-width: 901px) {
+  .section-head__index {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-head__index::after {
+    content: "";
+    flex: 1 1 auto;
+    height: 1px;
+    background: var(--line);
+  }
+}
+
+/* 28.8 المعرض: البطاقة ترتفع وتُلقي ظلًّا عند التحويم أو التركيز، والاسم
+   يُضيء، و«عرض» تبقى مرئية بلطف بدل أن تُخفى حتى يمرّ المؤشّر. */
+.shot__frame {
+  transition:
+    border-color var(--quick) var(--ease),
+    transform var(--standard) var(--ease),
+    box-shadow var(--standard) var(--ease);
+}
+
+.shot:hover .shot__frame,
+.shot:focus-visible .shot__frame {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 46px -24px rgba(0, 0, 0, 0.72);
+}
+
+.shot__name {
+  transition: color var(--quick) var(--ease);
+}
+
+.shot:hover .shot__name,
+.shot:focus-visible .shot__name {
+  color: var(--fg);
+}
+
+.shot__open {
+  opacity: 0.45;
+}
+
+.shot:hover .shot__open,
+.shot:focus-visible .shot__open {
+  opacity: 1;
+}
+
+/* الظلّ الأسود لا يُرى على الشريط الأسود (‏#screens هو band--ink): هنا
+   هالةٌ فاتحة خفيفة تُعلن الارتفاع بدل ظلّ مفقود. */
+.band--ink .shot:hover .shot__frame,
+.band--ink .shot:focus-visible .shot__frame {
+  box-shadow:
+    0 24px 46px -24px rgba(0, 0, 0, 0.95),
+    0 0 30px -6px rgba(143, 176, 255, 0.28);
+}
+
+/* شاشة لمس: لا تحويم فيها، فالرفع والظلّ لا يظهران أبدًا — و«عرض» كانت
+   غائبة تمامًا. */
+@media (hover: none) {
+  .shot__open {
+    opacity: 0.6;
+  }
+
+  .shot:hover .shot__frame {
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+/* الصفوف أطول من الأعمدة بكثير: فاصل أوسع يمنع أن تصير كتلة واحدة. */
+.gallery {
+  row-gap: clamp(26px, 3.4vw, 44px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shot:hover .shot__frame,
+  .shot:focus-visible .shot__frame {
+    transform: none;
+  }
+}

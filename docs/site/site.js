@@ -98,9 +98,24 @@
     });
   }
 
+  /* The bar stops looking welded to the page once content slides under it. */
+  var masthead = document.querySelector(".masthead");
+  var barIsLifted = null;
+
+  function updateMasthead() {
+    if (!masthead) return;
+
+    var lifted = window.scrollY > 8;
+    if (lifted === barIsLifted) return;
+
+    barIsLifted = lifted;
+    masthead.classList.toggle("is-scrolled", lifted);
+  }
+
   function updateScrollState() {
     updateProgress();
     updateActiveSection();
+    updateMasthead();
     ticking = false;
   }
 
