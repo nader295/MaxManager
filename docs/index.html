@@ -6,8 +6,10 @@
 <title>MaxManager — performance control, with the receipts</title>
 <meta name="description" content="MaxManager is a systemless module for rooted Android. It reads the interfaces your kernel exposes, writes through one audited path, reads every change back, and shows an unknown value as unknown — never as a plausible zero.">
 <meta name="theme-color" content="#f2f4ef" data-theme-color>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://nader295.github.io/MaxManager/">
 <link rel="alternate" hreflang="en" href="https://nader295.github.io/MaxManager/">
+<link rel="alternate" hreflang="x-default" href="https://nader295.github.io/MaxManager/">
 <link rel="alternate" hreflang="ar" href="https://nader295.github.io/MaxManager/ar/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%230038ff'/%3E%3Cpath%20d='M8%2023V9l8%2010%208-10v14'%20fill='none'%20stroke='%23fff'%20stroke-width='2.4'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="site/site.css">
@@ -26,6 +28,80 @@
 <meta name="twitter:title" content="MaxManager — performance control, with the receipts">
 <meta name="twitter:description" content="One audited write path, read-back verification, and status_unknown instead of a plausible zero.">
 <meta name="twitter:image" content="https://nader295.github.io/MaxManager/store/feature-en.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://nader295.github.io/MaxManager/#org",
+   "name": "MaxManager",
+   "url": "https://nader295.github.io/MaxManager/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://nader295.github.io/MaxManager/store/feature-en.png",
+    "width": 1024,
+    "height": 500
+   },
+   "sameAs": [
+    "https://github.com/nader295/MaxManager",
+    "https://t.me/GetMaxManager",
+    "https://t.me/MaxManagerChat"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://nader295.github.io/MaxManager/#website",
+   "url": "https://nader295.github.io/MaxManager/",
+   "name": "MaxManager",
+   "inLanguage": "en",
+   "publisher": {
+    "@id": "https://nader295.github.io/MaxManager/#org"
+   }
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://nader295.github.io/MaxManager/#app",
+   "name": "MaxManager",
+   "applicationCategory": "UtilitiesApplication",
+   "applicationSubCategory": "Device performance control",
+   "operatingSystem": "Android",
+   "softwareVersion": "v5.0",
+   "url": "https://nader295.github.io/MaxManager/",
+   "downloadUrl": "https://github.com/nader295/MaxManager/releases",
+   "license": "https://github.com/nader295/MaxManager/blob/main/LICENSE",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "image": "https://nader295.github.io/MaxManager/store/feature-en.png",
+   "screenshot": [
+    "https://nader295.github.io/MaxManager/screenshots/02-now-home.png",
+    "https://nader295.github.io/MaxManager/screenshots/03-max-ai.png",
+    "https://nader295.github.io/MaxManager/screenshots/51-cpu-hub.png",
+    "https://nader295.github.io/MaxManager/screenshots/70-game-lobby.webp"
+   ],
+   "featureList": [
+    "One audited write path",
+    "Read-back verification",
+    "Per-app profiles",
+    "Thermal and battery control",
+    "Max AI decisions",
+    "Game space"
+   ],
+   "description": "MaxManager is a systemless control plane for rooted Android: it reads the interfaces the kernel actually exposes, writes through one audited path, and reads every change back — an unknown value stays unknown.",
+   "author": {
+    "@id": "https://nader295.github.io/MaxManager/#org"
+   },
+   "publisher": {
+    "@id": "https://nader295.github.io/MaxManager/#org"
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
@@ -429,7 +505,7 @@
         </li>
       </ul>
 
-      <p class="note">Anything your device does not expose in one of these areas is simply not listed. There is no dead switch to explain away. <a href="https://github.com/nader295/MaxManager/blob/main/docs/features.md">Read the full feature list</a>.</p>
+      <p class="note">Anything your device does not expose in one of these areas is simply not listed. There is no dead switch to explain away. <a href="features.html">Read the full feature list</a>.</p>
     </div>
   </section>
 
@@ -726,7 +802,7 @@
         </table>
       </div>
 
-      <p class="note"><strong>A green build means it compiles and the tests pass.</strong> It does not mean a write settles on your hardware. That sentence is a rule in this project, not a hedge — <a href="https://github.com/nader295/MaxManager/blob/main/docs/verification.md">verification.md</a> lists what is proven, what runs without a device, and what needs a phone.</p>
+      <p class="note"><strong>A green build means it compiles and the tests pass.</strong> It does not mean a write settles on your hardware. That sentence is a rule in this project, not a hedge — <a href="verification.html">verification.md</a> lists what is proven, what runs without a device, and what needs a phone.</p>
     </div>
   </section>
 
@@ -809,16 +885,16 @@
 
       <div class="docs-grid">
         <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/README.md"><span class="doc-link__label">Documentation index</span></a>
-        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/features.md"><span class="doc-link__label">Every capability</span></a>
-        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/max-atlas.md"><span class="doc-link__label">Max Atlas, stage by stage</span></a>
-        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/max-ai.md"><span class="doc-link__label">Max AI, decision by decision</span></a>
-        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/architecture.md"><span class="doc-link__label">Architecture and invariants</span></a>
-        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/compatibility.md"><span class="doc-link__label">Compatibility</span></a>
-        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/verification.md"><span class="doc-link__label">How claims are measured</span></a>
-        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/rom-integration.md"><span class="doc-link__label">ROM integration kit</span></a>
-        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/building.md"><span class="doc-link__label">Building and releases</span></a>
+        <a class="doc-link" href="features.html"><span class="doc-link__label">Every capability</span></a>
+        <a class="doc-link" href="max-atlas.html"><span class="doc-link__label">Max Atlas, stage by stage</span></a>
+        <a class="doc-link" href="max-ai.html"><span class="doc-link__label">Max AI, decision by decision</span></a>
+        <a class="doc-link" href="architecture.html"><span class="doc-link__label">Architecture and invariants</span></a>
+        <a class="doc-link" href="compatibility.html"><span class="doc-link__label">Compatibility</span></a>
+        <a class="doc-link" href="verification.html"><span class="doc-link__label">How claims are measured</span></a>
+        <a class="doc-link" href="rom-integration.html"><span class="doc-link__label">ROM integration kit</span></a>
+        <a class="doc-link" href="building.html"><span class="doc-link__label">Building and releases</span></a>
         <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/DESIGN.md"><span class="doc-link__label">Design language</span></a>
-        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/faq.md"><span class="doc-link__label">FAQ, in full</span></a>
+        <a class="doc-link" href="faq.html"><span class="doc-link__label">FAQ, in full</span></a>
         <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/screenshots/README.md"><span class="doc-link__label">Screenshot contract</span></a>
       </div>
 
@@ -828,7 +904,7 @@
           <p>Send the device, the ROM, the root manager, and what the app showed. If it said <code>status_unknown</code>, say so — that is a fact about your device, not a mistake on your part.</p>
         </div>
         <div class="support__actions">
-          <a class="btn btn--primary" href="https://t.me/ROBINHOOD_GROUP_RODIN">Telegram group</a>
+          <a class="btn btn--primary" href="https://t.me/MaxManagerChat">Telegram group</a>
           <a class="btn btn--line" href="https://github.com/PanditJi-9/Xx/issues">Open an issue</a>
         </div>
       </div>
@@ -871,9 +947,9 @@
         <h3>Read</h3>
         <ul>
           <li><a href="https://github.com/nader295/MaxManager/blob/main/docs/README.md">Documentation</a></li>
-          <li><a href="https://github.com/nader295/MaxManager/blob/main/docs/verification.md">Verification</a></li>
-          <li><a href="https://github.com/nader295/MaxManager/blob/main/docs/compatibility.md">Compatibility</a></li>
-          <li><a href="https://github.com/nader295/MaxManager/blob/main/docs/rom-integration.md">ROM integration</a></li>
+          <li><a href="verification.html">Verification</a></li>
+          <li><a href="compatibility.html">Compatibility</a></li>
+          <li><a href="rom-integration.html">ROM integration</a></li>
           <li><a href="ar/" hreflang="ar" lang="ar">العربية</a></li>
         </ul>
       </div>
