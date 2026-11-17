@@ -83,7 +83,7 @@
   </g>
   <rect x="40.0" y="268.0" width="184.8" height="46.0" rx="23.0" fill="#1F6FEB" opacity="0.10"/>
   <rect x="40.0" y="268.0" width="184.8" height="46.0" rx="23.0" fill="none" stroke="#1F6FEB" stroke-width="1.2" opacity="0.40"/>
-  <text x="132.4" y="300.2" font-size="28" fill="#1F6FEB" text-anchor="middle" font-weight="600" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">65 screens</text>
+  <text x="132.4" y="300.2" font-size="28" fill="#1F6FEB" text-anchor="middle" font-weight="600" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">69 screens</text>
   <rect x="238.8" y="268.0" width="216.2" height="46.0" rx="23.0" fill="#3C5A72" opacity="0.10"/>
   <rect x="238.8" y="268.0" width="216.2" height="46.0" rx="23.0" fill="none" stroke="#3C5A72" stroke-width="1.2" opacity="0.40"/>
   <text x="346.9" y="300.2" font-size="28" fill="#3C5A72" text-anchor="middle" font-weight="600" font-family="-apple-system, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">84 languages</text>

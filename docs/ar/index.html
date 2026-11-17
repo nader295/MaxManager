@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>‏MaxManager — تحكّم في الأداء، مع الدليل</title>
+<meta name="description" content="‏MaxManager وحدة بلا لمس النظام لأندرويد بصلاحيات الجذر. يقرأ الواجهات التي يعرضها جهازك، ويكتب عبر مسار واحد مُدقّق، ويعيد قراءة كل تغيير، ويعرض القيمة المجهولة مجهولة — لا صفرًا مقنعًا.">
+<meta name="theme-color" content="#f2f4ef" data-theme-color>
+<link rel="canonical" href="https://nader295.github.io/MaxManager/ar/">
+<link rel="alternate" hreflang="ar" href="https://nader295.github.io/MaxManager/ar/">
+<link rel="alternate" hreflang="en" href="https://nader295.github.io/MaxManager/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%230038ff'/%3E%3Cpath%20d='M8%2023V9l8%2010%208-10v14'%20fill='none'%20stroke='%23fff'%20stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../site/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MaxManager">
+<meta property="og:title" content="‏MaxManager — تحكّم في الأداء، مع الدليل">
+<meta property="og:description" content="مسار كتابة واحد مُدقّق، وقراءة مرتجعة، وأنماط لكل تطبيق، وstatus_unknown بدل صفر مقنع.">
+<meta property="og:url" content="https://nader295.github.io/MaxManager/ar/">
+<meta property="og:image" content="https://nader295.github.io/MaxManager/store/feature-ar.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="‏MaxManager — مستوى تحكّم لأندرويد بصلاحيات الجذر">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="‏MaxManager — تحكّم في الأداء، مع الدليل">
+<meta name="twitter:description" content="مسار كتابة واحد مُدقّق، وقراءة مرتجعة، وstatus_unknown بدل صفر مقنع.">
+<meta name="twitter:image" content="https://nader295.github.io/MaxManager/store/feature-ar.png">
+<script>
+(function () {
+  var root = document.documentElement;
+  try {
+    var t = localStorage.getItem("mm-theme");
+    if (t === "light" || t === "dark") root.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#main">تجاوز إلى المحتوى</a>
+<div class="progress" aria-hidden="true"><span class="progress__bar" data-progress></span></div>
+
+<header class="masthead">
+  <div class="shell masthead__inner">
+    <a class="wordmark" href="#top" aria-label="‏MaxManager، أعلى الصفحة">
+      <span class="wordmark__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none">
+          <rect x="1.25" y="1.25" width="29.5" height="29.5" rx="6" stroke="currentColor" stroke-opacity=".35" stroke-width="1.5"/>
+          <path d="M8.5 23V9l7.5 10L23.5 9v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/>
+        </svg>
+      </span>
+      <span class="wordmark__text">MaxManager<span class="wordmark__sub">تحكّم بالنظام</span></span>
+    </a>
+
+    <nav class="nav" aria-label="أقسام الصفحة">
+      <a class="nav__link" href="#screens">الشاشات</a>
+      <a class="nav__link" href="#controls">التحكّم</a>
+      <a class="nav__link" href="#atlas">Atlas</a>
+      <a class="nav__link" href="#max-ai">Max AI</a>
+      <a class="nav__link" href="#install">التثبيت</a>
+      <a class="nav__link" href="#measured">التحقّق</a>
+      <a class="nav__link" href="#docs">الوثائق</a>
+    </nav>
+
+    <div class="masthead__tools">
+      <a class="lang" href="../" hreflang="en" lang="en">English</a>
+      <button class="theme" type="button" data-theme-toggle aria-label="التبديل إلى السمة الداكنة" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 14.4A8 8 0 1 1 9.6 4 6.5 6.5 0 0 0 20 14.4Z"/></svg>
+      </button>
+      <a class="btn btn--primary btn--small masthead__install" href="#install">ثبّت 5.2</a>
+      <details class="menu">
+        <summary>القائمة</summary>
+        <div class="menu__panel">
+          <a href="#screens">الشاشات <span>٠٢</span></a>
+          <a href="#controls">التحكّم <span>٠٤</span></a>
+          <a href="#atlas">Max Atlas <span>٠٥</span></a>
+          <a href="#max-ai">Max AI <span>٠٦</span></a>
+          <a href="#install">التثبيت <span>١٠</span></a>
+          <a href="#measured">ما يُقاس <span>١١</span></a>
+          <a href="#docs">الوثائق <span>١٤</span></a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<div class="release">
+  <div class="shell release__inner">
+    <span class="release__tag">5.2</span>
+    <span class="release__text">صفحات قابلة للتمرير، وأنماط جاهزة للألوان، وتصغير دقّة لكل تطبيق في الألعاب.</span>
+    <a class="release__link" href="https://github.com/PanditJi-9/Xx/blob/main/changelog.md">سجلّ التغييرات الكامل</a>
+  </div>
+</div>
+
+<main id="main">
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="shell hero__grid">
+      <div class="hero__copy">
+        <h1 class="hero__title" id="hero-title">تحكّم في الأداء، <em>مع الدليل.</em></h1>
+        <p class="hero__lede">يقرأ MaxManager الواجهات التي يكشفها نواتك فعلًا، ويكتب عبر مسار واحد مُدقّق، ثم يعيد قراءة كل تغيير من الجهاز. وإن لم يستقرّ التغيير، سترى ذلك — لا علامة نجاح خضراء.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#install">ثبّت الوحدة</a>
+          <a class="index-link" href="#screens">انظر الشاشات</a>
+        </div>
+        <ul class="specs" aria-label="لمحة سريعة">
+          <li>Magisk وKernelSU</li>
+          <li>arm64-v8a</li>
+          <li>بلا قياس عن بُعد</li>
+        </ul>
+      </div>
+
+      <div class="hero__stage" aria-label="لقطة حقيقية لشاشة الرئيسية">
+        <span class="hero__ghost" aria-hidden="true">5.2</span>
+        <span class="stage-label" aria-hidden="true">لقطة حقيقية</span>
+        <figure class="phone phone--main">
+          <img src="../screenshots/02-now-home.png" width="1162" height="2480" fetchpriority="high" decoding="async" alt="شاشة الرئيسية: إجراءات سريعة فوق قراءات حيّة للجهد والأنوية المتصلة وهامش التقييد وضغط الذاكرة وسرعة التنزيل ومعدّل التحديث.">
+        </figure>
+        <p class="capture">الرئيسية، اللقطة ٠٢ من ٧٢</p>
+      </div>
+    </div>
+
+    <div class="shell">
+      <div class="statbar" aria-label="لمحة سريعة">
+        <div class="stat"><span class="stat__num">٦٨</span><span class="stat__label">شاشة</span></div>
+        <div class="stat"><span class="stat__num">١٠</span><span class="stat__label">مجالات تحكّم</span></div>
+        <div class="stat"><span class="stat__num">٨٤</span><span class="stat__label">لغة</span></div>
+        <div class="stat"><span class="stat__num">٠</span><span class="stat__label">قياس عن بُعد</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rules" aria-labelledby="rules-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">٠١ / القواعد</span>
+        <div>
+          <h2 id="rules-title">أربع قواعد لا تستطيع الواجهة إيقافها.</h2>
+          <p class="lede">ليست إعدادات. إنها سبب أن تبدو شاشة فارغة على هاتف لا يستطيع فعل الشيء — وسبب أن تبدو قيمة غير مفيدة بدل أن تبدو واثقة.</p>
+        </div>
+      </header>
+
+      <ol class="rules">
+        <li class="rule">
+          <h3>الغائب ليس معطّلًا.</h3>
+          <p>يُقرأ جهازك قبل رسم أي مقبض. وإن أثبتت قائمة أن الواجهة غير موجودة، لا تُعرض — لا مفتاح باهت، ولا وعد بما لا يستطيعه العتاد.</p>
+        </li>
+        <li class="rule">
+          <h3>الكتابة ليست نتيجة.</h3>
+          <p>كل تغيير يمرّ عبر محكّم واحد، ثم يُقرأ من الجهاز. والقيمة التي لم تستقرّ تُعرض مع محاولة تراجع — ولا تُحسب نجاحًا.</p>
+        </li>
+        <li class="rule">
+          <h3>المجهول قيمة.</h3>
+          <p>الرقم الذي لا يستطيع التطبيق قياسه يُعرض <code>status_unknown</code> أو شرطة طويلة. ولا يملأ الفراغ بصفر مقنع.</p>
+        </li>
+        <li class="rule">
+          <h3>لا شيء يفعّل نفسه.</h3>
+          <p>Max AI وMax Atlas وسياسة كل تطبيق تبقى مغلقة حتى تشغّلها، وطبقة السلامة تحتفظ بالأولوية المطلقة في مسار الكتابة.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band band--ink" id="screens" aria-labelledby="screens-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">٠٢ / الشاشات</span>
+        <div>
+          <h2 id="screens-title">الجهاز كما يصف نفسه.</h2>
+          <p class="lede">كل إطار أدناه لقطة حقيقية من جهاز: ١١٦٢ × ٢٤٨٠، واختيار واحد لشريط الحالة، وسمة داكنة في كل الشاشات. افتح أي إطار للحجم الكامل.</p>
+        </div>
+      </header>
+
+      <div class="filters" data-filters aria-label="تصفية الشاشات">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">الكل <span class="filters__count">١٤</span></button>
+        <button class="filter" type="button" data-filter="home" aria-pressed="false">الرئيسية <span class="filters__count">٢</span></button>
+        <button class="filter" type="button" data-filter="intelligence" aria-pressed="false">الذكاء <span class="filters__count">٣</span></button>
+        <button class="filter" type="button" data-filter="control" aria-pressed="false">التحكّم <span class="filters__count">٥</span></button>
+        <button class="filter" type="button" data-filter="apps" aria-pressed="false">التطبيقات <span class="filters__count">٢</span></button>
+        <button class="filter" type="button" data-filter="games" aria-pressed="false">الألعاب <span class="filters__count">٢</span></button>
+      </div>
+
+      <div class="gallery" data-gallery>
+        <a class="shot" href="../screenshots/02-now-home.png" data-lightbox data-shot-group="home" data-caption="الرئيسية — الجهاز في لمحة، مع قراءات حيّة وإجراءات سريعة.">
+          <span class="shot__frame"><img src="../screenshots/02-now-home.png" width="1162" height="2480" loading="lazy" decoding="async" alt="الرئيسية مع إجراءات سريعة وستّ قراءات حيّة."></span>
+          <span class="shot__meta"><span class="shot__n">٠٢</span><span class="shot__name">الرئيسية</span><span class="shot__open">عرض</span></span>
+        </a>
+        <a class="shot" href="../screenshots/03-max-ai.png" data-lightbox data-shot-group="intelligence" data-caption="Max AI — الهدف، وحكم السلامة، وما سيتغيّر تاليًا.">
+          <span class="shot__frame"><img src="../screenshots/03-max-ai.png" width="1162" height="2480" loading="lazy" decoding="async" alt="شاشة Max AI مع الهدف وحالة القرار الحالية."></span>
+          <span class="shot__meta"><span class="shot__n">٠٣</span><span class="shot__name">Max AI</span><span class="shot__open">عرض</span></span>
+        </a>
+        <a class="shot" href="../screenshots/05-max-ai-live.png" data-lightbox data-shot-group="intelligence" data-caption="التحكّم الحيّ — المؤشرات، وتوقّع الحرارة مقابل ما حدث فعلًا، وخطأ التوقّع عبر الزمن.">
+          <span class="shot__frame"><img src="../screenshots/05-max-ai-live.png" width="1162" height="2480" loading="lazy" decoding="async" alt="مركز القيادة الحيّ: حمل المعالج والبطارية والذاكرة والحرارة، مع توقّع يُقارن بالنتيجة المقيسة."></span>
+          <span class="shot__meta"><span class="shot__n">٠٥</span><span class="shot__name">التحكّم الحيّ</span><span class="shot__open">عرض</span></span>
+        </a>
+        <a class="shot" href="../screenshots/51-cpu-hub.png" data-lightbox data-shot-group="control" data-caption="المعالج — شبكة الأنوية وإعدادات الحاكم والتفضيلات.">
+          <span class="shot__frame"><img src="../screenshots/51-cpu-hub.png" width="1162" height="2480" loading="lazy" decoding="async" alt="مجال المعالج يعرض شبكة الأنوية وإعدادات الحاكم والتفضيلات."></span>
+          <span class="shot__meta"><span class="shot__n">٥١</span><span class="shot__name">مجال المعالج</span><span class="shot__open">عرض</span></span>
+        </a>
+        <a class="shot" href="../screenshots/54-thermal.png" data-lightbox data-shot-group="control" data-caption="الحرارة — قراءات المناطق الحيّة وما يقيّده الجهاز الآن.">
+          <span class="shot__frame"><img src="../screenshots/54-thermal.png" width="1162" height="2480" loading="lazy" decoding="async" alt="شاشة تفاصيل الحرارة مع قراءات المناطق الحيّة."></span>
+          <span class="shot__meta"><span class="shot__n">٥٤</span><span class="shot__name">الحرارة</span><span class="shot__open">عرض</span></span>
+        </a>
+        <a class="shot" href="../screenshots/27-app-settings.png" data-lightbox data-shot-group="apps" data-caption="إعدادات تطبيق واحد — المقابض نفسها، محصورة في حزمة واحدة.">
+          <span class="shot__frame"><img src="../screenshots/27-app-settings.png" width="1162" height="2480" loading="lazy" decoding="async" alt="إعدادات تطبيق واحد."></span>
+          <span class="shot__meta"><span class="shot__n">٢٧</span><span class="shot__name">لكل تطبيق</span><span class="shot__open">عرض</span></span>
+        </a>
+        <a class="shot" href="../screenshots/20-memory-zram.png" data-lightbox data-shot-group="control" data-caption="ZRAM — حجم مساحة التبديل المضغوطة، أو إيقافها.">
+          <span class="shot__frame"><img src="../screenshots/20-memory-zram.png" width="1162" height="2480" loading="lazy" decoding="async" alt="مدير ZRAM."></span>
+          <span class="shot__meta"><span class="shot__n">٢٠</span><span class="shot__name">ZRAM</span><span class="shot__open">عرض</span></span>
+        </a>
+        <a class="shot" href="../screenshots/22-power-charging.png" data-lightbox data-shot-group="control" data-caption="الطاقة — حدود الشحن وتجاوز الشحن وصحّة البطارية.">
+          <span class="shot__frame"><img src="../screenshots/22-power-charging.png" width="1162" height="2480" loading="lazy" decoding="async" alt="شاشة الشحن."></span>
+          <span class="shot__meta"><span class="shot__n">٢٢</span><span class="shot__name">الشحن</span><span class="shot__open">عرض</span></span>
+        </a>
+        <a class="shot" href="../screenshots/29-app-settings-gaming.png" data-lightbox data-shot-group="apps" data-caption="نمط الألعاب لكل تطبيق — يُطبّق ما دام التطبيق في المقدّمة.">
+          <span class="shot__frame"><img src="../screenshots/29-app-settings-gaming.png" width="1162" height="2480" loading="lazy" decoding="async" alt="قسم الألعاب في إعدادات تطبيق واحد."></span>
+          <span class="shot__meta"><span class="shot__n">٢٩</span><span class="shot__name">لكل تطبيق · الألعاب</span><span class="shot__open">عرض</span></span>
+        </a>
+        <a class="shot" href="../screenshots/04-max-ai-plan.png" data-lightbox data-shot-group="intelligence" data-caption="خطة Max AI — أصغر تغيير كافٍ، مسمّى قبل تنفيذه.">
+          <span class="shot__frame"><img src="../screenshots/04-max-ai-plan.png" width="1162" height="2480" loading="lazy" decoding="async" alt="الخطة التي ينوي Max AI تطبيقها، مقبضًا واحدًا في كل مرة."></span>
+          <span class="shot__meta"><span class="shot__n">٠٤</span><span class="shot__name">خطة Max AI</span><span class="shot__open">عرض</span></span>
+        </a>
+        <a class="shot" href="../screenshots/52-memory-hub.png" data-lightbox data-shot-group="control" data-caption="الذاكرة — الضغط وسلوك VM وswappiness في مكان واحد.">
+          <span class="shot__frame"><img src="../screenshots/52-memory-hub.png" width="1162" height="2480" loading="lazy" decoding="async" alt="مجال الذاكرة."></span>
+          <span class="shot__meta"><span class="shot__n">٥٢</span><span class="shot__name">مجال الذاكرة</span><span class="shot__open">عرض</span></span>
+        </a>
+        <a class="shot" href="../screenshots/01-start.png" data-lightbox data-shot-group="home" data-caption="البداية — شاشة التشغيل الأول قبل لمس أي شيء.">
+          <span class="shot__frame"><img src="../screenshots/01-start.png" width="1162" height="2480" loading="lazy" decoding="async" alt="شاشة البداية الأولى."></span>
+          <span class="shot__meta"><span class="shot__n">٠١</span><span class="shot__name">البداية</span><span class="shot__open">عرض</span></span>
+        </a>
+        <a class="shot shot--wide" href="../screenshots/70-game-lobby.png" data-lightbox data-shot-group="games" data-caption="لوبي الألعاب — مساحة اللعب الأفقية، ولكل لعبة معاملتها.">
+          <span class="shot__frame"><img src="../screenshots/70-game-lobby.png" width="1280" height="576" loading="lazy" decoding="async" alt="لوبي الألعاب في الوضع الأفقي."></span>
+          <span class="shot__meta"><span class="shot__n">٧٠</span><span class="shot__name">لوبي الألعاب</span><span class="shot__open">عرض</span></span>
+        </a>
+        <a class="shot shot--wide" href="../screenshots/72-game-panel.png" data-lightbox data-shot-group="games" data-caption="اللوحة الجانبية — تحكّم في لعبة تعمل دون مغادرتها.">
+          <span class="shot__frame"><img src="../screenshots/72-game-panel.png" width="2560" height="1152" loading="lazy" decoding="async" alt="اللوحة الجانبية للعبة في الوضع الأفقي."></span>
+          <span class="shot__meta"><span class="shot__n">٧٢</span><span class="shot__name">اللوحة الجانبية</span><span class="shot__open">عرض</span></span>
+        </a>
+      </div>
+
+      <div class="gallery-foot">
+        <span>يحتفظ المستودع بـ٧٢ إطارًا ملتقطًا؛ وعقد اللقطات يسمّي أيضًا النسخ الفاتحة والعربية.</span>
+        <a class="link-arrow" href="https://github.com/PanditJi-9/Xx/tree/main/docs/screenshots">تصفّح كل الإطارات</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="path" aria-labelledby="path-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">٠٣ / طريق واحد</span>
+        <div>
+          <h2 id="path-title">ثلاث طبقات. ومسار واحد يكتب.</h2>
+          <p class="lede">القطع لا تتداخل. واحدة تقرّر ما هو ممكن هنا، وواحدة هي الشيء الوحيد المسموح له بالكتابة، وواحدة تقرّر ما ينبغي تغييره — وطبقة سلامة تعلوها جميعًا.</p>
+        </div>
+      </header>
+
+      <div class="flow">
+        <div class="flow__top">
+          <span class="label">اتجاه واحد</span>
+          <p>كل تغيير يُسجَّل، ويُحلّ مقابل سجلّ الملكية، ويُكتب مرة، ويُقرأ مرة أخرى، ويُعاد فحصه لاحقًا بحثًا عن الانحراف.</p>
+        </div>
+        <ol class="flow__steps">
+          <li class="flow__step">
+            <span class="flow__step-n">٠١</span>
+            <h3>أنت تلمس</h3>
+            <p>مفتاح أو شريط. لا شيء يُكتب بعد.</p>
+          </li>
+          <li class="flow__step">
+            <span class="flow__step-n">٠٢</span>
+            <h3>مالك واحد</h3>
+            <p>المحكّم يحلّ الملكية ويسأل: هل هذا آمن هنا؟</p>
+          </li>
+          <li class="flow__step">
+            <span class="flow__step-n">٠٣</span>
+            <h3>كتابة الجذر</h3>
+            <p>باب واحد مُدقّق يطبّق التغيير. لا شاشة تكتب إلى النواة.</p>
+          </li>
+          <li class="flow__step">
+            <span class="flow__step-n">٠٤</span>
+            <h3>قراءة مرتجعة</h3>
+            <p>يُقرأ الجهاز مرة أخرى. استقرّ: يبقى. لم يستقرّ: يُعرض ويُتراجع عنه.</p>
+          </li>
+        </ol>
+        <p class="flow__note"><strong>مسار واحد مُدقّق.</strong> الجزء المهم ليس الكتابة — بل ما يقوله الجهاز بعدها.</p>
+      </div>
+
+      <div class="triptych">
+        <article class="triptych__item">
+          <h3>Max Atlas</h3>
+          <p>يقرّر ما هو ممكن هنا: أي الواجهات موجودة، وبأي وحدات، وهل يمكن الكتابة إليها، وما استقرّ فعلًا في المرة السابقة.</p>
+        </article>
+        <article class="triptych__item">
+          <h3>مستوى التحكّم</h3>
+          <p>محكّم واحد، وسجلّ ملكية واحد، وقراءة مرتجعة، وتراجع عندما لا تستقرّ القيمة، وحارس انحراف يعيد الفحص لاحقًا.</p>
+        </article>
+        <article class="triptych__item">
+          <h3>Max AI</h3>
+          <p>يقرّر ما ينبغي تغييره، خطوة مقيسة واحدة في كل مرة، من المفردات التي وجدها Atlas فعلًا على هاتفك. مغلق حتى تشغّله.</p>
+        </article>
+      </div>
+
+      <p class="note"><strong>الملكية مكتوبة بجوار كل قيمة.</strong> ترى هل ضبطها أنت، أم نمط تطبيق، أم الوحدة، أم بقيت على افتراضي النواة — ويمكنك استعادة الملكية اليدوية في أي وقت.</p>
+    </div>
+  </section>
+
+  <section class="section" id="controls" aria-labelledby="controls-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">٠٤ / التحكّم</span>
+        <div>
+          <h2 id="controls-title">عشرة مجالات، ولا شيء غير ما يكشفه جهازك.</h2>
+          <p class="lede">لكل مجال مركزه. والسطر تحت كل اسم هو وصف التطبيق نفسه للمجال، مقتبسًا من الواجهة.</p>
+        </div>
+      </header>
+
+      <ul class="domains">
+        <li class="domain">
+          <h3>المعالج</h3>
+          <p>الأنوية والحاكم وتعزيز البائع وتفضيلات النواة. كل عنقود يُقرأ من المنصّة، لا يُخمَّن.</p>
+        </li>
+        <li class="domain">
+          <h3>الرسوميات</h3>
+          <p>ترددات GPU ومعاملات البائع الخاصة بالرسوميات، مع حدود يدوية ومسار تعزيز البائع.</p>
+        </li>
+        <li class="domain">
+          <h3>الذاكرة</h3>
+          <p>الضغط وسلوك VM وswappiness. المحرّك يقرأ ضغط تعثّر الذاكرة، لا نسبة امتلائها.</p>
+        </li>
+        <li class="domain">
+          <h3>العرض</h3>
+          <p>معدّل التحديث واللون ومقياس اللوحة، مع شاشة دقّة مخصّصة ولوحة ألوان.</p>
+        </li>
+        <li class="domain">
+          <h3>الاستجابة</h3>
+          <p>اللمس وإيقاع الإطارات وزمن الجدولة — ما يسمّيه الناس «استجابة اللمس»، مسمّى بما يفعله.</p>
+        </li>
+        <li class="domain">
+          <h3>الحرارة</h3>
+          <p>درجات الحرارة والتقييد ومعاملات الحرارة. نقاط الرحلة لا تُكتب، على أي جهاز.</p>
+        </li>
+        <li class="domain">
+          <h3>الطاقة</h3>
+          <p>الشحن والتجاوز والخمول وصحّة البطارية، بما في ذلك سقف الشحن وDoze المتشدّد.</p>
+        </li>
+        <li class="domain">
+          <h3>التخزين والمترجم</h3>
+          <p>أعد تشغيل تجميع ART بمرشّح مختار، وأعد ضبط الحالة المجمّعة، واقرأ صحّة التخزين.</p>
+        </li>
+        <li class="domain">
+          <h3>الشبكة</h3>
+          <p>TCP congestion control وfast-open وSACK وECN وإعادة استخدام المقابس ومواعيد I/O وحالة الرابط.</p>
+        </li>
+        <li class="domain">
+          <h3>الصوت</h3>
+          <p>مخارج الصوت والتدفقات والتأثيرات المعلنة. للقراءة فقط بالتصميم — والجهاز الذي لا يعلن تأثيرات يقول ذلك.</p>
+        </li>
+      </ul>
+
+      <p class="note">أي شيء لا يكشفه جهازك في أحد هذه المجالات لا يُعرض ببساطة. لا مفتاح ميت لتشرحه. <a href="https://github.com/nader295/MaxManager/blob/main/docs/features.md">اقرأ قائمة الميزات الكاملة</a>.</p>
+    </div>
+  </section>
+
+  <section class="band band--blue atlas" id="atlas" aria-labelledby="atlas-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">٠٥ / Max Atlas</span>
+        <div>
+          <h2 id="atlas-title">«يعمل على هاتفي» ليست مواصفة.</h2>
+          <p class="lede">هاتفان من الطراز نفسه قد يكشفان واجهات مختلفة. ونواتان قد تسمّيان الواجهة نفسها بوحدات مختلفة — وتسمحان بالكتابة إلى إحداهما دون الأخرى. Atlas يسأل كل واجهة سؤالًا ويتذكّر الجواب.</p>
+        </div>
+      </header>
+
+      <div class="states">
+        <div class="state"><code class="state__code">SUPPORTED</code><span>مسار مُراجع موجود، وكتابة تحقّقت على هذا الجهاز.</span></div>
+        <div class="state"><code class="state__code">WRITABLE</code><span>مسار مؤهّل الآن؛ والنجاح لم يُثبت هنا بعد.</span></div>
+        <div class="state"><code class="state__code">READ_ONLY</code><span>الجهاز يجيب القراءات؛ ولا مسار كتابة مؤهّل.</span></div>
+        <div class="state"><code class="state__code">NEEDS_ADAPTER</code><span>الميزة ظاهرة؛ وهذا البناء لا يملك طريقة مُثبتة لقيادتها.</span></div>
+        <div class="state"><code class="state__code">UNAVAILABLE</code><span>الغياب أُثبت بقائمة تخلو من الاسم.</span></div>
+        <div class="state"><code class="state__code">NEVER_TOUCH</code><span>قاعدة سلامة مُراجعة تمنع كتابة هذه الواجهة — دائمًا.</span></div>
+        <div class="state"><code class="state__code">UNKNOWN</code><span>لا شيء قيس، أو لا شيء أجاب ولم يُثبت الغياب.</span></div>
+      </div>
+
+      <ol class="stages" aria-label="مراحل Atlas">
+        <li class="stage"><span class="stage__n">٠١</span><strong>اكتشف</strong></li>
+        <li class="stage"><span class="stage__n">٠٢</span><strong>افهم</strong></li>
+        <li class="stage"><span class="stage__n">٠٣</span><strong>خطّط</strong></li>
+        <li class="stage"><span class="stage__n">٠٤</span><strong>تكيّف</strong></li>
+        <li class="stage"><span class="stage__n">٠٥</span><strong>نفّذ</strong></li>
+        <li class="stage"><span class="stage__n">٠٦</span><strong>تحقّق</strong></li>
+        <li class="stage"><span class="stage__n">٠٧</span><strong>تعلّم</strong></li>
+      </ol>
+
+      <p class="note"><strong>الغياب يجب أن يُثبت.</strong> القراءة الفاشلة ليست غيابًا: القائمة الناجحة التي تخلو من الاسم وحدها تثبت أن الاسم غير موجود. وكل ما عدا ذلك يبقى <code>UNKNOWN</code>، لأن القراءة المحجوبة والميزة غير المدعومة تبدوان متطابقتين من الخارج.</p>
+    </div>
+  </section>
+
+  <section class="band band--ink" id="max-ai" aria-labelledby="max-ai-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">٠٦ / Max AI</span>
+        <div>
+          <h2 id="max-ai-title">تغيير واحد مقيس في كل مرة.</h2>
+          <p class="lede">ليس روبوت محادثة، وليس جدول قيم سحرية. حلقة تعمل على المقابض التي وجدها Atlas على هاتفك: اختر هدفًا، واعمل أصغر تغيير قد يسدّ الفجوة، وتحقق من السلامة، ونفّذ عبر المسار المعتاد، ثم قس ما حدث.</p>
+        </div>
+      </header>
+
+      <div class="ai">
+        <div class="ai__copy">
+          <p class="lede">الجزء المهم ليس الحلقة — بل السجلّ: ما أراده المحرّك، وما غيّره، وما فعله الجهاز بعدها، وما تعلّمه من الفرق.</p>
+          <div class="never">
+            <h3>ما لن يفعله أبدًا</h3>
+            <ul class="never__list">
+              <li>كتابة واجهة NEVER_TOUCH، قبل التخطيط أو التوجيه.</li>
+              <li>ادّعاء نجاح لم يقسه.</li>
+              <li>اختلاق قراءة حيث لم تعطِ المنصّة شيئًا.</li>
+              <li>إخفاء فشل، بما في ذلك فشل تراجع عنه.</li>
+            </ul>
+          </div>
+          <p class="note"><strong>مغلق حتى تشغّله.</strong> التحكّم اليدوي هو الحالة الافتراضية. سياسة الحرارة الخاصة بالبائع تُقرأ، ولا تُتجاوز؛ والسقف الذي يفرضه البرنامج الثابت ниже الطلب يُعرض مقيّدًا — لا «مرفوعًا».</p>
+        </div>
+        <div class="ai__stage">
+          <figure class="phone">
+            <img src="../screenshots/03-max-ai.png" width="1162" height="2480" loading="lazy" decoding="async" alt="شاشة Max AI مع الهدف وحالة القرار الحالية.">
+          </figure>
+          <p class="capture">Max AI، اللقطة ٠٣ من ٧٢</p>
+        </div>
+      </div>
+
+      <ol class="ai-steps" aria-label="حلقة Max AI">
+        <li class="ai-step"><span class="ai-step__n">٠١</span><h3>لاحظ</h3><p>يقرأ الحرارة والحمل والبطارية والذاكرة والتطبيق في المقدّمة.</p></li>
+        <li class="ai-step"><span class="ai-step__n">٠٢</span><h3>قرّر</h3><p>يختار أصغر تغيير كافٍ، لا ثمانية تغييرات دفعة واحدة.</p></li>
+        <li class="ai-step"><span class="ai-step__n">٠٣</span><h3>اسأل</h3><p>طبقة سلامة بأولوية مطلقة تقول نعم أو لا أولًا.</p></li>
+        <li class="ai-step"><span class="ai-step__n">٠٤</span><h3>تحقّق</h3><p>يعيد قراءة القيمة، ثم يقيس النتيجة بعد نافذة زمنية.</p></li>
+        <li class="ai-step"><span class="ai-step__n">٠٥</span><h3>تذكّر</h3><p>يحتفظ بحلقة كاملة مقيسة — ولا يثق بما كان خاطئًا.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="apps" aria-labelledby="apps-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">٠٧ / التطبيقات</span>
+        <div>
+          <h2 id="apps-title">نمط لتطبيق واحد، لا للهاتف كله.</h2>
+          <p class="lede">افتح التطبيقات، واختر حزمة، وأعطها معاملتها. كل تطبيق يعرض حالته الفعلية بكلمات واضحة: التحكّم لكل تطبيق مغلق · يستخدم النمط العام · تجاوز التطبيق نشط.</p>
+        </div>
+      </header>
+
+      <div class="apps">
+        <div class="duo">
+          <figure class="phone">
+            <img src="../screenshots/27-app-settings.png" width="1162" height="2480" loading="lazy" decoding="async" alt="إعدادات تطبيق واحد.">
+          </figure>
+          <figure class="phone">
+            <img src="../screenshots/29-app-settings-gaming.png" width="1162" height="2480" loading="lazy" decoding="async" alt="قسم الألعاب في إعدادات تطبيق واحد.">
+          </figure>
+        </div>
+
+        <div class="app-copy">
+          <h3 class="subhead">ما الذي يمكن أن يحمله تطبيق واحد</h3>
+          <p class="lede">نمط الأداء، ومعدّل التحديث، ودقّة العرض، وسقف الحرارة، وحاكم المعالج والرسوميات — فقط ما يعلنه نواك، وفقط الحكام المدعومة من كل سياسات المعالج.</p>
+          <ul class="feature-list">
+            <li>قفل أولوية المقدّمة</li>
+            <li>تعزيز أولوية I/O</li>
+            <li>تصغير دقّة لكل تطبيق</li>
+            <li>إعادة ضبط لكل تطبيق</li>
+          </ul>
+          <div class="tags" aria-label="أنماط جاهزة">
+            <span class="tag">الطاقة</span>
+            <span class="tag">متوازن</span>
+            <span class="tag">الألعاب</span>
+            <span class="tag">الأداء</span>
+            <span class="tag">مخصّص</span>
+          </div>
+
+          <h3 class="subhead">أنماط تسافر مع مصدرها</h3>
+          <p class="lede">النمط مجموعة سلوك مسمّاة يمكنك تطبيقها وضبطها وحفظها ومشاركتها. عند التصدير، تحمل كل قيمة مصدرها: افتراضي مشحون، أو قيمة غيّرتها أنت، أو قياس يدّعيه من صدّرها. وعند الاستيراد، يقول التطبيق بالضبط ما قبله وما رفضه.</p>
+          <p class="note">القيمة المقيسة على شريحة أخرى تقول ذلك. ليست قياسًا على شريحتك. والأنماط متاحة أيضًا من الإعدادات السريعة، فيتغيّر النمط دون فتح التطبيق.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tools" aria-labelledby="tools-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">٠٨ / الأدوات</span>
+        <div>
+          <h2 id="tools-title">يُظهر ما فعله.</h2>
+          <p class="lede">القراءة والقياس والتشخيص شاشات من الدرجة الأولى، لا قائمة تصحيح مركّبة لاحقًا. لا شيء هنا يتصل بالخارج؛ تقرير الدعم يُجمّع محليًّا ولا يغادر إلا إذا سلّمته أنت.</p>
+        </div>
+      </header>
+
+      <div class="tools">
+        <article class="tool"><h3>Max Live</h3><p>الصورة الحيّة: القراءات الحالية، وما يُسمح للأتمتة بفعله الآن ولماذا، وما ستفعله تاليًا، وهل يمكن التراجع عنه.</p></article>
+        <article class="tool"><h3>طبقة FPS</h3><p>قراءة قابلة للسحب لمعدّل الإطارات والمعالج والذاكرة فوق أي لعبة — حتى ثلاثة مراقبات مستقلة، لكل منها حقولها وموضعها.</p></article>
+        <article class="tool"><h3>عارض السجلات</h3><p>logcat حيّ مع تصفية وبحث، وتقرير قابل للمشاركة، ومسرد مكتوب داخل ملف السجل نفسه.</p></article>
+        <article class="tool"><h3>مراقب العمليات</h3><p>استهلاك المعالج والذاكرة لكل عملية، وإيقاف قسري، وSIGKILL، وطبقة عائمة عندما تحتاجها فوق شيء آخر.</p></article>
+        <article class="tool"><h3>التشخيص</h3><p>مركز تشخيص حيّ، وصحّة مسار لكل مقبض، ومخطّط جهاز قابل لإعادة الإنتاج، وجواب صادق لسؤال «لماذا لم يعمل؟» لإعداد تطبيق.</p></article>
+        <article class="tool"><h3>مختبر الجهاز</h3><p>فحوص عتاد تفاعلية على الجهاز نفسه — ألوان الشاشة، واللمس المتعدد، والمفاتيح، والاهتزاز، وتوجيه الصوت، ومستوى الميكروفون، والحساسات، والقدرات التي تعلنها اللوحة.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="interface" aria-labelledby="interface-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">٠٩ / الواجهة</span>
+        <div>
+          <h2 id="interface-title">مرسومة بقواعد، لا بذوق.</h2>
+          <p class="lede">الواجهة أداة قياس. قواعدها مكتوبة قيمة بقيمة في المستودع، وبوابة تفشل البناء عندما تختلف الوثيقة والكود.</p>
+        </div>
+      </header>
+
+      <div class="triptych">
+        <article class="triptych__item">
+          <h3>تسليط واحد، مستعار</h3>
+          <p>اللون الأساسي يتبع سمتك، فيأخذ المنتج شكل الهاتف الذي يعمل عليه. أما الإيجابي والتحذير والحرج فثابتة ومفحوصة التباين، لأن إنذارًا حراريًّا يبدو زخرفيًّا عطب صحّة في أداة أداء.</p>
+        </article>
+        <article class="triptych__item">
+          <h3>خط ثابت للقيم الحيّة فقط</h3>
+          <p>MHz والنسب ودرجات الحرارة وعدد الأنوية لا يعيدون التدفّق أثناء تغيّرها. والقيمة التي لا يملكها التطبيق شرطة طويلة — لا صفر بوحدة بعده.</p>
+        </article>
+        <article class="triptych__item">
+          <h3>حركة من ٩٠ إلى ٣٦٠ مللي ثانية</h3>
+          <p>الحركة موجودة لتشرح تغييرًا، وما يطول عن ذلك زخرفة. وتفضيل تقليل الحركة محترم في هذه الصفحة وفي التطبيق.</p>
+        </article>
+      </div>
+
+      <div class="specimen" aria-label="القيمة المجهولة تُعرض شرطة طويلة">
+        <div class="specimen__cell"><span class="specimen__label">المعالج</span><span class="specimen__value">—</span><span class="specimen__unit">MHz</span></div>
+        <div class="specimen__cell"><span class="specimen__label">الحرارة</span><span class="specimen__value">—</span><span class="specimen__unit">°C</span></div>
+        <div class="specimen__cell"><span class="specimen__label">الحمل</span><span class="specimen__value">—</span><span class="specimen__unit">%</span></div>
+      </div>
+
+      <div class="swatches" aria-label="ألوان الحالة الثابتة">
+        <span class="swatch swatch--positive"><i></i>إيجابي</span>
+        <span class="swatch swatch--caution"><i></i>تحذير</span>
+        <span class="swatch swatch--critical"><i></i>حرج</span>
+        <span class="swatch swatch--accent"><i></i>اللون الأساسي</span>
+      </div>
+
+      <p class="note">فاتح وداكن، ولون أساسي قابل للتغيير، وشاشة لوحة ألوان مخصّصة. ٨٤ لغة، مع فرض RTL ببوابة لا بأمل. <a href="https://github.com/nader295/MaxManager/blob/main/DESIGN.md">اقرأ لغة التصميم</a>.</p>
+    </div>
+  </section>
+
+  <section class="band band--ink install" id="install" aria-labelledby="install-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">١٠ / التثبيت</span>
+        <div>
+          <h2 id="install-title">بلا لمس النظام، وقابل للرجوع.</h2>
+          <p class="lede">يُشحن MaxManager كوحدة: لا شيء في <code>/system</code> يُعدّل نهائيًّا، وإزالة التثبيت تعيد كل شيء.</p>
+        </div>
+      </header>
+
+      <div class="install__grid">
+        <div>
+          <ol class="install-steps">
+            <li class="install-step">
+              <span class="install-step__n">٠١</span>
+              <h3>احصل على الوحدة</h3>
+              <p>نزّل <code>MaxManager-&lt;version&gt;.zip</code> من آخر تشغيل ناجح أو من إصدار. لا تثبّت <code>MaxManager-developer-bundle.zip</code> — ذلك لمطوّري ROM.</p>
+            </li>
+            <li class="install-step">
+              <span class="install-step__n">٠٢</span>
+              <h3>ثبّتها في Magisk أو KernelSU</h3>
+              <p>اختر «التثبيت من التخزين» وحدّد ملف الوحدة. KernelSU وKernelSU Next مدعومان، والمثبّت يتحقق من وصول الخدمة لمعماريتك قبل أن يعلن النجاح.</p>
+            </li>
+            <li class="install-step">
+              <span class="install-step__n">٠٣</span>
+              <h3>أعد التشغيل، ثم امنح الجذر</h3>
+              <p>اقبل طلب المستخدم الخارق الذي يعرضه مدير الجذر عندما يطلبه MaxManager. بدونه لا يستطيع مستوى التحكّم الكتابة؛ ومع Shizuku وحده تظل عدة أدوات قراءة وكتابة تعمل.</p>
+            </li>
+            <li class="install-step">
+              <span class="install-step__n">٠٤</span>
+              <h3>افتح الإعداد</h3>
+              <p>يشرح الإعداد ما يكشفه جهازك قبل أن تلمس أي شيء. التحكّم اليدوي هو الحالة الافتراضية؛ لا يبدأ أي محرّك من تلقاء نفسه.</p>
+            </li>
+          </ol>
+
+          <div class="table-wrap">
+            <table class="table">
+              <caption>المتطلّبات</caption>
+              <thead><tr><th scope="col">المتطلّب</th><th scope="col">القيمة</th></tr></thead>
+              <tbody>
+                <tr><td>أندرويد</td><td>١٠ أو أحدث (API 29)، مبنيّ ضد API 37</td></tr>
+                <tr><td>الجذر</td><td>Magisk أو KernelSU أو KernelSU Next</td></tr>
+                <tr><td>المعمارية</td><td><code>arm64-v8a</code>، <code>armeabi-v7a</code></td></tr>
+                <tr><td>الطبقة الثانية</td><td>Shizuku، حيث يمكن أن تساعد — وليست بديلًا عن الوحدة</td></tr>
+                <tr><td>الشرائح</td><td>استراتيجيات مخصّصة لـSnapdragon وMediaTek وExynos وTensor وUnisoc؛ وما عداها عبر الاكتشاف</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <aside class="aside-box">
+          <h3>من أين يأتي البناء</h3>
+          <p>CI هو مسار البناء. وحدة الفلاش وحزمة المطوّر والمجاميع هي مخرجات سير العمل؛ لا توجد إصدارات منشورة في هذا المستودع، فخذ المخرج من آخر تشغيل ناجح.</p>
+          <a class="btn btn--line" href="https://github.com/PanditJi-9/Xx/actions/workflows/build.yml">تشغيلات سير العمل</a>
+          <a class="btn btn--line" href="https://github.com/nader295/MaxManager/blob/main/docs/building.md#releases">البناء والإصدارات</a>
+        </aside>
+      </div>
+
+      <p class="caution"><strong>خذ نسخة من صورة الإقلاع قبل التثبيت</strong>، كما في أي وحدة جذر. الجذر قرارك ومسؤوليتك. وإن فشلت الوحدة في الوصول إلى إقلاع مستقر مرتين متتاليتين، تعطّل نفسها وتقول ذلك في وصفها.</p>
+    </div>
+  </section>
+
+  <section class="section measured" id="measured" aria-labelledby="measured-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">١١ / ما يُقاس</span>
+        <div>
+          <h2 id="measured-title">ادّعاءات خلفها بوابة.</h2>
+          <p class="lede">ثلاثة وثلاثون حكمًا تعمل قبل المترجم: ستة عشر تأكيدًا، وسبعة عشر أداة تقيس نفسها. والمدقّق الذي لا يستطيع الفشل لا يثبت شيئًا، لذلك يُكسر كل واحد منها عمدًا ويجب أن يسمّي القاعدة التي كان يصطادها.</p>
+        </div>
+      </header>
+
+      <div class="measured__intro">
+        <span class="measured__num">٣٣</span>
+        <p class="measured__label">حكمًا قبل المترجم</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <caption>بوابات العقد</caption>
+          <thead><tr><th scope="col">البوابة</th><th scope="col">ما ترفض تمريره</th></tr></thead>
+          <tbody>
+            <tr><td><code>kt_balance</code></td><td>أقواس غير متوازنة، أو نصوص أو تعليقات غير مغلقة، أو XML تالف</td></tr>
+            <tr><td><code>code_health</code></td><td>مخالفات النظافة، أو دَين فوق سقفه المعلن، أو أصول غير مفصح عنها</td></tr>
+            <tr><td><code>i18n_coverage</code></td><td>محدّدات تنسيق خاطئة، أو مفاتيح مكررة، أو انحراف المجلد/المنتقي/إعداد اللغات</td></tr>
+            <tr><td><code>resource_compile</code></td><td>موارد غير صالحة، يحكمها aapt2 الحقيقي — لا شبيه له</td></tr>
+            <tr><td><code>rtl_guard</code></td><td>حشو واتجاهات أيقونات لا تنعكس</td></tr>
+            <tr><td><code>license_audit</code></td><td>كود GPL يظهر في أي مكان في مسار الإصدار</td></tr>
+            <tr><td><code>source_manifest</code></td><td>انحراف الشجرة عن بصمة ملفاتها المعلنة</td></tr>
+            <tr><td><code>readme_assets</code></td><td>أصول وروابط مكسورة أو غير آمنة في هذه الوثائق</td></tr>
+            <tr><td><code>screenshot_gallery</code></td><td>معرض انحرف عن المجلد الذي يُولَّد منه</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>ما لا يُتحقَّق منه هنا — مذكورًا كحاجة إلى جهاز</h3>
+      <div class="table-wrap">
+        <table class="table table--muted">
+          <thead><tr><th scope="col">غير مُتحقَّق في هذا المستودع</th><th scope="col">السبب</th></tr></thead>
+          <tbody>
+            <tr><td>السلوك الفعلي للعتاد</td><td>الوحدات وجداول OPP تختلف بحسب البائع؛ واستقرار الكتابة يحتاج الجهاز نفسه</td></tr>
+            <tr><td>صحّة سياسة SELinux</td><td>لا شجرة AOSP في هذه البيئة لتشغيل neverallow ضدها</td></tr>
+            <tr><td>سلوك الإقلاع ومنع حلقة الإقلاع</td><td>يحتاج جهازًا يُقلع؛ عدّاد المثبّت نفسه هو الدليل</td></tr>
+            <tr><td>الإخراج البصري: RTL والحركة والسمة</td><td>يحتاج مُصيّرًا وشاشة — واللقطات هي الدليل</td></tr>
+            <tr><td>مخرج إصدار موقّع</td><td>سرّ التوقيع غائب بالتصميم؛ وتشغيل CI مع keystore يتحقق منه</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note"><strong>البناء الأخضر يعني أنه يترجم والاختبارات تمرّ.</strong> ولا يعني أن كتابة تستقرّ على عتادك. هذه الجملة قاعدة في هذا المشروع، لا تحوّط — <a href="https://github.com/nader295/MaxManager/blob/main/docs/verification.md">verification.md</a> يسرد ما أُثبت، وما يعمل بلا جهاز، وما يحتاج هاتفًا.</p>
+    </div>
+  </section>
+
+  <section class="section" id="notes" aria-labelledby="notes-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">١٢ / ملاحظات الإصدار</span>
+        <div>
+          <h2 id="notes-title">الجديد في 5.2.</h2>
+          <p class="lede">النسخة القصيرة من أحدث إصدار. التاريخ الكامل يعيش في ملف واحد في جذر المستودع.</p>
+        </div>
+      </header>
+
+      <div class="timeline">
+        <article class="release-row">
+          <div class="release-row__version">5.2 <span>الحالي</span></div>
+          <div>
+            <h3>قابل للتمرير، وأهدأ، وتحكّم أكبر حيث يُحسّ</h3>
+            <p>صفحة قابلة للتمرير وتصميم مبسّط؛ وأنماط جاهزة في شاشة نظام الألوان؛ وخيارات لتعطيل إشعارات نمط الاستمرارية؛ وتصغير دقّة لكل تطبيق في تطبيقات الألعاب؛ وخيارات مُصيّر عامة؛ ودعم إعادة التشغيل الناعمة المحاكاة في KernelSU. وأزيلت مجموعة كبيرة من إعدادات التحسين البالية، بما في ذلك إعدادات معدّل التحديث في الشاشات لكل تطبيق والعامة.</p>
+            <div class="release-row__meta"><span>الواجهة</span><span>السلوك</span><span>التنظيف</span></div>
+          </div>
+        </article>
+        <article class="release-row">
+          <div class="release-row__version">5.1 <span>أقدم</span></div>
+          <div>
+            <h3>الترجمة تتوسّع من ١٧ إلى ٨٤ لغة</h3>
+            <p>تُرجمت الواجهة وتدفّق الإعداد ومفردات الدعم عبر مجموعة اللغات الكاملة، مع معاملة تخطيط RTL كحالة من الدرجة الأولى.</p>
+            <div class="release-row__meta"><span>اللغات</span><span>RTL</span></div>
+          </div>
+        </article>
+        <article class="release-row">
+          <div class="release-row__version">5.0.4 <span>أقدم</span></div>
+          <div>
+            <h3>خدمة مدفوعة بالأحداث، وحدّ أدنى أقل</h3>
+            <p>انتقلت الخدمة من الاستطلاع إلى الأحداث، فخفضت الحد الأدنى المدعوم إلى أندرويد ١٠ وقلّلت العمل الذي تقوم به عندما لا يتغيّر شيء.</p>
+            <div class="release-row__meta"><span>الخدمة</span><span>أندرويد ١٠</span></div>
+          </div>
+        </article>
+        <article class="release-row">
+          <div class="release-row__version">5.0 <span>أقدم</span></div>
+          <div>
+            <h3>واجهة معاد بناؤها، مع الإعداد والنسخ والبلاطات</h3>
+            <p>وصل تدفّق الإعداد الأول، ونسخ الأنماط، وبلاطات الإعدادات السريعة مع إعادة بناء الواجهة التي تنحدر منها الشاشات الحالية.</p>
+            <div class="release-row__meta"><span>الواجهة</span><span>الإعداد</span><span>النسخ</span></div>
+          </div>
+        </article>
+      </div>
+
+      <p class="note">الإصدارات الأقدم مسجّلة بالكامل في <a href="https://github.com/PanditJi-9/Xx/blob/main/changelog.md">changelog.md</a>.</p>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">١٣ / الأسئلة الشائعة</span>
+        <div>
+          <h2 id="faq-title">الأسئلة التي تعود دائمًا.</h2>
+        </div>
+      </header>
+
+      <div class="faq">
+        <details>
+          <summary>هل يحتاج إلى جذر؟</summary>
+          <div class="faq__body"><p>نعم، لمستوى التحكّم الكامل. MaxManager وحدة بلا لمس النظام لـMagisk أو KernelSU: يصل التطبيق إلى النواة عبر جسر جذر واحد مُدقّق، وتعمل الخدمات كعمليات في جانب النظام. ويُكتشف Shizuku (مستوى ADB، بلا جذر) أيضًا ويفتح عدة أدوات قراءة وكتابة، لكنه ليس بديلًا عن الوحدة.</p></div>
+        </details>
+        <details>
+          <summary>هل سيعمل على هاتفي؟</summary>
+          <div class="faq__body"><p>غالبًا — لكنك لا تحتاج إلى التخمين. يحلّ MaxManager القدرات لكل واجهة قبل عرض أي شيء، فالمقبض الذي لا يكشفه جهازك لا يظهر أبدًا كمفتاح لا يفعل شيئًا. افتحه واقرأ الخريطة: ذلك الجواب عن هاتفك، وهو أفضل من أي قائمة.</p></div>
+        </details>
+        <details>
+          <summary>هل Max AI مفعّل افتراضيًّا؟</summary>
+          <div class="faq__body"><p>لا. التحكّم اليدوي هو الحالة الافتراضية، وMax AI وMax Atlas ومحرّكات كل تطبيق أشياء تشغّلها أنت. وعندما تفعل، تظل طبقة السلامة ذات الأولوية المطلقة.</p></div>
+        </details>
+        <details>
+          <summary>لماذا تظهر قيمة مجهولة <code>status_unknown</code> بدل 0؟</summary>
+          <div class="faq__body"><p>لأن 0 ادّعاء. المشروع يمنع التليمتري المُصنَّع: عندما لا يعرف، يقول ذلك بدل عرض صفر يبدو معقولًا. الحقل الذي يبدو فارغًا أصدق من رقم خاطئ.</p></div>
+        </details>
+        <details>
+          <summary>ماذا يحدث إذا حدث خطأ؟</summary>
+          <div class="faq__body"><p>ثلاث طبقات مستقلة. تُقرأ القيم بعد كتابتها، ويُعرض عدم التطابق مع محاولة تراجع. ويعيد حارس الانحراف الفحص لاحقًا، لأن الإعداد قد يرتدّ بصمت. ويعطّل المثبّت نفسه إن فشلت الوحدة في الوصول إلى إقلاع مستقر مرتين متتاليتين.</p></div>
+        </details>
+        <details>
+          <summary>هل يرسل بياناتي إلى مكان ما؟</summary>
+          <div class="faq__body"><p>لا قياس عن بُعد، ولا تحليلات، ولا رفع صامت. تقرير التشخيص يُبنى محليًّا ويُقلَّل، ولا يغادر جهازك إلا إذا سلّمت الملف بنفسك. تقرير الدعم ليس لقطة شاشة.</p></div>
+        </details>
+        <details>
+          <summary>لماذا الترخيص احتكاري إذا كان المستودع عامًّا؟</summary>
+          <div class="faq__body"><p>المستودع العام ليس الشيء نفسه مشروع مفتوح المصدر. MaxManager برنامج مغلق المصدر؛ والمستودع صفحة منتجه وعدّة تكامله مع ROM وسجلّه الهندسي. ولا يُمنح أي حق في الاستخدام أو النسخ أو التعديل أو التوزيع دون إذن كتابي مسبق من صاحب حقوق النشر. وتحتفظ مكوّنات الطرف الثالث بتراخيصها، مسرودة فردًا فردًا في الإشعارات.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="docs" aria-labelledby="docs-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">١٤ / الوثائق</span>
+        <div>
+          <h2 id="docs-title">النصف المكتوب.</h2>
+          <p class="lede">هذه الصفحة هي الجولة. وهذه هي الأجوبة التي تعود إليها بعدها.</p>
+        </div>
+      </header>
+
+      <div class="docs-grid">
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/README.md"><span class="doc-link__label">فهرس الوثائق</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/features.md"><span class="doc-link__label">كل قدرة</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/max-atlas.md"><span class="doc-link__label">Max Atlas، مرحلة بمرحلة</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/max-ai.md"><span class="doc-link__label">Max AI، قرارًا بقرار</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/architecture.md"><span class="doc-link__label">المعمارية والثوابت</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/compatibility.md"><span class="doc-link__label">التوافق</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/verification.md"><span class="doc-link__label">كيف تُقاس الادّعاءات</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/rom-integration.md"><span class="doc-link__label">عدّة تكامل ROM</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/building.md"><span class="doc-link__label">البناء والإصدارات</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/DESIGN.md"><span class="doc-link__label">لغة التصميم</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/faq.md"><span class="doc-link__label">الأسئلة الشائعة كاملة</span></a>
+        <a class="doc-link" href="https://github.com/PanditJi-9/Xx/blob/main/docs/screenshots/README.md"><span class="doc-link__label">عقد اللقطات</span></a>
+      </div>
+
+      <div class="support" id="support">
+        <div class="support__copy">
+          <h3>وجدت ما أخطأت فيه الخريطة؟</h3>
+          <p>أرسل الجهاز، وROM، ومدير الجذر، وما عرضه التطبيق. وإن قال <code>status_unknown</code>، قل ذلك — إنها حقيقة عن جهازك، لا خطأ منك.</p>
+        </div>
+        <div class="support__actions">
+          <a class="btn btn--primary" href="https://t.me/ROBINHOOD_GROUP_RODIN">مجموعة Telegram</a>
+          <a class="btn btn--line" href="https://github.com/PanditJi-9/Xx/issues">افتح مشكلة</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <span class="footer__word" aria-hidden="true">MAXMANAGER</span>
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="1.25" y="1.25" width="29.5" height="29.5" rx="6" stroke="currentColor" stroke-opacity=".35" stroke-width="1.5"/><path d="M8.5 23V9l7.5 10L23.5 9v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></svg>
+          MaxManager
+        </div>
+        <p class="footer__note">لوحة تحكّم في الأداء والطاقة لأندرويد بصلاحيات الجذر، بُنيت كي لا تُزيَّن قيمة لا يعرفها التطبيق بمظهر قيمة يعرفها.</p>
+      </div>
+      <div class="footer__col">
+        <h3>المنتج</h3>
+        <ul>
+          <li><a href="#screens">الشاشات</a></li>
+          <li><a href="#controls">التحكّم</a></li>
+          <li><a href="#install">التثبيت</a></li>
+          <li><a href="#notes">ملاحظات الإصدار</a></li>
+          <li><a href="https://github.com/PanditJi-9/Xx/blob/main/changelog.md">سجلّ التغييرات</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>المستودع</h3>
+        <ul>
+          <li><a href="https://github.com/nader295/MaxManager">GitHub</a></li>
+          <li><a href="https://github.com/PanditJi-9/Xx/issues">المشكلات</a></li>
+          <li><a href="https://github.com/PanditJi-9/Xx/actions">Actions</a></li>
+          <li><a href="https://github.com/nader295/MaxManager/blob/main/LICENSE">الترخيص</a></li>
+          <li><a href="https://github.com/nader295/MaxManager/blob/main/THIRD_PARTY_NOTICES.md">إشعارات الطرف الثالث</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>اقرأ</h3>
+        <ul>
+          <li><a href="https://github.com/nader295/MaxManager/blob/main/docs/README.md">الوثائق</a></li>
+          <li><a href="https://github.com/nader295/MaxManager/blob/main/docs/verification.md">التحقّق</a></li>
+          <li><a href="https://github.com/nader295/MaxManager/blob/main/docs/compatibility.md">التوافق</a></li>
+          <li><a href="https://github.com/nader295/MaxManager/blob/main/docs/rom-integration.md">تكامل ROM</a></li>
+          <li><a href="../" hreflang="en" lang="en">English</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__fine">
+      <span>© ٢٠٢٦ Nader Magdy. MaxManager برنامج احتكاري؛ لا يُمنح أي حق دون إذن كتابي.</span>
+      <span>هذه الصفحة لا تحمّل شيئًا من طرف ثالث — لا خطوط ويب، ولا تحليلات، ولا كوكيز.</span>
+      <a class="footer__top" href="#top">إلى الأعلى</a>
+    </div>
+  </div>
+</footer>
+
+<dialog class="shot-dialog" id="shot-dialog" aria-label="عارض اللقطات">
+  <div class="shot-dialog__bar">
+    <button class="shot-dialog__btn" type="button" data-dialog-prev aria-label="اللقطة السابقة">→</button>
+    <button class="shot-dialog__btn" type="button" data-dialog-next aria-label="اللقطة التالية">←</button>
+    <span class="shot-dialog__cap" id="shot-dialog-cap"></span>
+    <form method="dialog"><button class="shot-dialog__btn" aria-label="إغلاق">×</button></form>
+  </div>
+  <img id="shot-dialog-img" src="../screenshots/02-now-home.png" width="1162" height="2480" alt="">
+</dialog>
+
+<script src="../site/site.js" defer></script>
+</body>
+</html>

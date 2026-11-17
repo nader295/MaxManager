@@ -1,0 +1,172 @@
+{
+  "_readme": [
+    "عقد المعرض — يقرأه tools/screenshot_gallery.py وحده. صيغة كل إطار: {stem, route, en, ar}.",
+    "الملفّات نفسها لا تُكتب هنا: المولّد يبحث عن <stem>.png في هذا المجلّد، فإن وُجد ظهر الإطار،",
+    "وإن غاب لم يظهر ولم تنكسر صورة. وroute تُقاس على MaxDestinations.kt، وen/ar تسميتان قصيرتان",
+    "لأن حدّ الطول (caption_max) هو ما يمنع التسميات الطويلة من إفساد تراصف الصفوف.",
+    "وخانات ٤٨ الأولى لقطات حقيقية من جهاز المالك، أسماؤها ومساراتها وصفتها مقيسة بالـOCR على الملفّات",
+    "نفسها لا مُخمَّنة. أما خانات ٤٩–٧٢ فأُضيفت لاحقًا: مساراتها مطابقة لـMaxDestinations.kt، وأوصافها من الشاشات نفسها لا من الـOCR، والجدول البشريّ لها في docs/screenshots/README.md. ومجموعة Game space (٧٠–٧٢) أفقية، وقياسها معلن في مجموعتها."
+  ],
+  "columns": 4,
+  "thumb_width": 140,
+  "caption_max": 20,
+  "expected": { "width": 1162, "height": 2480, "max_bytes": 409600 },
+  "variants": ["light", "ar"],
+  "groups": [
+    {
+      "key": "home",
+      "en": "Home and Max AI",
+      "ar": "الرئيسية و Max AI",
+      "open": true,
+      "frames": [
+        { "stem": "01-start", "route": "get_started", "en": "Start", "ar": "البداية" },
+        { "stem": "02-now-home", "route": "now", "en": "Home", "ar": "الرئيسية" },
+        { "stem": "03-max-ai", "route": "max_ai", "en": "Max AI", "ar": "Max AI" },
+        { "stem": "04-max-ai-plan", "route": "max_ai", "en": "Max AI plan", "ar": "خطة Max AI" },
+        { "stem": "05-max-ai-live", "route": "max_live", "en": "Live control", "ar": "التحكّم الحيّ" },
+        { "stem": "06-max-ai-loops", "route": "max_live", "en": "Loop results", "ar": "حصيلة الحلقات" },
+        { "stem": "49-home-tour", "route": "now", "en": "Home tour", "ar": "جولة الرئيسية" }
+      ]
+    },
+    {
+      "key": "apps",
+      "en": "Per-app control",
+      "ar": "التحكّم لكل تطبيق",
+      "open": true,
+      "frames": [
+        { "stem": "26-apps-list", "route": "apps", "en": "Apps", "ar": "التطبيقات" },
+        { "stem": "27-app-settings", "route": "app_settings", "en": "Per-app", "ar": "لكل تطبيق" },
+        { "stem": "28-app-settings-display", "route": "app_settings", "en": "Per-app display", "ar": "لكل تطبيق · العرض" },
+        { "stem": "29-app-settings-gaming", "route": "app_settings", "en": "Per-app gaming", "ar": "لكل تطبيق · الألعاب" },
+        { "stem": "30-app-settings-power", "route": "app_settings", "en": "Per-app power", "ar": "لكل تطبيق · الطاقة" },
+        { "stem": "31-app-settings-tune", "route": "app_settings", "en": "Per-app tuning", "ar": "لكل تطبيق · ضبط" },
+        { "stem": "50-app-spoof", "route": "app_settings", "en": "Spoof", "ar": "انتحال الجهاز" }
+      ]
+    },
+    {
+      "key": "game",
+      "en": "Game space",
+      "ar": "مساحة الألعاب",
+      "open": true,
+      "columns": 3,
+      "thumb_width": 260,
+      "expected": { "width": 1280, "height": 576 },
+      "frames": [
+        { "stem": "70-game-lobby", "route": "gamelobby", "en": "Game lobby", "ar": "لوبي الألعاب" },
+        { "stem": "71-game-launch", "route": "gamelobby", "en": "Launching", "ar": "بدء التشغيل" },
+        { "stem": "72-game-panel", "route": "gamelobby", "en": "Side panel", "ar": "اللوحة الجانبية" }
+      ]
+    },
+    {
+      "key": "hubs",
+      "en": "Control hubs",
+      "ar": "مجالات التحكّم",
+      "open": false,
+      "frames": [
+        { "stem": "07-control-hub", "route": "control", "en": "Control", "ar": "التحكّم" },
+        { "stem": "08-control-lanes", "route": "control", "en": "Control lanes", "ar": "مسارات التحكّم" },
+        { "stem": "09-control-tools", "route": "control", "en": "Control tools", "ar": "أدوات التحكّم" },
+        { "stem": "10-control-tools-2", "route": "control", "en": "More tools", "ar": "أدوات أخرى" },
+        { "stem": "11-control-hub-2", "route": "control", "en": "Control (2)", "ar": "التحكّم (٢)" },
+        { "stem": "12-hub-display", "route": "hub_display", "en": "Display", "ar": "العرض" },
+        { "stem": "13-hub-responsiveness", "route": "hub_responsiveness", "en": "Responsiveness", "ar": "الاستجابة" },
+        { "stem": "14-hub-power", "route": "hub_power", "en": "Power", "ar": "الطاقة" },
+        { "stem": "51-cpu-hub", "route": "hub_cpu", "en": "CPU hub", "ar": "مجال المعالج" },
+        { "stem": "52-memory-hub", "route": "hub_memory", "en": "Memory hub", "ar": "مجال الذاكرة" },
+        { "stem": "53-storage-hub", "route": "hub_storage", "en": "Storage hub", "ar": "مجال التخزين" }
+      ]
+    },
+    {
+      "key": "silicon",
+      "en": "CPU and GPU",
+      "ar": "المعالج والرسوميات",
+      "open": false,
+      "frames": [
+        { "stem": "15-cpu-cores", "route": "cpucorecontrol", "en": "CPU cores", "ar": "أنوية المعالج" },
+        { "stem": "16-core-limits", "route": "cpucorecontrol", "en": "Core limits", "ar": "حدود الأنوية" },
+        { "stem": "17-cpu-preference-tweaks", "route": "preferenced", "en": "Tweaks", "ar": "التحسينات" },
+        { "stem": "18-gpu-studio-profiles", "route": "gpustudio", "en": "GPU profiles", "ar": "أنماط الرسوميات" },
+        { "stem": "19-gpu-studio-live", "route": "gpustudio", "en": "GPU live", "ar": "الرسوميات الحيّ" },
+        { "stem": "54-thermal", "route": "thermal_detail", "en": "Thermal", "ar": "الحرارة" }
+      ]
+    },
+    {
+      "key": "memory",
+      "en": "Memory and display",
+      "ar": "الذاكرة والعرض",
+      "open": false,
+      "frames": [
+        { "stem": "20-memory-zram", "route": "zrammanager", "en": "ZRAM", "ar": "مدير ZRAM" },
+        { "stem": "21-display-resolution", "route": "resolutionscreen", "en": "Resolution", "ar": "الدقّة" },
+        { "stem": "55-memory-ufs", "route": "memory_ufs", "en": "Memory & UFS", "ar": "الذاكرة و UFS" },
+        { "stem": "56-zram-custom", "route": "zrammanager", "en": "ZRAM size", "ar": "حجم ZRAM" },
+        { "stem": "57-canvas-custom", "route": "resolutionscreen", "en": "Custom canvas", "ar": "مقاس مخصّص" }
+      ]
+    },
+    {
+      "key": "power",
+      "en": "Battery and charging",
+      "ar": "البطارية والشحن",
+      "open": false,
+      "frames": [
+        { "stem": "22-power-charging", "route": "chargingscreen", "en": "Charging", "ar": "الشحن" },
+        { "stem": "23-bypass-check", "route": "bypasschg_check", "en": "Bypass check", "ar": "فحص التجاوز" },
+        { "stem": "24-doze", "route": "dozemode", "en": "Doze", "ar": "وضع Doze" },
+        { "stem": "25-sleep-policy", "route": "dozemode", "en": "Sleep policy", "ar": "سياسة الخمول" }
+      ]
+    },
+    {
+      "key": "system",
+      "en": "Settings and tools",
+      "ar": "الإعدادات والأدوات",
+      "open": false,
+      "frames": [
+        { "stem": "32-settings-root", "route": "settings", "en": "Settings", "ar": "الإعدادات" },
+        { "stem": "33-color-palette", "route": "color_palette", "en": "Palette", "ar": "لوحة الألوان" },
+        { "stem": "34-logs", "route": "logsviewer", "en": "Logs", "ar": "السجلات" },
+        { "stem": "35-max-backup", "route": "max_backup", "en": "Backup", "ar": "النسخ الاحتياطي" },
+        { "stem": "36-backup-plan", "route": "max_backup", "en": "Backup plan", "ar": "خطة النسخ" },
+        { "stem": "37-backup-apps", "route": "max_backup", "en": "Backup apps", "ar": "تطبيقات النسخ" },
+        { "stem": "38-permissions", "route": "max_perms", "en": "Permissions", "ar": "الأذونات" },
+        { "stem": "39-permissions-app", "route": "max_perms", "en": "App permissions", "ar": "أذونات تطبيق" },
+        { "stem": "40-permissions-2", "route": "max_perms", "en": "Permissions (2)", "ar": "الأذونات (٢)" },
+        { "stem": "41-activity-launcher", "route": "activitylauncher", "en": "Activities", "ar": "الأنشطة" },
+        { "stem": "42-set-edit", "route": "setedit", "en": "Property editor", "ar": "محرّر الخصائص" },
+        { "stem": "58-backup-scope", "route": "max_backup", "en": "What it copies", "ar": "ما يُنسخ" },
+        { "stem": "59-settings-about", "route": "settings", "en": "About", "ar": "حول التطبيق" },
+        { "stem": "60-settings-advanced", "route": "settings", "en": "Advanced", "ar": "الوضع المتقدّم" },
+        { "stem": "61-settings-service", "route": "settings", "en": "Service & logs", "ar": "الخدمة والسجلّ" },
+        { "stem": "62-language", "route": "settings", "en": "Language", "ar": "اللغة" }
+      ]
+    },
+    {
+      "key": "network",
+      "en": "Network, storage and HUD",
+      "ar": "الشبكة والتخزين و HUD",
+      "open": false,
+      "frames": [
+        { "stem": "43-network-detail", "route": "network_detail", "en": "Network", "ar": "الشبكة" },
+        { "stem": "44-network-scheduler", "route": "networkscheduler", "en": "Scheduler", "ar": "مجدول الشبكة" },
+        { "stem": "45-storage-detail", "route": "storage_detail", "en": "Storage", "ar": "التخزين" },
+        { "stem": "46-fps-overlay", "route": "fpsoverlay", "en": "FPS overlay", "ar": "طبقة FPS" },
+        { "stem": "47-fps-overlay-metrics", "route": "fpsoverlay", "en": "HUD metrics", "ar": "مقاييس HUD" },
+        { "stem": "48-fps-overlay-source", "route": "fpsoverlay", "en": "HUD source", "ar": "مصدر HUD" },
+        { "stem": "63-compiler-mode", "route": "dex2oat", "en": "Compiler mode", "ar": "وضع التجميع" },
+        { "stem": "64-compiler-apps", "route": "dex2oat", "en": "Compile per app", "ar": "تجميع التطبيقات" }
+      ]
+    },
+    {
+      "key": "device",
+      "en": "Device and tools",
+      "ar": "الجهاز والأدوات",
+      "open": false,
+      "frames": [
+        { "stem": "65-device-info", "route": "device_info", "en": "Device info", "ar": "معلومات الجهاز" },
+        { "stem": "66-access-privileges", "route": "privilege", "en": "Privileges", "ar": "الصلاحيات" },
+        { "stem": "67-file-manager", "route": "filemanager", "en": "File manager", "ar": "مدير الملفات" },
+        { "stem": "68-task-monitor", "route": "processmanager", "en": "Task monitor", "ar": "مراقب المهام" },
+        { "stem": "69-audio-studio", "route": "audio_studio", "en": "Audio studio", "ar": "استوديو الصوت" }
+      ]
+    }
+  ]
+}

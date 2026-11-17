@@ -1,0 +1,136 @@
+{
+  "_": "بيان الصور المصغّرة — بصمات تُقاس في CI. تغيير أيّ مدخل يوجب إعادة التوليد.",
+  "tool": "tools/store_thumbnails.py",
+  "spec_sha256": "f8addb667c7dc2ce78a7db54d92b8c1c9737df85a88eb118246441f20107b657",
+  "palette": {
+    "board_dark_sha256": "432f6c8e662e606d0dcb81cddddb5ed2dc6909caa5bcbbd07da68ae6e052952a",
+    "mark_dark": "#5FD9AC",
+    "mark_light": "#0B6B4F"
+  },
+  "mark": {
+    "view": 100.0,
+    "stroke": 7.0,
+    "segments_sha256": "827117937e0f85dc1012cec67764d558986c2e2ecbdd251775166c905cf3ab95"
+  },
+  "fonts": {
+    "display": {
+      "file": "SpaceGrotesk[wght].ttf",
+      "sha256": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72",
+      "source": "google/fonts — ofl/spacegrotesk"
+    },
+    "body": {
+      "file": "Manrope[wght].ttf",
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6",
+      "source": "google/fonts — ofl/manrope"
+    },
+    "mono": {
+      "file": "JetBrainsMono[wght].ttf",
+      "sha256": "48715a42ec242c21e9f02692891e147d022299a52e48d5e413e1a942193ffeda",
+      "source": "google/fonts — ofl/jetbrainsmono"
+    },
+    "ar": {
+      "file": "NotoKufiArabic-Bold.ttf",
+      "sha256": "11c1608fb7c70135ab4cfd126f2300c81c7ca08c9bcffaff61b947edba234e65",
+      "source": "نظام (fonts-noto) / google/fonts — ofl/notokufiarabic"
+    },
+    "arBody": {
+      "file": "NotoSansArabic-Bold.ttf",
+      "sha256": "ded6fc7359ca36d15d7aab9ef0c066e21ce48b26a069994d6602fa2cb9a1b952",
+      "source": "نظام (fonts-noto) / google/fonts — ofl/notosansarabic"
+    }
+  },
+  "measured": {
+    "screens": 69,
+    "locales": 84
+  },
+  "images": [
+    {
+      "file": "card-01-now-en.png",
+      "kind": "phone",
+      "lang": "en",
+      "id": "01-now",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 431721,
+      "sha256": "5422f05b429abea0f87b328aa128decc3daa1076366ebf088a8248a67da1960a",
+      "source": "docs/screenshots/02-now-home.png"
+    },
+    {
+      "file": "card-01-now-ar.png",
+      "kind": "phone",
+      "lang": "ar",
+      "id": "01-now",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 439303,
+      "sha256": "1e93f1cdeb7f57f7d782136c40668269a6962ec748fcd4b24375c9f029a13204",
+      "source": "docs/screenshots/02-now-home.png"
+    },
+    {
+      "file": "card-02-max-ai-en.png",
+      "kind": "phone",
+      "lang": "en",
+      "id": "02-max-ai",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 328482,
+      "sha256": "f4c8f99fac23c76ea792c26eab26135a95e0c74662166f81d5b9e92eacbab78b",
+      "source": "docs/screenshots/03-max-ai.png"
+    },
+    {
+      "file": "card-02-max-ai-ar.png",
+      "kind": "phone",
+      "lang": "ar",
+      "id": "02-max-ai",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 328761,
+      "sha256": "a6ba9c7242815e1862dc5b7b8e1cfe5916a3aea8bf2f76eed1c8a35566d4ee3e",
+      "source": "docs/screenshots/03-max-ai.png"
+    },
+    {
+      "file": "card-03-control-en.png",
+      "kind": "phone",
+      "lang": "en",
+      "id": "03-control",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 270867,
+      "sha256": "c9a27ff953943c20e9d86a4b2a82c728162ff95f826d219daf196b8a2b1c3693",
+      "source": "docs/screenshots/07-control-hub.png"
+    },
+    {
+      "file": "card-03-control-ar.png",
+      "kind": "phone",
+      "lang": "ar",
+      "id": "03-control",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 274307,
+      "sha256": "3700146bb3021688e541f3030151d18aa9b416967e139f4a661715695efd7933",
+      "source": "docs/screenshots/07-control-hub.png"
+    },
+    {
+      "file": "feature-en.png",
+      "kind": "feature",
+      "lang": "en",
+      "id": "feature",
+      "width": 1024,
+      "height": 500,
+      "bytes": 133945,
+      "sha256": "0ceefe33084249a64c2614aa49f89506e142c8aa3c29d94c9818337867a5e976",
+      "source": "docs/screenshots/02-now-home.png"
+    },
+    {
+      "file": "feature-ar.png",
+      "kind": "feature",
+      "lang": "ar",
+      "id": "feature",
+      "width": 1024,
+      "height": 500,
+      "bytes": 130385,
+      "sha256": "ef521a9980ea4ea359a7e1cb99c62c21bab3c04af68e6aa5745513bd75730102",
+      "source": "docs/screenshots/02-now-home.png"
+    }
+  ]
+}

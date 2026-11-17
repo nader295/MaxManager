@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MaxManager — performance control, with the receipts</title>
+<meta name="description" content="MaxManager is a systemless module for rooted Android. It reads the interfaces your kernel exposes, writes through one audited path, reads every change back, and shows an unknown value as unknown — never as a plausible zero.">
+<meta name="theme-color" content="#f2f4ef" data-theme-color>
+<link rel="canonical" href="https://nader295.github.io/MaxManager/">
+<link rel="alternate" hreflang="en" href="https://nader295.github.io/MaxManager/">
+<link rel="alternate" hreflang="ar" href="https://nader295.github.io/MaxManager/ar/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%230038ff'/%3E%3Cpath%20d='M8%2023V9l8%2010%208-10v14'%20fill='none'%20stroke='%23fff'%20stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="site/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MaxManager">
+<meta property="og:title" content="MaxManager — performance control, with the receipts">
+<meta property="og:description" content="One audited write path, read-back verification, per-app profiles, and status_unknown instead of a plausible zero.">
+<meta property="og:url" content="https://nader295.github.io/MaxManager/">
+<meta property="og:image" content="https://nader295.github.io/MaxManager/store/feature-en.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="MaxManager — a control plane for rooted Android">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MaxManager — performance control, with the receipts">
+<meta name="twitter:description" content="One audited write path, read-back verification, and status_unknown instead of a plausible zero.">
+<meta name="twitter:image" content="https://nader295.github.io/MaxManager/store/feature-en.png">
+<script>
+(function () {
+  var root = document.documentElement;
+  try {
+    var t = localStorage.getItem("mm-theme");
+    if (t === "light" || t === "dark") root.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><span class="progress__bar" data-progress></span></div>
+
+<header class="masthead">
+  <div class="shell masthead__inner">
+    <a class="wordmark" href="#top" aria-label="MaxManager, top of page">
+      <span class="wordmark__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none">
+          <rect x="1.25" y="1.25" width="29.5" height="29.5" rx="6" stroke="currentColor" stroke-opacity=".35" stroke-width="1.5"/>
+          <path d="M8.5 23V9l7.5 10L23.5 9v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/>
+        </svg>
+      </span>
+      <span class="wordmark__text">MaxManager<span class="wordmark__sub">System control</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Sections">
+      <a class="nav__link" href="#screens">Screens</a>
+      <a class="nav__link" href="#controls">Controls</a>
+      <a class="nav__link" href="#atlas">Atlas</a>
+      <a class="nav__link" href="#max-ai">Max AI</a>
+      <a class="nav__link" href="#install">Install</a>
+      <a class="nav__link" href="#measured">Verify</a>
+      <a class="nav__link" href="#docs">Docs</a>
+    </nav>
+
+    <div class="masthead__tools">
+      <a class="lang" href="ar/" hreflang="ar" lang="ar">العربية</a>
+      <button class="theme" type="button" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 14.4A8 8 0 1 1 9.6 4 6.5 6.5 0 0 0 20 14.4Z"/></svg>
+      </button>
+      <a class="btn btn--primary btn--small masthead__install" href="#install">Install 5.2</a>
+      <details class="menu">
+        <summary>Menu</summary>
+        <div class="menu__panel">
+          <a href="#screens">Screens <span>02</span></a>
+          <a href="#controls">Controls <span>04</span></a>
+          <a href="#atlas">Max Atlas <span>05</span></a>
+          <a href="#max-ai">Max AI <span>06</span></a>
+          <a href="#install">Install <span>10</span></a>
+          <a href="#measured">What is measured <span>11</span></a>
+          <a href="#docs">Documentation <span>14</span></a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<div class="release">
+  <div class="shell release__inner">
+    <span class="release__tag">5.2</span>
+    <span class="release__text">Scrollable pages, colour-scheme presets, and per-app resolution downscale for games.</span>
+    <a class="release__link" href="https://github.com/PanditJi-9/Xx/blob/main/changelog.md">Full changelog</a>
+  </div>
+</div>
+
+<main id="main">
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="shell hero__grid">
+      <div class="hero__copy">
+        <h1 class="hero__title" id="hero-title">Performance control, <em>with the receipts.</em></h1>
+        <p class="hero__lede">MaxManager reads the interfaces your kernel actually exposes, writes through one audited path, and reads every change back. If the phone did not settle, you see that — not a green check.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#install">Install the module</a>
+          <a class="index-link" href="#screens">See the screens</a>
+        </div>
+        <ul class="specs" aria-label="At a glance">
+          <li>Magisk and KernelSU</li>
+          <li>arm64-v8a</li>
+          <li>No telemetry</li>
+        </ul>
+      </div>
+
+      <div class="hero__stage" aria-label="A real capture of the Home screen">
+        <span class="hero__ghost" aria-hidden="true">5.2</span>
+        <span class="stage-label" aria-hidden="true">Real capture</span>
+        <figure class="phone phone--main">
+          <img src="screenshots/02-now-home.png" width="1162" height="2480" fetchpriority="high" decoding="async" alt="The Home screen: quick actions above live readings for voltage, cores online, throttle headroom, memory pressure, download rate and refresh rate.">
+        </figure>
+        <p class="capture">Home, capture 02 of 72</p>
+      </div>
+    </div>
+
+    <div class="shell">
+      <div class="statbar" aria-label="At a glance">
+        <div class="stat"><span class="stat__num">68</span><span class="stat__label">screens</span></div>
+        <div class="stat"><span class="stat__num">10</span><span class="stat__label">control domains</span></div>
+        <div class="stat"><span class="stat__num">84</span><span class="stat__label">locales</span></div>
+        <div class="stat"><span class="stat__num">0</span><span class="stat__label">telemetry</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rules" aria-labelledby="rules-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">01 / Rules</span>
+        <div>
+          <h2 id="rules-title">Four rules the interface cannot switch off.</h2>
+          <p class="lede">They are not settings. They are why a screen can look empty on a phone that cannot do the thing — and why a value can look unhelpful instead of confident.</p>
+        </div>
+      </header>
+
+      <ol class="rules">
+        <li class="rule">
+          <h3>Absent is not disabled.</h3>
+          <p>Your device is read before a control is drawn. If a listing proves an interface is not there, it is not listed — no greyed-out switch, no promise the hardware cannot keep.</p>
+        </li>
+        <li class="rule">
+          <h3>A write is not a result.</h3>
+          <p>Every change goes through one arbiter, then is read back from the device. A value that did not settle is reported with a rollback attempted — never counted as a win.</p>
+        </li>
+        <li class="rule">
+          <h3>Unknown is a value.</h3>
+          <p>A number the app cannot measure is shown as <code>status_unknown</code> or an em dash. It never fills the gap with a plausible zero.</p>
+        </li>
+        <li class="rule">
+          <h3>Nothing self-enables.</h3>
+          <p>Max AI, Max Atlas and per-app policy are off until you turn them on, and the safety layer keeps absolute priority in the write path.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band band--ink" id="screens" aria-labelledby="screens-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">02 / Screens</span>
+        <div>
+          <h2 id="screens-title">The device, as it reports itself.</h2>
+          <p class="lede">Every frame below is a real capture from a device: 1162 × 2480, one status-bar choice, dark theme throughout. Open any frame for the full-size image.</p>
+        </div>
+      </header>
+
+      <div class="filters" data-filters aria-label="Filter screens">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">All <span class="filters__count">14</span></button>
+        <button class="filter" type="button" data-filter="home" aria-pressed="false">Home <span class="filters__count">2</span></button>
+        <button class="filter" type="button" data-filter="intelligence" aria-pressed="false">Intelligence <span class="filters__count">3</span></button>
+        <button class="filter" type="button" data-filter="control" aria-pressed="false">Control <span class="filters__count">5</span></button>
+        <button class="filter" type="button" data-filter="apps" aria-pressed="false">Apps <span class="filters__count">2</span></button>
+        <button class="filter" type="button" data-filter="games" aria-pressed="false">Games <span class="filters__count">2</span></button>
+      </div>
+
+      <div class="gallery" data-gallery>
+        <a class="shot" href="screenshots/02-now-home.png" data-lightbox data-shot-group="home" data-caption="Home — the device at a glance, with live readings and quick actions.">
+          <span class="shot__frame"><img src="screenshots/02-now-home.png" width="1162" height="2480" loading="lazy" decoding="async" alt="Home with quick actions and six live readings."></span>
+          <span class="shot__meta"><span class="shot__n">02</span><span class="shot__name">Home</span><span class="shot__open">View</span></span>
+        </a>
+        <a class="shot" href="screenshots/03-max-ai.png" data-lightbox data-shot-group="intelligence" data-caption="Max AI — the objective, the safety verdict, and what the engine would change next.">
+          <span class="shot__frame"><img src="screenshots/03-max-ai.png" width="1162" height="2480" loading="lazy" decoding="async" alt="The Max AI screen with its objective and current decision state."></span>
+          <span class="shot__meta"><span class="shot__n">03</span><span class="shot__name">Max AI</span><span class="shot__open">View</span></span>
+        </a>
+        <a class="shot" href="screenshots/05-max-ai-live.png" data-lightbox data-shot-group="intelligence" data-caption="Live control — vitals, thermal forecast against what actually happened, and prediction error over time.">
+          <span class="shot__frame"><img src="screenshots/05-max-ai-live.png" width="1162" height="2480" loading="lazy" decoding="async" alt="Live command centre: CPU load, battery, memory and temperature, with a forecast compared to the measured result."></span>
+          <span class="shot__meta"><span class="shot__n">05</span><span class="shot__name">Live control</span><span class="shot__open">View</span></span>
+        </a>
+        <a class="shot" href="screenshots/51-cpu-hub.png" data-lightbox data-shot-group="control" data-caption="CPU — core grid, governor settings, and the lower-level preferences.">
+          <span class="shot__frame"><img src="screenshots/51-cpu-hub.png" width="1162" height="2480" loading="lazy" decoding="async" alt="The CPU hub listing Core Grid, Governor Settings and Preferences."></span>
+          <span class="shot__meta"><span class="shot__n">51</span><span class="shot__name">CPU hub</span><span class="shot__open">View</span></span>
+        </a>
+        <a class="shot" href="screenshots/54-thermal.png" data-lightbox data-shot-group="control" data-caption="Thermal — live zone temperatures and what the device is throttling right now.">
+          <span class="shot__frame"><img src="screenshots/54-thermal.png" width="1162" height="2480" loading="lazy" decoding="async" alt="The thermal detail screen with live zone readings."></span>
+          <span class="shot__meta"><span class="shot__n">54</span><span class="shot__name">Thermal</span><span class="shot__open">View</span></span>
+        </a>
+        <a class="shot" href="screenshots/27-app-settings.png" data-lightbox data-shot-group="apps" data-caption="Per-app settings — the same knobs, scoped to one package.">
+          <span class="shot__frame"><img src="screenshots/27-app-settings.png" width="1162" height="2480" loading="lazy" decoding="async" alt="Per-app settings for a single package."></span>
+          <span class="shot__meta"><span class="shot__n">27</span><span class="shot__name">Per-app</span><span class="shot__open">View</span></span>
+        </a>
+        <a class="shot" href="screenshots/20-memory-zram.png" data-lightbox data-shot-group="control" data-caption="ZRAM — size the compressed swap area, or turn it off.">
+          <span class="shot__frame"><img src="screenshots/20-memory-zram.png" width="1162" height="2480" loading="lazy" decoding="async" alt="The ZRAM manager."></span>
+          <span class="shot__meta"><span class="shot__n">20</span><span class="shot__name">ZRAM</span><span class="shot__open">View</span></span>
+        </a>
+        <a class="shot" href="screenshots/22-power-charging.png" data-lightbox data-shot-group="control" data-caption="Power — charging limits, bypass charging and battery health.">
+          <span class="shot__frame"><img src="screenshots/22-power-charging.png" width="1162" height="2480" loading="lazy" decoding="async" alt="The charging screen."></span>
+          <span class="shot__meta"><span class="shot__n">22</span><span class="shot__name">Charging</span><span class="shot__open">View</span></span>
+        </a>
+        <a class="shot" href="screenshots/29-app-settings-gaming.png" data-lightbox data-shot-group="apps" data-caption="Per-app gaming — the profile that applies while that app is in front.">
+          <span class="shot__frame"><img src="screenshots/29-app-settings-gaming.png" width="1162" height="2480" loading="lazy" decoding="async" alt="The gaming section of per-app settings."></span>
+          <span class="shot__meta"><span class="shot__n">29</span><span class="shot__name">Per-app gaming</span><span class="shot__open">View</span></span>
+        </a>
+        <a class="shot" href="screenshots/04-max-ai-plan.png" data-lightbox data-shot-group="intelligence" data-caption="Max AI plan — the smallest sufficient change, named before it is made.">
+          <span class="shot__frame"><img src="screenshots/04-max-ai-plan.png" width="1162" height="2480" loading="lazy" decoding="async" alt="The plan Max AI intends to apply, one control at a time."></span>
+          <span class="shot__meta"><span class="shot__n">04</span><span class="shot__name">Max AI plan</span><span class="shot__open">View</span></span>
+        </a>
+        <a class="shot" href="screenshots/52-memory-hub.png" data-lightbox data-shot-group="control" data-caption="Memory — compression, VM behaviour and swappiness in one place.">
+          <span class="shot__frame"><img src="screenshots/52-memory-hub.png" width="1162" height="2480" loading="lazy" decoding="async" alt="The memory hub."></span>
+          <span class="shot__meta"><span class="shot__n">52</span><span class="shot__name">Memory hub</span><span class="shot__open">View</span></span>
+        </a>
+        <a class="shot" href="screenshots/01-start.png" data-lightbox data-shot-group="home" data-caption="Start — the first-run screen, before anything is touched.">
+          <span class="shot__frame"><img src="screenshots/01-start.png" width="1162" height="2480" loading="lazy" decoding="async" alt="The first-run start screen."></span>
+          <span class="shot__meta"><span class="shot__n">01</span><span class="shot__name">Start</span><span class="shot__open">View</span></span>
+        </a>
+        <a class="shot shot--wide" href="screenshots/70-game-lobby.png" data-lightbox data-shot-group="games" data-caption="Game lobby — the landscape game space, with each game's own treatment.">
+          <span class="shot__frame"><img src="screenshots/70-game-lobby.png" width="1280" height="576" loading="lazy" decoding="async" alt="The game lobby in landscape."></span>
+          <span class="shot__meta"><span class="shot__n">70</span><span class="shot__name">Game lobby</span><span class="shot__open">View</span></span>
+        </a>
+        <a class="shot shot--wide" href="screenshots/72-game-panel.png" data-lightbox data-shot-group="games" data-caption="Side panel — control over a running game without leaving it.">
+          <span class="shot__frame"><img src="screenshots/72-game-panel.png" width="2560" height="1152" loading="lazy" decoding="async" alt="The game side panel in landscape."></span>
+          <span class="shot__meta"><span class="shot__n">72</span><span class="shot__name">Side panel</span><span class="shot__open">View</span></span>
+        </a>
+      </div>
+
+      <div class="gallery-foot">
+        <span>The repository holds 72 captured frames; the capture contract also names light and Arabic variants.</span>
+        <a class="link-arrow" href="https://github.com/PanditJi-9/Xx/tree/main/docs/screenshots">Browse every frame</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="path" aria-labelledby="path-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">03 / One road</span>
+        <div>
+          <h2 id="path-title">Three layers. One path that writes.</h2>
+          <p class="lede">The pieces do not overlap. One decides what is possible here, one is the only thing allowed to write, and one decides what should change — with a safety layer that outranks all of them.</p>
+        </div>
+      </header>
+
+      <div class="flow">
+        <div class="flow__top">
+          <span class="label">One direction</span>
+          <p>Every mutation is journaled, resolved against an ownership ledger, written once, read back, and re-checked later for drift.</p>
+        </div>
+        <ol class="flow__steps">
+          <li class="flow__step">
+            <span class="flow__step-n">01</span>
+            <h3>You tap</h3>
+            <p>A switch or a slider. Nothing writes yet.</p>
+          </li>
+          <li class="flow__step">
+            <span class="flow__step-n">02</span>
+            <h3>One owner</h3>
+            <p>The arbiter resolves ownership and asks: is this safe here?</p>
+          </li>
+          <li class="flow__step">
+            <span class="flow__step-n">03</span>
+            <h3>Root write</h3>
+            <p>One audited door applies the change. No screen writes to the kernel.</p>
+          </li>
+          <li class="flow__step">
+            <span class="flow__step-n">04</span>
+            <h3>Read back</h3>
+            <p>The device is read again. Held: keep. Did not hold: report and roll back.</p>
+          </li>
+        </ol>
+        <p class="flow__note"><strong>One audited path.</strong> The interesting part is not the write — it is what the device says afterwards.</p>
+      </div>
+
+      <div class="triptych">
+        <article class="triptych__item">
+          <h3>Max Atlas</h3>
+          <p>Decides what is possible here: which interfaces exist, what unit they speak, whether they can be written, and what settled last time.</p>
+        </article>
+        <article class="triptych__item">
+          <h3>Control plane</h3>
+          <p>One arbiter, one ownership ledger, read-back verification, a rollback when a value does not hold, and a drift guard that looks again later.</p>
+        </article>
+        <article class="triptych__item">
+          <h3>Max AI</h3>
+          <p>Decides what should change, one measured step at a time, from the vocabulary Atlas actually found on your phone. Off until you switch it on.</p>
+        </article>
+      </div>
+
+      <p class="note"><strong>Ownership is written next to every value.</strong> You can see whether a control was set by you, by a per-app profile, by the module, or left at the kernel default — and manual ownership can be taken back at any time.</p>
+    </div>
+  </section>
+
+  <section class="section" id="controls" aria-labelledby="controls-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">04 / Controls</span>
+        <div>
+          <h2 id="controls-title">Ten domains, and only what your device exposes.</h2>
+          <p class="lede">Each area has its own hub. The line under each name is the app's own description of the area, quoted from the interface.</p>
+        </div>
+      </header>
+
+      <ul class="domains">
+        <li class="domain">
+          <h3>CPU</h3>
+          <p>Cores, governor, vendor boost and kernel preferences. Every cluster is read from the platform, not guessed.</p>
+        </li>
+        <li class="domain">
+          <h3>GPU</h3>
+          <p>GPU frequencies and graphics-specific vendor parameters, with manual bounds and the vendor boost pipeline.</p>
+        </li>
+        <li class="domain">
+          <h3>Memory</h3>
+          <p>Compression, VM behaviour and swappiness. The engine reads memory stall pressure, not fill percentage.</p>
+        </li>
+        <li class="domain">
+          <h3>Display</h3>
+          <p>Refresh rate, colour and canvas scale, with a custom resolution and palette screen.</p>
+        </li>
+        <li class="domain">
+          <h3>Responsiveness</h3>
+          <p>Touch, frame pacing and scheduling latency — the settings people call "touch response", named by what they do.</p>
+        </li>
+        <li class="domain">
+          <h3>Thermal</h3>
+          <p>Temperatures, throttling and thermal parameters. Trip points are never written, on any device.</p>
+        </li>
+        <li class="domain">
+          <h3>Power</h3>
+          <p>Charging, bypass, sleep and battery health, including a charge ceiling and aggressive doze.</p>
+        </li>
+        <li class="domain">
+          <h3>Storage and compiler</h3>
+          <p>Re-run ART compilation with a chosen filter, reset compiled state, and read storage health.</p>
+        </li>
+        <li class="domain">
+          <h3>Network</h3>
+          <p>TCP congestion control, fast-open, SACK and ECN, socket reuse, I/O scheduler tunables and link state.</p>
+        </li>
+        <li class="domain">
+          <h3>Audio</h3>
+          <p>Output devices, streams and declared effects. Read-only by design — and a device that declares no effects says so.</p>
+        </li>
+      </ul>
+
+      <p class="note">Anything your device does not expose in one of these areas is simply not listed. There is no dead switch to explain away. <a href="https://github.com/nader295/MaxManager/blob/main/docs/features.md">Read the full feature list</a>.</p>
+    </div>
+  </section>
+
+  <section class="band band--blue atlas" id="atlas" aria-labelledby="atlas-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">05 / Max Atlas</span>
+        <div>
+          <h2 id="atlas-title">“It works on my phone” is not a specification.</h2>
+          <p class="lede">Two phones of the same model can expose different interfaces. Two kernels can name the same interface in different units — and let you write one but not the other. Atlas asks each interface a question and remembers the answer.</p>
+        </div>
+      </header>
+
+      <div class="states">
+        <div class="state"><code class="state__code">SUPPORTED</code><span>A reviewed route exists, and a write was verified on this device.</span></div>
+        <div class="state"><code class="state__code">WRITABLE</code><span>A route is eligible now; success is not yet proven here.</span></div>
+        <div class="state"><code class="state__code">READ_ONLY</code><span>The device answers reads; no write route is eligible.</span></div>
+        <div class="state"><code class="state__code">NEEDS_ADAPTER</code><span>The feature is visible; this build has no proven way to drive it.</span></div>
+        <div class="state"><code class="state__code">UNAVAILABLE</code><span>Absence was proved by a listing that lacks the name.</span></div>
+        <div class="state"><code class="state__code">NEVER_TOUCH</code><span>A reviewed safety rule forbids writing this interface — always.</span></div>
+        <div class="state"><code class="state__code">UNKNOWN</code><span>Nothing measured, or nothing answered and absence was never proved.</span></div>
+      </div>
+
+      <ol class="stages" aria-label="Atlas stages">
+        <li class="stage"><span class="stage__n">01</span><strong>Discover</strong></li>
+        <li class="stage"><span class="stage__n">02</span><strong>Understand</strong></li>
+        <li class="stage"><span class="stage__n">03</span><strong>Map</strong></li>
+        <li class="stage"><span class="stage__n">04</span><strong>Adapt</strong></li>
+        <li class="stage"><span class="stage__n">05</span><strong>Execute</strong></li>
+        <li class="stage"><span class="stage__n">06</span><strong>Verify</strong></li>
+        <li class="stage"><span class="stage__n">07</span><strong>Learn</strong></li>
+      </ol>
+
+      <p class="note"><strong>Absence must be proved.</strong> A failed read is not an absence: only a successful listing that lacks the name proves the name is not there. Everything else stays <code>UNKNOWN</code>, because a blocked read and an unsupported feature look identical from the outside.</p>
+    </div>
+  </section>
+
+  <section class="band band--ink" id="max-ai" aria-labelledby="max-ai-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">06 / Max AI</span>
+        <div>
+          <h2 id="max-ai-title">One measured change at a time.</h2>
+          <p class="lede">Not a chatbot, and not a table of magic values. A loop that acts on the controls Atlas found on your phone: pick an objective, make the smallest change that could close the gap, check safety, execute through the normal path, then measure what happened.</p>
+        </div>
+      </header>
+
+      <div class="ai">
+        <div class="ai__copy">
+          <p class="lede">The interesting part is not the loop — it is the record: what the engine wanted, what it changed, what the device did afterwards, and what it learned from the difference.</p>
+          <div class="never">
+            <h3>What it will never do</h3>
+            <ul class="never__list">
+              <li>Write a never-touch interface, before planning or routing.</li>
+              <li>Claim a win it did not measure.</li>
+              <li>Invent a reading where the platform gave none.</li>
+              <li>Hide a failure, including a rolled-back one.</li>
+            </ul>
+          </div>
+          <p class="note"><strong>Off until you turn it on.</strong> Manual control is the default state. The vendor thermal policy is read, never overridden; a ceiling the firmware holds below the request is reported as clamped — not "lifted".</p>
+        </div>
+        <div class="ai__stage">
+          <figure class="phone">
+            <img src="screenshots/03-max-ai.png" width="1162" height="2480" loading="lazy" decoding="async" alt="The Max AI screen with its objective and current decision state.">
+          </figure>
+          <p class="capture">Max AI, capture 03 of 72</p>
+        </div>
+      </div>
+
+      <ol class="ai-steps" aria-label="The Max AI loop">
+        <li class="ai-step"><span class="ai-step__n">01</span><h3>Notice</h3><p>Reads temperature, load, battery, memory, and the app in front.</p></li>
+        <li class="ai-step"><span class="ai-step__n">02</span><h3>Decide</h3><p>Picks the smallest sufficient change, not eight at once.</p></li>
+        <li class="ai-step"><span class="ai-step__n">03</span><h3>Ask</h3><p>A safety layer with absolute priority says yes or no first.</p></li>
+        <li class="ai-step"><span class="ai-step__n">04</span><h3>Verify</h3><p>Reads the value back, then measures the result after a window.</p></li>
+        <li class="ai-step"><span class="ai-step__n">05</span><h3>Remember</h3><p>Keeps a complete, measured episode — and distrusts what was wrong.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="apps" aria-labelledby="apps-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">07 / Apps</span>
+        <div>
+          <h2 id="apps-title">A profile for one app, not for the whole phone.</h2>
+          <p class="lede">Open Apps, pick a package, and give it its own treatment. Every app shows its effective state in plain words: per-app control is off · using the global profile · app override active.</p>
+        </div>
+      </header>
+
+      <div class="apps">
+        <div class="duo">
+          <figure class="phone">
+            <img src="screenshots/27-app-settings.png" width="1162" height="2480" loading="lazy" decoding="async" alt="Per-app settings for one package.">
+          </figure>
+          <figure class="phone">
+            <img src="screenshots/29-app-settings-gaming.png" width="1162" height="2480" loading="lazy" decoding="async" alt="The gaming section of per-app settings.">
+          </figure>
+        </div>
+
+        <div class="app-copy">
+          <h3 class="subhead">What one app can carry</h3>
+          <p class="lede">Performance profile, refresh rate, render resolution, thermal ceiling, CPU and GPU governor — only the ones your kernel reports, and only governors supported by every CPU policy.</p>
+          <ul class="feature-list">
+            <li>Foreground priority lock</li>
+            <li>I/O priority boost</li>
+            <li>Per-app resolution downscale</li>
+            <li>A per-app reset</li>
+          </ul>
+          <div class="tags" aria-label="Profile presets">
+            <span class="tag">Power</span>
+            <span class="tag">Balanced</span>
+            <span class="tag">Gaming</span>
+            <span class="tag">Performance</span>
+            <span class="tag">Custom</span>
+          </div>
+
+          <h3 class="subhead">Profiles that travel with their source</h3>
+          <p class="lede">A profile is a named set of behaviour you can apply, tune, save and share. On export, each value carries where it came from: a shipped default, a value you changed, or a measurement claimed by whoever exported it. On import, the app says exactly what it accepted and refused.</p>
+          <p class="note">A value measured on another chipset says so. It is not a measurement on yours. Profiles are also reachable from Quick Settings, so a profile can change without opening the app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tools" aria-labelledby="tools-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">08 / Tools</span>
+        <div>
+          <h2 id="tools-title">It shows its work.</h2>
+          <p class="lede">Reading, measuring and diagnosing are first-class screens, not a debug menu bolted on afterwards. Nothing here phones home; a support report is assembled locally and leaves only if you hand it over.</p>
+        </div>
+      </header>
+
+      <div class="tools">
+        <article class="tool"><h3>Max Live</h3><p>The live picture: current readings, what automation is allowed to do now and why, what it would do next, and whether it can be undone.</p></article>
+        <article class="tool"><h3>FPS overlay</h3><p>A draggable readout of frame rate, CPU and RAM over any game — up to three independent monitors, each with its own fields and position.</p></article>
+        <article class="tool"><h3>Log viewer</h3><p>Live logcat with filtering and search, plus a shareable report whose glossary is written into the log file itself.</p></article>
+        <article class="tool"><h3>Process monitor</h3><p>Per-process CPU and RAM, force-stop, SIGKILL, and a floating overlay when you need it over something else.</p></article>
+        <article class="tool"><h3>Diagnostics</h3><p>A live diagnostic centre, per-control route health, a reproducible device blueprint, and the honest "why didn't it work?" answer for a per-app setting.</p></article>
+        <article class="tool"><h3>Device lab</h3><p>Interactive hardware checks on the device itself — screen colours, multi-touch, keys, vibration, audio routing, microphone level, sensors and the panel's own declared capabilities.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="interface" aria-labelledby="interface-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">09 / Interface</span>
+        <div>
+          <h2 id="interface-title">Drawn by rules, not by taste.</h2>
+          <p class="lede">The interface is a measuring instrument. Its rules are written value by value in the repository, and a gate fails the build when the document and the code disagree.</p>
+        </div>
+      </header>
+
+      <div class="triptych">
+        <article class="triptych__item">
+          <h3>One accent, borrowed</h3>
+          <p>The accent follows your own theme, so the product takes the shape of the phone it runs on. Positive, caution and critical are fixed and contrast-checked, because a thermal alert that looks decorative is a correctness bug.</p>
+        </article>
+        <article class="triptych__item">
+          <h3>Monospace for live values only</h3>
+          <p>MHz, percentages, temperatures and core counts never reflow as they change. A value the app does not have is an em dash — not a zero with a unit after it.</p>
+        </article>
+        <article class="triptych__item">
+          <h3>Motion from 90 to 360 ms</h3>
+          <p>Motion exists to explain a change, and anything longer is decoration. Reduced-motion preferences are respected on this page and in the app.</p>
+        </article>
+      </div>
+
+      <div class="specimen" aria-label="An unknown value is drawn as an em dash">
+        <div class="specimen__cell"><span class="specimen__label">CPU</span><span class="specimen__value">—</span><span class="specimen__unit">MHz</span></div>
+        <div class="specimen__cell"><span class="specimen__label">Thermal</span><span class="specimen__value">—</span><span class="specimen__unit">°C</span></div>
+        <div class="specimen__cell"><span class="specimen__label">Load</span><span class="specimen__value">—</span><span class="specimen__unit">%</span></div>
+      </div>
+
+      <div class="swatches" aria-label="Fixed status tones">
+        <span class="swatch swatch--positive"><i></i>Positive</span>
+        <span class="swatch swatch--caution"><i></i>Caution</span>
+        <span class="swatch swatch--critical"><i></i>Critical</span>
+        <span class="swatch swatch--accent"><i></i>Accent</span>
+      </div>
+
+      <p class="note">Light and dark, a themable key colour and a custom palette screen. 84 locales, with right-to-left enforced by a gate rather than by hope. <a href="https://github.com/nader295/MaxManager/blob/main/DESIGN.md">Read the design language</a>.</p>
+    </div>
+  </section>
+
+  <section class="band band--ink install" id="install" aria-labelledby="install-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">10 / Install</span>
+        <div>
+          <h2 id="install-title">Systemless, and reversible.</h2>
+          <p class="lede">MaxManager ships as a module: nothing in <code>/system</code> is modified permanently, and uninstalling puts everything back.</p>
+        </div>
+      </header>
+
+      <div class="install__grid">
+        <div>
+          <ol class="install-steps">
+            <li class="install-step">
+              <span class="install-step__n">01</span>
+              <h3>Get the module</h3>
+              <p>Download <code>MaxManager-&lt;version&gt;.zip</code> from the latest green workflow run or a release. Do not flash <code>MaxManager-developer-bundle.zip</code> — that one is for ROM developers.</p>
+            </li>
+            <li class="install-step">
+              <span class="install-step__n">02</span>
+              <h3>Flash it in Magisk or KernelSU</h3>
+              <p>Choose “Install from storage” and select the module zip. KernelSU and KernelSU Next are supported, and the installer checks that the daemon arrives for your ABI before it reports success.</p>
+            </li>
+            <li class="install-step">
+              <span class="install-step__n">03</span>
+              <h3>Reboot, then grant root</h3>
+              <p>Accept the superuser prompt your root manager shows when MaxManager asks. Without it the control plane cannot write; with Shizuku alone, several read-and-write tools still work.</p>
+            </li>
+            <li class="install-step">
+              <span class="install-step__n">04</span>
+              <h3>Open Setup</h3>
+              <p>Setup explains what your device exposes before you touch anything. Manual control is the default; no engine starts on its own.</p>
+            </li>
+          </ol>
+
+          <div class="table-wrap">
+            <table class="table">
+              <caption>Requirements</caption>
+              <thead><tr><th scope="col">Requirement</th><th scope="col">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Android</td><td>10 or newer (API 29), built against API 37</td></tr>
+                <tr><td>Root</td><td>Magisk, KernelSU or KernelSU Next</td></tr>
+                <tr><td>Architecture</td><td><code>arm64-v8a</code>, <code>armeabi-v7a</code></td></tr>
+                <tr><td>Second layer</td><td>Shizuku, where it can help — never a substitute for the module</td></tr>
+                <tr><td>Chipsets</td><td>Dedicated strategies for Snapdragon, MediaTek, Exynos, Tensor and Unisoc; everything else through discovery</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <aside class="aside-box">
+          <h3>Where the build comes from</h3>
+          <p>CI is the build path. The flashable module, the developer bundle and checksums are workflow artifacts; this repository has no published releases, so take the artifact from the latest green run.</p>
+          <a class="btn btn--line" href="https://github.com/PanditJi-9/Xx/actions/workflows/build.yml">Workflow runs</a>
+          <a class="btn btn--line" href="https://github.com/nader295/MaxManager/blob/main/docs/building.md#releases">Build and releases</a>
+        </aside>
+      </div>
+
+      <p class="caution"><strong>Take a backup of your boot image before flashing</strong>, as with any root module. Rooting is your decision and your responsibility. If the module fails to reach a stable boot twice in a row, it disables itself and says so in its own description.</p>
+    </div>
+  </section>
+
+  <section class="section measured" id="measured" aria-labelledby="measured-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">11 / What is measured</span>
+        <div>
+          <h2 id="measured-title">Claims with a gate behind them.</h2>
+          <p class="lede">Thirty-three judgements run before the compiler: sixteen assertions, and seventeen tools measuring themselves. A checker that cannot fail proves nothing, so each one is deliberately broken and must name the rule it was meant to catch.</p>
+        </div>
+      </header>
+
+      <div class="measured__intro">
+        <span class="measured__num">33</span>
+        <p class="measured__label">judgements before the compiler</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <caption>Contract gates</caption>
+          <thead><tr><th scope="col">Gate</th><th scope="col">What it refuses to let through</th></tr></thead>
+          <tbody>
+            <tr><td><code>kt_balance</code></td><td>Unbalanced braces, unterminated strings or comments, malformed XML</td></tr>
+            <tr><td><code>code_health</code></td><td>Cleanliness violations, debt above its declared ceiling, undisclosed assets</td></tr>
+            <tr><td><code>i18n_coverage</code></td><td>Wrong format specifiers, duplicate keys, folder, picker and locale-config drift</td></tr>
+            <tr><td><code>resource_compile</code></td><td>Invalid resources, judged by real <code>aapt2</code> — not by a look-alike</td></tr>
+            <tr><td><code>rtl_guard</code></td><td>Directional padding and icons that do not mirror</td></tr>
+            <tr><td><code>license_audit</code></td><td>GPL code appearing anywhere in the release path</td></tr>
+            <tr><td><code>source_manifest</code></td><td>The tree drifting from its declared file digest</td></tr>
+            <tr><td><code>readme_assets</code></td><td>Broken or unsafe assets and links in this documentation</td></tr>
+            <tr><td><code>screenshot_gallery</code></td><td>A gallery that drifted from the folder it is generated from</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>What is not verified here — stated as needing a device</h3>
+      <div class="table-wrap">
+        <table class="table table--muted">
+          <thead><tr><th scope="col">Not verified in this repository</th><th scope="col">Why</th></tr></thead>
+          <tbody>
+            <tr><td>Actual hardware behaviour</td><td>Units and OPP tables vary by vendor; a write settling needs the physical device</td></tr>
+            <tr><td>SELinux policy correctness</td><td>No AOSP tree in this environment to run <code>neverallow</code> against</td></tr>
+            <tr><td>Boot behaviour, anti-bootloop</td><td>Needs a device that boots; the installer's own counter is the evidence</td></tr>
+            <tr><td>Visual output: RTL, motion, theme</td><td>Needs a renderer and a screen — the captures are the evidence</td></tr>
+            <tr><td>A signed release artifact</td><td>The signing secret is absent by design; a CI run with the keystore verifies it</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note"><strong>A green build means it compiles and the tests pass.</strong> It does not mean a write settles on your hardware. That sentence is a rule in this project, not a hedge — <a href="https://github.com/nader295/MaxManager/blob/main/docs/verification.md">verification.md</a> lists what is proven, what runs without a device, and what needs a phone.</p>
+    </div>
+  </section>
+
+  <section class="section" id="notes" aria-labelledby="notes-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">12 / Release notes</span>
+        <div>
+          <h2 id="notes-title">New in 5.2.</h2>
+          <p class="lede">The short version of the latest release. The full history lives in one file at the repository root.</p>
+        </div>
+      </header>
+
+      <div class="timeline">
+        <article class="release-row">
+          <div class="release-row__version">5.2 <span>Current</span></div>
+          <div>
+            <h3>Scrollable, quieter, and more control where it is felt</h3>
+            <p>A scrollable page and a simplified design; presets on the colour-scheme screen; options to disable the persistence-profile notifications; per-app resolution downscale for game apps; global renderer options; and support for KernelSU's emulated soft reboot. A large set of stale tweak settings was removed, including refresh-rate settings in both per-app and global screens.</p>
+            <div class="release-row__meta"><span>Interface</span><span>Behaviour</span><span>Cleanup</span></div>
+          </div>
+        </article>
+        <article class="release-row">
+          <div class="release-row__version">5.1 <span>Earlier</span></div>
+          <div>
+            <h3>Localization expanded from 17 to 84 languages</h3>
+            <p>The interface, the setup flow and the support vocabulary were translated across the full language set, with right-to-left layout treated as a first-class case.</p>
+            <div class="release-row__meta"><span>Languages</span><span>RTL</span></div>
+          </div>
+        </article>
+        <article class="release-row">
+          <div class="release-row__version">5.0.4 <span>Earlier</span></div>
+          <div>
+            <h3>An event-driven service, and a lower floor</h3>
+            <p>The service moved from polling to events, lowering the minimum supported version to Android 10 and reducing the work it does while nothing is changing.</p>
+            <div class="release-row__meta"><span>Service</span><span>Android 10</span></div>
+          </div>
+        </article>
+        <article class="release-row">
+          <div class="release-row__version">5.0 <span>Earlier</span></div>
+          <div>
+            <h3>A rebuilt interface, with Setup, backup and Quick Settings</h3>
+            <p>The first-run Setup flow, profile backup, and Quick Settings tiles arrived together with the interface rebuild that the current screens descend from.</p>
+            <div class="release-row__meta"><span>Interface</span><span>Setup</span><span>Backup</span></div>
+          </div>
+        </article>
+      </div>
+
+      <p class="note">Earlier releases are recorded in full in <a href="https://github.com/PanditJi-9/Xx/blob/main/changelog.md">changelog.md</a>.</p>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">13 / FAQ</span>
+        <div>
+          <h2 id="faq-title">The questions that keep coming back.</h2>
+        </div>
+      </header>
+
+      <div class="faq">
+        <details>
+          <summary>Does it need root?</summary>
+          <div class="faq__body"><p>Yes, for the full control plane. MaxManager is a systemless module for Magisk or KernelSU: the app reaches the kernel through one audited root bridge, and the daemons run as system-side processes. Shizuku (ADB level, no root) is detected too and unlocks several read-and-write tools, but it is not a substitute for the module.</p></div>
+        </details>
+        <details>
+          <summary>Will it work on my phone?</summary>
+          <div class="faq__body"><p>Probably — but you do not have to guess. MaxManager resolves capabilities per interface before showing anything, so a control your device does not expose never appears as a switch that does nothing. Open it and read the map: that answer is about your phone, which is better than any list.</p></div>
+        </details>
+        <details>
+          <summary>Is Max AI on by default?</summary>
+          <div class="faq__body"><p>No. Manual control is the default state, and Max AI, Max Atlas and the per-app engines are things you switch on. When you do, the safety layer still has absolute priority.</p></div>
+        </details>
+        <details>
+          <summary>Why does an unknown value show <code>status_unknown</code> instead of 0?</summary>
+          <div class="faq__body"><p>Because 0 is a claim. The project forbids fabricated telemetry: when it does not know, it says so rather than showing a plausible-looking zero. A blank-looking field is more honest than a wrong number.</p></div>
+        </details>
+        <details>
+          <summary>What happens if something goes wrong?</summary>
+          <div class="faq__body"><p>Three independent layers. Values are read back after being written, and a mismatch is surfaced with a rollback attempted. A drift guard re-checks later, because a setting can silently revert. And the installer disables itself if the module fails to reach a stable boot twice in a row.</p></div>
+        </details>
+        <details>
+          <summary>Does it send my data anywhere?</summary>
+          <div class="faq__body"><p>No telemetry, no analytics, no silent uploads. The diagnostic report is built locally and minimized, and it leaves your device only if you hand the file over yourself. The support report is not a screenshot.</p></div>
+        </details>
+        <details>
+          <summary>Why is the licence proprietary if the repository is public?</summary>
+          <div class="faq__body"><p>A public repository is not the same thing as an open-source project. MaxManager is closed-source software; the repository is its product page, its ROM-integration kit and its engineering record. No right is granted to use, copy, modify or distribute without the copyright holder's prior written permission. Third-party components keep their own licences, listed individually in the notices.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="docs" aria-labelledby="docs-title">
+    <div class="shell">
+      <header class="section-head">
+        <span class="section-head__index">14 / Docs</span>
+        <div>
+          <h2 id="docs-title">The written half.</h2>
+          <p class="lede">This page is the tour. These are the answers you reach for afterwards.</p>
+        </div>
+      </header>
+
+      <div class="docs-grid">
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/README.md"><span class="doc-link__label">Documentation index</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/features.md"><span class="doc-link__label">Every capability</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/max-atlas.md"><span class="doc-link__label">Max Atlas, stage by stage</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/max-ai.md"><span class="doc-link__label">Max AI, decision by decision</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/architecture.md"><span class="doc-link__label">Architecture and invariants</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/compatibility.md"><span class="doc-link__label">Compatibility</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/verification.md"><span class="doc-link__label">How claims are measured</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/rom-integration.md"><span class="doc-link__label">ROM integration kit</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/building.md"><span class="doc-link__label">Building and releases</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/DESIGN.md"><span class="doc-link__label">Design language</span></a>
+        <a class="doc-link" href="https://github.com/nader295/MaxManager/blob/main/docs/faq.md"><span class="doc-link__label">FAQ, in full</span></a>
+        <a class="doc-link" href="https://github.com/PanditJi-9/Xx/blob/main/docs/screenshots/README.md"><span class="doc-link__label">Screenshot contract</span></a>
+      </div>
+
+      <div class="support" id="support">
+        <div class="support__copy">
+          <h3>Found something the map got wrong?</h3>
+          <p>Send the device, the ROM, the root manager, and what the app showed. If it said <code>status_unknown</code>, say so — that is a fact about your device, not a mistake on your part.</p>
+        </div>
+        <div class="support__actions">
+          <a class="btn btn--primary" href="https://t.me/ROBINHOOD_GROUP_RODIN">Telegram group</a>
+          <a class="btn btn--line" href="https://github.com/PanditJi-9/Xx/issues">Open an issue</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <span class="footer__word" aria-hidden="true">MAXMANAGER</span>
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="1.25" y="1.25" width="29.5" height="29.5" rx="6" stroke="currentColor" stroke-opacity=".35" stroke-width="1.5"/><path d="M8.5 23V9l7.5 10L23.5 9v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></svg>
+          MaxManager
+        </div>
+        <p class="footer__note">A performance and power control panel for rooted Android, built so a value the app does not know is never dressed up as one it does.</p>
+      </div>
+      <div class="footer__col">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="#screens">Screens</a></li>
+          <li><a href="#controls">Controls</a></li>
+          <li><a href="#install">Install</a></li>
+          <li><a href="#notes">Release notes</a></li>
+          <li><a href="https://github.com/PanditJi-9/Xx/blob/main/changelog.md">Changelog</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>Repository</h3>
+        <ul>
+          <li><a href="https://github.com/nader295/MaxManager">GitHub</a></li>
+          <li><a href="https://github.com/PanditJi-9/Xx/issues">Issues</a></li>
+          <li><a href="https://github.com/PanditJi-9/Xx/actions">Actions</a></li>
+          <li><a href="https://github.com/nader295/MaxManager/blob/main/LICENSE">Licence</a></li>
+          <li><a href="https://github.com/nader295/MaxManager/blob/main/THIRD_PARTY_NOTICES.md">Third-party notices</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>Read</h3>
+        <ul>
+          <li><a href="https://github.com/nader295/MaxManager/blob/main/docs/README.md">Documentation</a></li>
+          <li><a href="https://github.com/nader295/MaxManager/blob/main/docs/verification.md">Verification</a></li>
+          <li><a href="https://github.com/nader295/MaxManager/blob/main/docs/compatibility.md">Compatibility</a></li>
+          <li><a href="https://github.com/nader295/MaxManager/blob/main/docs/rom-integration.md">ROM integration</a></li>
+          <li><a href="ar/" hreflang="ar" lang="ar">العربية</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__fine">
+      <span>© 2026 Nader Magdy. MaxManager is proprietary software; no right is granted without written permission.</span>
+      <span>This page loads nothing from a third party — no webfonts, no analytics, no cookies.</span>
+      <a class="footer__top" href="#top">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<dialog class="shot-dialog" id="shot-dialog" aria-label="Screenshot viewer">
+  <div class="shot-dialog__bar">
+    <button class="shot-dialog__btn" type="button" data-dialog-prev aria-label="Previous screenshot">←</button>
+    <button class="shot-dialog__btn" type="button" data-dialog-next aria-label="Next screenshot">→</button>
+    <span class="shot-dialog__cap" id="shot-dialog-cap"></span>
+    <form method="dialog"><button class="shot-dialog__btn" aria-label="Close">×</button></form>
+  </div>
+  <img id="shot-dialog-img" src="screenshots/02-now-home.png" width="1162" height="2480" alt="">
+</dialog>
+
+<script src="site/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+{
+  "_": [
+    "عقد الصور المصغّرة للمتجر (REVIEW-NOTES-01 · البند ③ من ملاحظات التقييم).",
+    "كل صورة هنا **تُبنى** من ثلاثة مصادر يملكها المشروع: لقطة شاشة حقيقية من docs/screenshots،",
+    "ولوحة ألوان التطبيق نفسها (MaxTokens.kt عبر لوحة gen_readme_assets.DARK)، ووسم الصانع",
+    "(هندسة makers_mark.py الواحدة). ولا يدخل المستودع ملفّ من مولّد صور — ADR-73.",
+    "وما في هذا الملفّ يُقاس: tools/store_thumbnails.py --assert يتحقّق أن الصور المولّدة لم تنزح",
+    "عن هذا العقد، وأن اللوحة لم تنزح عن MaxTokens، وأن هندسة الوسم لم تتغيّر، وأن الادّعاءات",
+    "منشورة فعلًا في README، وأن الأرقام في النصّ مطابقة لما في الشجرة."
+  ],
+  "canvas": {
+    "phone": [
+      1080,
+      1920
+    ],
+    "feature": [
+      1024,
+      500
+    ]
+  },
+  "palette": {
+    "_": "لوحة العرض = DARK في tools/gen_readme_assets.py حرفيًّا (وهي مقيسة بدورها على MaxTokens.kt)، ووسم الصانع يأخذ لونَي الإيجابي من MaxTokens.kt.",
+    "board_dark": {
+      "bg": "#0E1418",
+      "panel": "#151C22",
+      "panelTop": "#1B242C",
+      "panelBottom": "#101820",
+      "edge": "#243340",
+      "tile": "#0C1116",
+      "ink": "#E8F1F7",
+      "muted": "#93A9B8",
+      "steel": "#9BBACB",
+      "accent": "#5FD9AC"
+    },
+    "mark_dark": "#5FD9AC",
+    "mark_light": "#0B6B4F"
+  },
+  "fonts": {
+    "_": "خطوط التطبيق نفسها (Space Grotesk عرضًا · Manrope متنًا · JetBrains Mono للقيم) — وهي تُنزَّل على الجهاز ولا تُشحن في المستودع (Fonts.kt)، فتُثبَّت هنا خارج المستودع على عُرف tessdata/EasyOCR. والعربية تسقط إلى خطّ النظام لأن الخطّين اللاتينيّين بلا محارف عربية — فالوسم نفسه.",
+    "display": {
+      "file": "SpaceGrotesk[wght].ttf",
+      "weight": 700,
+      "role": "DisplayFontFamily في التطبيق",
+      "license": "OFL-1.1",
+      "source": "google/fonts — ofl/spacegrotesk"
+    },
+    "body": {
+      "file": "Manrope[wght].ttf",
+      "weight": 600,
+      "role": "BodyFontFamily في التطبيق",
+      "license": "OFL-1.1",
+      "source": "google/fonts — ofl/manrope"
+    },
+    "mono": {
+      "file": "JetBrainsMono[wght].ttf",
+      "weight": 700,
+      "role": "MonoFontFamily في التطبيق (القيم الحيّة)",
+      "license": "OFL-1.1",
+      "source": "google/fonts — ofl/jetbrainsmono"
+    },
+    "ar": {
+      "file": "NotoKufiArabic-Bold.ttf",
+      "weight": 700,
+      "role": "وجه العرض العربي (العنوان وحده) — من عائلة Noto التي يرسم بها أندرويد العربية (ولا يُدّعى تطابق جهاز بعينه)",
+      "license": "OFL-1.1",
+      "source": "نظام (fonts-noto) / google/fonts — ofl/notokufiarabic"
+    },
+    "arBody": {
+      "file": "NotoSansArabic-Bold.ttf",
+      "weight": 700,
+      "role": "وجه المتن العربي (السطر المساند والشرائح) — وهو ما يسقط إليه النصّ العربي في أندرويد",
+      "license": "OFL-1.1",
+      "source": "نظام (fonts-noto) / google/fonts — ofl/notosansarabic"
+    }
+  },
+  "claims": [
+    {
+      "_": "شرائح الادّعاء — نصوصها من جملة README المنشورة، ومرساتها تُقاس على الصفحتين معًا.",
+      "en": "No telemetry",
+      "ar": "بلا قياس عن بُعد",
+      "anchor_en": "no telemetry",
+      "anchor_ar": "قياس عن بُعد"
+    },
+    {
+      "en": "No accounts",
+      "ar": "بلا حسابات",
+      "anchor_en": "no accounts",
+      "anchor_ar": "حسابات"
+    },
+    {
+      "en": "No silent uploads",
+      "ar": "بلا رفع صامت",
+      "anchor_en": "no silent uploads",
+      "anchor_ar": "رفع صامت"
+    }
+  ],
+  "cards": [
+    {
+      "id": "01-now",
+      "source": "docs/screenshots/02-now-home.png",
+      "source_size": [
+        1162,
+        2480
+      ],
+      "headline": {
+        "en": "Every number shows its source and age",
+        "ar": "كل رقم يُظهر مصدره ووقت قراءته"
+      },
+      "sub": {
+        "en": "Traceable readings — never a plausible guess",
+        "ar": "قراءات قابلة للتتبّع، لا تخمين مقنع"
+      }
+    },
+    {
+      "id": "02-max-ai",
+      "source": "docs/screenshots/03-max-ai.png",
+      "source_size": [
+        1162,
+        2480
+      ],
+      "headline": {
+        "en": "Decisions you can read, not a black box",
+        "ar": "قرارات تُقرأ، لا صندوق أسود"
+      },
+      "sub": {
+        "en": "The journal says what changed, and why",
+        "ar": "السجلّ يقول ما تغيّر ولماذا"
+      }
+    },
+    {
+      "id": "03-control",
+      "source": "docs/screenshots/07-control-hub.png",
+      "source_size": [
+        1162,
+        2480
+      ],
+      "headline": {
+        "en": "Hardware control with a visible owner",
+        "ar": "تحكّم بالعتاد، ومالكه ظاهر"
+      },
+      "sub": {
+        "en": "Every knob says who set it — and can hand it back",
+        "ar": "كل مقبض يقول من ضبطه، ويمكن استرجاعه"
+      }
+    }
+  ],
+  "feature": {
+    "id": "feature",
+    "source": "docs/screenshots/02-now-home.png",
+    "source_size": [
+      1162,
+      2480
+    ],
+    "headline": {
+      "en": "Reads this device. Explains every number.",
+      "ar": "يقرأ جهازك، ويفسّر أرقامه"
+    }
+  },
+  "listing": {
+    "title": "MaxManager",
+    "short": {
+      "en": "A root-level hardware console: every reading carries its source and its age.",
+      "ar": "طرفية عتاد بصلاحيات الجذر: كل قراءة تحمل مصدرها ووقت قراءتها."
+    },
+    "full": {
+      "en": [
+        "MaxManager reads the device it runs on — temperature, load, battery, memory, clocks — and prints every value with two things a performance tool usually hides: where the value came from, and how old it is. A number whose source cannot be read is shown as unreadable, never as a plausible guess.",
+        "Control is organised by hardware domain ({screens} screens in all), and every knob that is written says who set it: you, the per-app profile, the module, or the kernel default. Manual ownership can be taken back at any time.",
+        "Max AI decides from measurements, not from a script: the objective, the safety verdict, the change and the rollback are written to a journal you can read.",
+        "No telemetry, no accounts, no silent uploads. The interface is authored in two languages — English and Arabic — and ships in {locales} locales.",
+        "MaxManager is proprietary software. This listing describes the same build that the repository documents, screen by screen."
+      ],
+      "ar": [
+        "يقرأ MaxManager الجهازَ الذي يعمل عليه — الحرارة والحمل والبطارية والذاكرة والترددات — ويطبع كل قيمة ومعهما شيئان يخفيهما عادةً كل أداة أداء: من أين جاءت القيمة، ومتى قُرئت. والقيمة التي لا يُقرأ مصدرها تُعرض «غير مقروءة»، لا تخمينًا مقنعًا.",
+        "التحكّم منظَّم بحسب مجالات العتاد ({screens} شاشة في المجموع)، وكل مقبض يُكتب يقول من ضبطه: أنت، أو بروفايل التطبيق، أو الوحدة، أو افتراضيّ النواة. والملكية اليدوية تُسترجع في أي لحظة.",
+        "وMax AI يقرّر من قياسات لا من نصّ: الهدف وحكم السلامة والتغيير والرجوع تُكتب في سجلّ يمكنك قراءته.",
+        "بلا قياس عن بُعد، وبلا حسابات، وبلا رفع صامت. والواجهة مكتوبة بلغتين — الإنجليزية والعربية — وتُشحن في {locales} لغة.",
+        "‏MaxManager برنامج مغلق المصدر، وهذا الوصف يصف البناء نفسه الذي يوثّقه المستودع شاشةً شاشة."
+      ]
+    }
+  },
+  "measured": {
+    "_": "الأرقام التي يجوز أن تظهر في النصّ — تُقاس على الشجرة عند كل تشغيل، فلا يبقى ادّعاء رقميّ بلا مقياس.",
+    "screens": 69,
+    "locales": 84
+  }
+}
