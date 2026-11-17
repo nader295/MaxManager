@@ -29,7 +29,7 @@
     return value === "dark" ? "dark" : "light";
   }
 
-  function paint(theme, persist) {
+  function paint(theme) {
     var dark = theme === "dark";
 
     root.setAttribute("data-theme", theme);
@@ -44,27 +44,16 @@
       toggle.setAttribute("title", dark ? labels.lightTitle : labels.darkTitle);
     }
 
-    if (persist) {
-      try {
-        localStorage.setItem("mm-theme", theme);
-      } catch (error) {
-        /* Private mode: the choice lasts for this page. */
-      }
-    }
   }
 
-  var stored = null;
-  try {
-    stored = localStorage.getItem("mm-theme");
-  } catch (error) {
-    stored = null;
-  }
-
-  paint(stored === "dark" ? "dark" : "light", false);
+  /* الوضع الافتراضي هو الافتراضي (أمر المالك، ٢٠٢٦-١١-١٧): لا استرجاع من
+     `localStorage` ولا حفظ، فكل تحميل يبدأ على لوحة الموقع نفسها (الفاتحة)،
+     ويبقى زرّ التبديل صالحًا لهذه الجلسة. */
+  paint("light");
 
   if (toggle) {
     toggle.addEventListener("click", function () {
-      paint(currentTheme() === "dark" ? "light" : "dark", true);
+      paint(currentTheme() === "dark" ? "light" : "dark");
     });
   }
 
