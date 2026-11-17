@@ -3325,7 +3325,7 @@ h4 {
   border-radius: 2px;
 }
 
-/* One page-load moment, 360 ms, and no infinite pulse. */
+/* Page-load rise plus scroll reveals; both yield to prefers-reduced-motion. */
 @media (prefers-reduced-motion: no-preference) {
   .hero__copy {
     animation: rise 360ms var(--ease) both;
@@ -3341,12 +3341,6 @@ h4 {
 
   .dot {
     animation: none;
-  }
-
-  .js .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
   }
 
   @keyframes rise {
@@ -3703,4 +3697,10 @@ p,
 
 :root[data-theme="dark"] .hero__ghost {
   -webkit-text-stroke-color: rgba(237, 239, 232, 0.22);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    transition-delay: var(--reveal-delay, 0ms);
+  }
 }
