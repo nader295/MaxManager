@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — MaxManager</title>
+<meta name="description" content="MaxManager privacy policy: no ads, no analytics SDK, no trackers. What stays on your device, the one optional signal (off by default), and how to withdraw it.">
+<meta name="theme-color" content="#f3efe5" data-theme-color>
+<link rel="canonical" href="https://nader295.github.io/MaxManager/privacy-policy.html">
+<link rel="alternate" hreflang="en" href="https://nader295.github.io/MaxManager/privacy-policy.html">
+<link rel="alternate" hreflang="ar" href="https://nader295.github.io/MaxManager/ar/privacy-policy.html">
+<link rel="alternate" hreflang="x-default" href="https://nader295.github.io/MaxManager/privacy-policy.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%230038ff'/%3E%3Cpath%20d='M8%2023V9l8%2010%208-10v14'%20fill='none'%20stroke='%23fff'%20stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="site/site.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="MaxManager">
+<meta property="og:title" content="Privacy policy — MaxManager">
+<meta property="og:description" content="No ads, no analytics SDK, no trackers. What stays on your device, the one optional signal (off by default), and how to withdraw it.">
+<meta property="og:url" content="https://nader295.github.io/MaxManager/privacy-policy.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+</head>
+<body>
+<main class="section section--no-rule legal-band" id="privacy">
+  <div class="shell">
+    <article class="legal">
+      <a class="legal__back" href="./">← MaxManager</a>
+      <h1>Privacy policy</h1>
+      <p class="legal__meta">Effective 18 November 2026 · applies to the MaxManager app and its Magisk/KernelSU module, version v5.0 and later · also available <a href="ar/privacy-policy.html" hreflang="ar" lang="ar">بالعربية</a>.</p>
+
+      <div class="legal__callout">
+        <p><strong>The short version.</strong> MaxManager shows no advertising, links no analytics or crash-reporting SDK, and contains no third-party tracker. It works with no network at all. There is exactly one optional signal, and it is <strong>off by default</strong>: you have to switch it on, read the exact bytes first, and you can delete what was sent with one tap.</p>
+      </div>
+
+      <h2>1. Who runs this</h2>
+      <p>MaxManager is an independent project published by <strong>nader295</strong>. The app is distributed through the project repositories — the app repository (<a href="https://github.com/PanditJi-9/Xx">PanditJi-9/Xx</a>) and the documentation repository (<a href="https://github.com/nader295/MaxManager">nader295/MaxManager</a>). There is no company, no advertising network and no data broker behind it.</p>
+      <p>Contact: the Telegram group <a href="https://t.me/MaxManagerChat">t.me/MaxManagerChat</a> (channel: <a href="https://t.me/GetMaxManager">t.me/GetMaxManager</a>), or an issue on either repository.</p>
+
+      <h2>2. What the app keeps on your device</h2>
+      <p>Everything the app does is local by default. These are the things that are stored, and they stay in the app's own private storage or in a file you chose yourself:</p>
+      <ul>
+        <li><strong>Your settings and profiles</strong> — control values, per-app and per-game profiles, and your preferences.</li>
+        <li><strong>Readings and history</strong> — thermal, battery, CPU/GPU and health readings the app has measured, so a screen can show a trend rather than a single sample.</li>
+        <li><strong>Backups you create</strong> — see section 5. A backup is a file written where you told it to write.</li>
+        <li><strong>Media you record</strong> — screenshots and screen recordings you start yourself, saved to your own storage.</li>
+        <li><strong>One optional identifier</strong> — <code>install.id</code>, a random UUID created on this device, used only by the optional signal in section 3. It is never derived from your hardware, your Google account or your phone number.</li>
+      </ul>
+      <p>Uninstalling the app, or clearing its data, removes all of the above from the device.</p>
+
+      <h2>3. The one optional signal (community statistics)</h2>
+      <p>The app can send one small record per day so the project can see roughly how many installs exist and on which hardware the app is actually being used. Three conditions must all be true before a single byte leaves the device:</p>
+      <ul>
+        <li>you switched the consent on yourself (it is <strong>off by default</strong>), <em>and</em></li>
+        <li>the project's signed configuration has collection enabled, <em>and</em></li>
+        <li>the app is starting up — it is one attempt per boot, with no background service, no scheduler and no retry loop.</li>
+      </ul>
+      <p>The record contains exactly these fields, and nothing else:</p>
+      <table>
+        <thead><tr><th>Field</th><th>What it is</th></tr></thead>
+        <tbody>
+          <tr><td><code>p_install</code></td><td>The random UUID described above — not a hardware or account identifier.</td></tr>
+          <tr><td><code>p_country</code></td><td>A country code derived from your device's language setting.</td></tr>
+          <tr><td><code>p_version</code></td><td>The app version string.</td></tr>
+          <tr><td><code>p_manufacturer</code>, <code>p_model</code>, <code>p_sdk</code>, <code>p_release</code></td><td>The device make, model, Android API level and Android version.</td></tr>
+          <tr><td><code>p_env</code></td><td>Which root environment is present, from a short fixed list, or <code>none</code>.</td></tr>
+          <tr><td><code>p_health</code></td><td>A capped summary of the health readings the app already measures on your device.</td></tr>
+        </tbody>
+      </table>
+      <p>It contains no account, no advertising identifier, no location, no contact, no message, no file name and no installed-app list. The consent screen renders <strong>the exact bytes that would be sent</strong>, built by the same code that sends them — so you can read the record before deciding.</p>
+      <p><strong>Withdrawing.</strong> Switching consent off stops all sending immediately. The same screen offers a one-tap forget action: it asks the server to delete the record for your identifier and then deletes the local <code>install.id</code>. Deleting the identifier means a later return to the app starts with a fresh, unrelated identity — the two periods cannot be joined.</p>
+
+      <h2>4. The only other network calls the app can make</h2>
+      <ul>
+        <li><strong>Signed configuration</strong> — an anonymous read of one small signed JSON document (revision, payload, signature). No identifier is sent, and the document is verified against its signature before it is used. If the project has no endpoint configured, no call is made at all.</li>
+        <li><strong>Licence activation</strong> — only if you open the licence screen and submit a code yourself. It sends the code you typed; it is not called in the background.</li>
+      </ul>
+      <p>The app does <strong>not</strong> check for updates in the background. Updates are files you download yourself from the project repositories; when you choose to install one, the app verifies the file's SHA-256 digest first.</p>
+
+      <h2>5. Permissions this app asks for, and why</h2>
+      <p>MaxManager is a control panel for a rooted device, so it needs access that an ordinary app does not. Each permission below is requested at the moment you use the related screen — not collected at install time — and the data behind it is processed on the device.</p>
+      <table>
+        <thead><tr><th>Permission</th><th>Used for</th><th>Leaves the device?</th></tr></thead>
+        <tbody>
+          <tr><td>Root / Magisk / KernelSU (module)</td><td>Reading and writing the kernel and system interfaces you control, through one audited path, with a read-back after every change.</td><td>No</td></tr>
+          <tr><td>Write secure settings, modify system settings</td><td>Changing the settings you asked to change (animation scale, doze, notification policy, and similar).</td><td>No</td></tr>
+          <tr><td>Usage access (<code>PACKAGE_USAGE_STATS</code>)</td><td>Showing per-app usage and foreground state so a profile can follow the app you are actually using.</td><td>No</td></tr>
+          <tr><td>Installed-app visibility (<code>QUERY_ALL_PACKAGES</code>)</td><td>Listing your apps so you can attach a profile to one, and showing install details in diagnostics.</td><td>No</td></tr>
+          <tr><td>Storage and media</td><td>Writing screenshots, recordings, exports and backups where you choose; reading a file you pick.</td><td>No</td></tr>
+          <tr><td>Notifications</td><td>Showing the status of a running control task or recording.</td><td>No</td></tr>
+          <tr><td>Location (<code>ACCESS_FINE_LOCATION</code>)</td><td>Only the Wi-Fi channel scan in the device lab: Android requires the permission to return channel numbers. The app does not request, compute or store a location.</td><td>No</td></tr>
+          <tr><td>Wi-Fi and network state</td><td>Reading link state, channel and band for diagnostics.</td><td>No</td></tr>
+          <tr><td>Microphone (<code>RECORD_AUDIO</code>)</td><td>Only if you start a screen recording with audio yourself; the system dialog asks you first. Never used in the background.</td><td>No</td></tr>
+          <tr><td>Screen capture (<code>MediaProjection</code>)</td><td>Recording a clip you start yourself. The system shows its own consent dialog every session.</td><td>No</td></tr>
+          <tr><td>Contacts, call log, SMS (<code>READ_CONTACTS</code>, <code>WRITE_CONTACTS</code>, <code>READ_CALL_LOG</code>, <code>WRITE_CALL_LOG</code>, <code>READ_SMS</code>)</td><td><strong>Only</strong> the local backup feature: reading these categories into a backup file you asked for, and restoring them from a backup you made. Read-only for SMS — the app does not claim to be a messaging app. Nothing in this category is ever uploaded.</td><td>No</td></tr>
+          <tr><td>Install packages (<code>REQUEST_INSTALL_PACKAGES</code>)</td><td>Installing an app update or a module file that you chose to install.</td><td>No</td></tr>
+          <tr><td>Boot completed</td><td>Letting the system re-register a backup schedule you created, so the schedule survives a restart.</td><td>No</td></tr>
+          <tr><td>Battery optimisation exemption</td><td>Keeping a control task you started from being killed mid-run. Requested by you, never silently.</td><td>No</td></tr>
+          <tr><td>Bluetooth, vibration, flashlight, audio settings</td><td>The toggles on your own device; no nearby-device data is collected.</td><td>No</td></tr>
+        </tbody>
+      </table>
+
+      <h2>6. What the app never does</h2>
+      <ul>
+        <li>No advertising, no ad identifier, no advertising SDK.</li>
+        <li>No analytics or crash-reporting SDK — the release build links none, and there is no third-party tracking library to disable.</li>
+        <li>No selling, renting or sharing of personal data, because none is collected for that purpose.</li>
+        <li>No access to your contacts, messages, call log, media or app list for any reason other than the on-device feature you opened — never for transmission.</li>
+        <li>No silent background uploads: the only outbound calls are the two in section 4 and the opt-in record in section 3.</li>
+      </ul>
+
+      <h2>7. Retention and deletion</h2>
+      <p>On-device data lives until you delete it, clear the app's data, or uninstall the app. For the optional signal, the sent record is kept on the project's server until you use the forget action in section 3, after which the row for your identifier is deleted and the local identifier is removed.</p>
+
+      <h2>8. Children</h2>
+      <p>MaxManager is a system tool for rooted devices and is not directed at children. It is not offered to anyone under the age required to consent to data processing in their country.</p>
+
+      <h2>9. Changes to this policy</h2>
+      <p>If a future version changes what leaves the device, this page changes first and the effective date above moves with it. The app's own release notes link here, and the page's history is public in the documentation repository.</p>
+
+      <h2>10. Your rights</h2>
+      <p>Because the only personal data the project can hold is the opt-in record in section 3, your rights — access, correction, deletion, objection — are exercised by the forget action on the consent screen, or by writing in the Telegram group. If a request needs a written answer, ask there and it will be answered there.</p>
+
+      <p class="legal__meta" style="margin-top:36px"><a href="./">← Back to MaxManager</a> · <a href="ar/privacy-policy.html" hreflang="ar" lang="ar">سياسة الخصوصية بالعربية</a></p>
+    </article>
+  </div>
+</main>
+<script src="site/site.js" defer></script>
+</body>
+</html>
